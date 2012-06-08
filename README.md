@@ -31,3 +31,7 @@ There is full support for filtering, ordering & limiting on entity collection pr
 It is also possible to explicitly include or exclude certain fields on entity & entity collection properties within a prefetch expression by using:-
 * Include
 * Exclude
+
+## Other business
+
+Check this out on Nuget: https://www.nuget.org/packages/LLBLGen.Linq.Prefetch
