@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>LLBLGen.Linq.Prefetch</id>
+    <version>1.0.0.0</version>
+    <authors>Richard Hopton</authors>
+    <owners>Richard</owners>
+    <description>Prefetch extensions for LLBLGen.</description> 
+    <projectUrl>http://github.com/richardhopton/LLBLGen.Linq.Prefetch</projectUrl>
+    <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
+    <tags>LLBLGen Prefetch</tags>
+    <language>en-us</language>
+  </metadata>
+</package>
