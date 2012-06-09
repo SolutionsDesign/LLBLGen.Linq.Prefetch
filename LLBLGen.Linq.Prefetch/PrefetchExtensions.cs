@@ -20,7 +20,7 @@ namespace LLBLGen.Linq.Prefetch
             return collection;
         }
 
-        public static CollectionCore<TEntity> OrderBy<TEntity>(this CollectionCore<TEntity> collection,
+        public static CollectionCore<TEntity> Order<TEntity>(this CollectionCore<TEntity> collection,
                                                                Expression<Func<TEntity, Object>> order)
             where TEntity : class, IEntityCore
         {
@@ -28,7 +28,7 @@ namespace LLBLGen.Linq.Prefetch
             return collection;
         }
 
-        public static CollectionCore<TEntity> OrderByDescending<TEntity>(this CollectionCore<TEntity> collection,
+        public static CollectionCore<TEntity> OrderDescending<TEntity>(this CollectionCore<TEntity> collection,
                                                                          Expression<Func<TEntity, Object>> order)
             where TEntity : class, IEntityCore
         {
@@ -146,6 +146,7 @@ namespace LLBLGen.Linq.Prefetch
 
             var methodName = expression.Method.Name;
             var argumentExpression = expression.Arguments[1];
+
             switch (methodName)
             {
                 case "With":
@@ -158,7 +159,7 @@ namespace LLBLGen.Linq.Prefetch
                         targetEdge.FilterLambda = GetExpression<LambdaExpression>(argumentExpression);
                         break;
                     }
-                case "OrderBy":
+                case "Order":
                     {
                         var sortClauseExpression = new SortClauseExpression(sourceType,
                                                                             SortOperator.Ascending,
@@ -166,7 +167,7 @@ namespace LLBLGen.Linq.Prefetch
                         targetEdge.SortClauseExpressions.Add(sortClauseExpression);
                         break;
                     }
-                case "OrderByDescending":
+                case "OrderDescending":
                     {
                         var sortClauseExpression = new SortClauseExpression(sourceType,
                                                                             SortOperator.Descending,
@@ -291,7 +292,7 @@ namespace LLBLGen.Linq.Prefetch
         {
             var result = UnwrapUnaryExpression(expression) as TExpression;
             if (result == null)
-                throw new Exception(String.Concat("Expected ", typeof(TExpression).Name));
+                throw new Exception(String.Format("Expected {0}", typeof(TExpression).Name));
             return result;
         }
 
