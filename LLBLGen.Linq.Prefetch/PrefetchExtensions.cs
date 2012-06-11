@@ -12,11 +12,13 @@ namespace LLBLGen.Linq.Prefetch
 {
     public static class PrefetchExtensions
     {
+        #region Expression Tree Methods
+        // these methods don't do anything really - they just provide the declarations for the expression tree syntax
+        
         public static CollectionCore<TEntity> Filter<TEntity>(this CollectionCore<TEntity> collection,
                                                               Expression<Func<TEntity, Boolean>> filter)
             where TEntity : class, IEntityCore
         {
-            //this doesn't do anything and is only there to provide a kick off point for the expression trees
             return collection;
         }
 
@@ -24,7 +26,6 @@ namespace LLBLGen.Linq.Prefetch
                                                              Expression<Func<TEntity, Object>> order)
             where TEntity : class, IEntityCore
         {
-            //this doesn't do anything and is only there to provide a kick off point for the expression trees
             return collection;
         }
 
@@ -32,7 +33,6 @@ namespace LLBLGen.Linq.Prefetch
                                                                        Expression<Func<TEntity, Object>> order)
             where TEntity : class, IEntityCore
         {
-            //this doesn't do anything and is only there to provide a kick off point for the expression trees
             return collection;
         }
 
@@ -40,7 +40,6 @@ namespace LLBLGen.Linq.Prefetch
                                                              Int32 limit)
             where TEntity : class, IEntityCore
         {
-            //this doesn't do anything and is only there to provide a kick off point for the expression trees
             return collection;
         }
 
@@ -48,7 +47,6 @@ namespace LLBLGen.Linq.Prefetch
                                                                params Expression<Func<TEntity, Object>>[] excludeFields)
             where TEntity : class, IEntityCore
         {
-            //this doesn't do anything and is only there to provide a kick off point for the expression trees
             return collection;
         }
 
@@ -56,7 +54,6 @@ namespace LLBLGen.Linq.Prefetch
                                                                params Expression<Func<TEntity, Object>>[] includeFields)
             where TEntity : class, IEntityCore
         {
-            //this doesn't do anything and is only there to provide a kick off point for the expression trees
             return collection;
         }
 
@@ -64,23 +61,20 @@ namespace LLBLGen.Linq.Prefetch
                                            params Expression<Func<TEntity, Object>>[] prefetch)
             where TEntity : class, IEntityCore
         {
-            //this doesn't do anything and is only there to provide a kick off point for the expression trees
             return null;
         }
 
-        public static TEntity Filter<TEntity>(this TEntity toFilter,
+        public static TEntity Filter<TEntity>(this TEntity entity,
                                               Expression<Func<TEntity, Boolean>> filter)
             where TEntity : class, IEntityCore
         {
-            //this doesn't do anything and is only there to provide a kick off point for the expression trees
-            return toFilter;
+            return entity;
         }
 
         public static TEntity Exclude<TEntity>(this TEntity entity,
                                                params Expression<Func<TEntity, Object>>[] excludeFields)
             where TEntity : class, IEntityCore
         {
-            //this doesn't do anything and is only there to provide a kick off point for the expression trees
             return entity;
         }
 
@@ -88,7 +82,6 @@ namespace LLBLGen.Linq.Prefetch
                                                params Expression<Func<TEntity, Object>>[] includeFields)
             where TEntity : class, IEntityCore
         {
-            //this doesn't do anything and is only there to provide a kick off point for the expression trees
             return entity;
         }
 
@@ -96,9 +89,10 @@ namespace LLBLGen.Linq.Prefetch
                                            params Expression<Func<TEntity, Object>>[] prefetch)
             where TEntity : class, IEntityCore
         {
-            //this doesn't do anything and is only there to provide a kick off point for the expression trees
             return null;
         }
+
+        #endregion
 
         public static IQueryable<TEntity> With<TEntity>(this IQueryable<TEntity> query,
                                                         params Expression<Func<TEntity, Object>>[] prefetch)
