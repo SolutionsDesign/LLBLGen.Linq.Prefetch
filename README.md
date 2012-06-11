@@ -32,6 +32,10 @@ There is full support for filtering, sorting and explicit inclusion or exclusion
 It is also possible to limit the number of rows from an entity collection properties within a prefetch expression by using:-
 * LimitTo
 
+## Tests
+
+The test suite included in the source is based on the standard Northwind database tests from LLBLGen Pro and is included with kind permission.
+
 ## Other business
 
 Check this out on Nuget: https://www.nuget.org/packages/LLBLGen.Linq.Prefetch

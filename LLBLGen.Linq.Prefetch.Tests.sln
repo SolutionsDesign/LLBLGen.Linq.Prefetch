@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLBLGen.Linq.Prefetch.Tests", "LLBLGen.Linq.Prefetch.Tests\LLBLGen.Linq.Prefetch.Tests.csproj", "{011C2CCB-938B-4AAD-9035-7CE04D511079}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NW26", "LLBLGen.Linq.Prefetch.Tests\Northwind\NW26.csproj", "{1F675E2D-229F-4DDB-B977-D0693B5ED469}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NW26DBSpecific", "LLBLGen.Linq.Prefetch.Tests\Northwind\NW26DBSpecific.csproj", "{C1F6E6F4-616F-4D35-A230-8C03A3973EBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLBLGen.Linq.Prefetch", "LLBLGen.Linq.Prefetch\LLBLGen.Linq.Prefetch.csproj", "{9B0CB7DF-C146-4733-91D5-D9D931ECA434}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{011C2CCB-938B-4AAD-9035-7CE04D511079}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{011C2CCB-938B-4AAD-9035-7CE04D511079}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{011C2CCB-938B-4AAD-9035-7CE04D511079}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{011C2CCB-938B-4AAD-9035-7CE04D511079}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F675E2D-229F-4DDB-B977-D0693B5ED469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F675E2D-229F-4DDB-B977-D0693B5ED469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F675E2D-229F-4DDB-B977-D0693B5ED469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F675E2D-229F-4DDB-B977-D0693B5ED469}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1F6E6F4-616F-4D35-A230-8C03A3973EBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1F6E6F4-616F-4D35-A230-8C03A3973EBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1F6E6F4-616F-4D35-A230-8C03A3973EBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1F6E6F4-616F-4D35-A230-8C03A3973EBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B0CB7DF-C146-4733-91D5-D9D931ECA434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B0CB7DF-C146-4733-91D5-D9D931ECA434}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B0CB7DF-C146-4733-91D5-D9D931ECA434}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B0CB7DF-C146-4733-91D5-D9D931ECA434}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
