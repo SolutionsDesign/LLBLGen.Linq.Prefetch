@@ -71,6 +71,20 @@ namespace LLBLGen.Linq.Prefetch
             return entity;
         }
 
+        public static TEntity Order<TEntity>(this TEntity entity,
+                                             Expression<Func<TEntity, Object>> order)
+            where TEntity : class, IEntityCore
+        {
+            return entity;
+        }
+
+        public static TEntity OrderDescending<TEntity>(this TEntity entity,
+                                                       Expression<Func<TEntity, Object>> order)
+            where TEntity : class, IEntityCore
+        {
+            return entity;
+        }
+
         public static TEntity Exclude<TEntity>(this TEntity entity,
                                                params Expression<Func<TEntity, Object>>[] excludeFields)
             where TEntity : class, IEntityCore
