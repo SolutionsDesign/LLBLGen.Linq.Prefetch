@@ -68,6 +68,14 @@ namespace LLBLGen.Linq.Prefetch
             return null;
         }
 
+        public static TEntity Filter<TEntity>(this TEntity toFilter,
+                                              Expression<Func<TEntity, Boolean>> filter)
+            where TEntity : class, IEntityCore
+        {
+            //this doesn't do anything and is only there to provide a kick off point for the expression trees
+            return toFilter;
+        }
+
         public static TEntity Exclude<TEntity>(this TEntity entity,
                                                params Expression<Func<TEntity, Object>>[] excludeFields)
             where TEntity : class, IEntityCore
