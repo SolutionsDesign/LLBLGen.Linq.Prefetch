@@ -8,3 +8,5 @@ deploy
 ~$*
 *~
 *ReSharper*
+*.DotSettings.user
+packages
