@@ -21,7 +21,7 @@ namespace LLBLGen.Linq.Prefetch
         }
 
         public static CollectionCore<TEntity> Order<TEntity>(this CollectionCore<TEntity> collection,
-                                                               Expression<Func<TEntity, Object>> order)
+                                                             Expression<Func<TEntity, Object>> order)
             where TEntity : class, IEntityCore
         {
             //this doesn't do anything and is only there to provide a kick off point for the expression trees
@@ -29,7 +29,7 @@ namespace LLBLGen.Linq.Prefetch
         }
 
         public static CollectionCore<TEntity> OrderDescending<TEntity>(this CollectionCore<TEntity> collection,
-                                                                         Expression<Func<TEntity, Object>> order)
+                                                                       Expression<Func<TEntity, Object>> order)
             where TEntity : class, IEntityCore
         {
             //this doesn't do anything and is only there to provide a kick off point for the expression trees
@@ -150,53 +150,55 @@ namespace LLBLGen.Linq.Prefetch
             switch (methodName)
             {
                 case "With":
-                    {
-                        AddChildEdges(creator, argumentExpression, targetEdge);
-                        break;
-                    }
+                {
+                    AddChildEdges(creator, argumentExpression, targetEdge);
+                    break;
+                }
                 case "Filter":
-                    {
-                        targetEdge.FilterLambda = GetExpression<LambdaExpression>(argumentExpression);
-                        break;
-                    }
+                {
+                    targetEdge.FilterLambda = GetExpression<LambdaExpression>(argumentExpression);
+                    break;
+                }
                 case "Order":
-                    {
-                        var sortClauseExpression = new SortClauseExpression(sourceType,
-                                                                            SortOperator.Ascending,
-                                                                            GetExpression<LambdaExpression>(argumentExpression));
-                        targetEdge.SortClauseExpressions.Add(sortClauseExpression);
-                        break;
-                    }
+                {
+                    var sortClauseExpression = new SortClauseExpression(sourceType,
+                                                                        SortOperator.Ascending,
+                                                                        GetExpression<LambdaExpression>(
+                                                                                                        argumentExpression));
+                    targetEdge.SortClauseExpressions.Add(sortClauseExpression);
+                    break;
+                }
                 case "OrderDescending":
-                    {
-                        var sortClauseExpression = new SortClauseExpression(sourceType,
-                                                                            SortOperator.Descending,
-                                                                            GetExpression<LambdaExpression>(argumentExpression));
-                        targetEdge.SortClauseExpressions.Add(sortClauseExpression);
-                        break;
-                    }
+                {
+                    var sortClauseExpression = new SortClauseExpression(sourceType,
+                                                                        SortOperator.Descending,
+                                                                        GetExpression<LambdaExpression>(
+                                                                                                        argumentExpression));
+                    targetEdge.SortClauseExpressions.Add(sortClauseExpression);
+                    break;
+                }
                 case "Limit":
-                    {
-                        var constantExpression = GetExpression<ConstantExpression>(argumentExpression);
-                        targetEdge.Limiter = (Int32)constantExpression.Value;
-                        break;
-                    }
+                {
+                    var constantExpression = GetExpression<ConstantExpression>(argumentExpression);
+                    targetEdge.Limiter = (Int32)constantExpression.Value;
+                    break;
+                }
                 case "Include":
-                    {
-                        HandleIncludeExcludeFields(targetEdge,
-                                                   creator,
-                                                   GetExpression<NewArrayExpression>(argumentExpression).Expressions,
-                                                   false);
-                        break;
-                    }
+                {
+                    HandleIncludeExcludeFields(targetEdge,
+                                               creator,
+                                               GetExpression<NewArrayExpression>(argumentExpression).Expressions,
+                                               false);
+                    break;
+                }
                 case "Exclude":
-                    {
-                        HandleIncludeExcludeFields(targetEdge,
-                                                   creator,
-                                                   GetExpression<NewArrayExpression>(argumentExpression).Expressions,
-                                                   true);
-                        break;
-                    }
+                {
+                    HandleIncludeExcludeFields(targetEdge,
+                                               creator,
+                                               GetExpression<NewArrayExpression>(argumentExpression).Expressions,
+                                               true);
+                    break;
+                }
             }
             return pathEdge;
         }
@@ -219,8 +221,8 @@ namespace LLBLGen.Linq.Prefetch
         }
 
         private static PathEdgeNonGeneric GetPathEdge(IElementCreatorCore creator,
-                                                             Type sourceType,
-                                                             MemberExpression expression)
+                                                      Type sourceType,
+                                                      MemberExpression expression)
         {
             var nodeType = expression.Expression.NodeType;
             var propertyName = expression.Member.Name;
@@ -228,17 +230,17 @@ namespace LLBLGen.Linq.Prefetch
             switch (nodeType)
             {
                 case ExpressionType.Parameter:
-                    {
-                        return CreatePathEdge(creator, destinationType, sourceType, propertyName);
-                    }
+                {
+                    return CreatePathEdge(creator, destinationType, sourceType, propertyName);
+                }
                 case ExpressionType.MemberAccess:
                 case ExpressionType.Call:
-                    {
-                        var pathEdge = GetPathEdge(expression.Expression, creator, sourceType);
-                        var childEdge = CreatePathEdge(creator, destinationType, pathEdge.EndNodeType, propertyName);
-                        pathEdge.ChildEdges.Add(childEdge);
-                        return pathEdge;
-                    }
+                {
+                    var pathEdge = GetPathEdge(expression.Expression, creator, sourceType);
+                    var childEdge = CreatePathEdge(creator, destinationType, pathEdge.EndNodeType, propertyName);
+                    pathEdge.ChildEdges.Add(childEdge);
+                    return pathEdge;
+                }
             }
             throw new Exception(String.Format("Cannot Handle NodeType: {0}", nodeType));
         }
