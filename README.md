@@ -22,15 +22,15 @@ You can just write
 
 ## Filtering, Ordering, Limiting, Including & Excluding
 
-There is full support for filtering, ordering & limiting on entity collection properties within a prefetch expression by using:-
-* Filter
-* OrderBy
-* OrderByDescending
-* Limit
-
-It is also possible to explicitly include or exclude certain fields on entity & entity collection properties within a prefetch expression by using:-
+There is full support for filtering, sorting and explicit inclusion or exclusion of fields on entity and entity collection properties within a prefetch expression by using:-
+* FilterBy
+* SortBy
+* SortByDescending
 * Include
 * Exclude
+
+It is also possible to limit the number of rows from an entity collection properties within a prefetch expression by using:-
+* LimitTo
 
 ## Other business
 

@@ -15,28 +15,28 @@ namespace LLBLGen.Linq.Prefetch
         #region Expression Tree Methods
         // these methods don't do anything really - they just provide the declarations for the expression tree syntax
         
-        public static CollectionCore<TEntity> Filter<TEntity>(this CollectionCore<TEntity> collection,
+        public static CollectionCore<TEntity> FilterBy<TEntity>(this CollectionCore<TEntity> collection,
                                                               Expression<Func<TEntity, Boolean>> filter)
             where TEntity : class, IEntityCore
         {
             return collection;
         }
 
-        public static CollectionCore<TEntity> Order<TEntity>(this CollectionCore<TEntity> collection,
+        public static CollectionCore<TEntity> SortBy<TEntity>(this CollectionCore<TEntity> collection,
                                                              Expression<Func<TEntity, Object>> order)
             where TEntity : class, IEntityCore
         {
             return collection;
         }
 
-        public static CollectionCore<TEntity> OrderDescending<TEntity>(this CollectionCore<TEntity> collection,
+        public static CollectionCore<TEntity> SortByDescending<TEntity>(this CollectionCore<TEntity> collection,
                                                                        Expression<Func<TEntity, Object>> order)
             where TEntity : class, IEntityCore
         {
             return collection;
         }
 
-        public static CollectionCore<TEntity> Limit<TEntity>(this CollectionCore<TEntity> collection,
+        public static CollectionCore<TEntity> LimitTo<TEntity>(this CollectionCore<TEntity> collection,
                                                              Int32 limit)
             where TEntity : class, IEntityCore
         {
@@ -64,21 +64,21 @@ namespace LLBLGen.Linq.Prefetch
             return null;
         }
 
-        public static TEntity Filter<TEntity>(this TEntity entity,
+        public static TEntity FilterBy<TEntity>(this TEntity entity,
                                               Expression<Func<TEntity, Boolean>> filter)
             where TEntity : class, IEntityCore
         {
             return entity;
         }
 
-        public static TEntity Order<TEntity>(this TEntity entity,
+        public static TEntity SortBy<TEntity>(this TEntity entity,
                                              Expression<Func<TEntity, Object>> order)
             where TEntity : class, IEntityCore
         {
             return entity;
         }
 
-        public static TEntity OrderDescending<TEntity>(this TEntity entity,
+        public static TEntity SortByDescending<TEntity>(this TEntity entity,
                                                        Expression<Func<TEntity, Object>> order)
             where TEntity : class, IEntityCore
         {
@@ -170,12 +170,12 @@ namespace LLBLGen.Linq.Prefetch
                     AddChildEdges(creator, argumentExpression, targetEdge);
                     break;
                 }
-                case "Filter":
+                case "FilterBy":
                 {
                     targetEdge.FilterLambda = GetExpression<LambdaExpression>(argumentExpression);
                     break;
                 }
-                case "Order":
+                case "SortBy":
                 {
                     var sortClauseExpression = new SortClauseExpression(sourceType,
                                                                         SortOperator.Ascending,
@@ -184,7 +184,7 @@ namespace LLBLGen.Linq.Prefetch
                     targetEdge.SortClauseExpressions.Add(sortClauseExpression);
                     break;
                 }
-                case "OrderDescending":
+                case "SortByDescending":
                 {
                     var sortClauseExpression = new SortClauseExpression(sourceType,
                                                                         SortOperator.Descending,
@@ -193,7 +193,7 @@ namespace LLBLGen.Linq.Prefetch
                     targetEdge.SortClauseExpressions.Add(sortClauseExpression);
                     break;
                 }
-                case "Limit":
+                case "LimitTo":
                 {
                     var constantExpression = GetExpression<ConstantExpression>(argumentExpression);
                     targetEdge.Limiter = (Int32)constantExpression.Value;
@@ -215,6 +215,8 @@ namespace LLBLGen.Linq.Prefetch
                                                true);
                     break;
                 }
+                default:
+                    throw new Exception("Unknown method specified");
             }
             return pathEdge;
         }
