@@ -13,94 +13,95 @@ namespace LLBLGen.Linq.Prefetch
     public static class PrefetchExtensions
     {
         #region Expression Tree Methods
-        // these methods don't do anything really - they just provide the declarations for the expression tree syntax
-        
-        public static CollectionCore<TEntity> FilterBy<TEntity>(this CollectionCore<TEntity> collection,
-                                                              Expression<Func<TEntity, Boolean>> filter)
+
+        // these methods are only present to build the expression tree syntax
+
+        public static IEnumerable<TEntity> FilterBy<TEntity>(this IEnumerable<TEntity> collection,
+                                                             Func<TEntity, Boolean> filter)
+            where TEntity : class, IEntityCore
+        {
+            return Enumerable.Where(collection, filter);
+        }
+
+        public static IEnumerable<TEntity> LimitTo<TEntity>(this IEnumerable<TEntity> collection,
+                                                            Int32 limit)
+            where TEntity : class, IEntityCore
+        {
+            return Enumerable.Take(collection, limit);
+        }
+
+        public static IEnumerable<TEntity> OrderBy<TEntity>(this IEnumerable<TEntity> collection,
+                                                            Func<TEntity, Object> order)
+            where TEntity : class, IEntityCore
+        {
+            return Enumerable.OrderBy(collection, order);
+        }
+
+        public static IEnumerable<TEntity> OrderByDescending<TEntity>(this IEnumerable<TEntity> collection,
+                                                                      Func<TEntity, Object> order)
+            where TEntity : class, IEntityCore
+        {
+            return Enumerable.OrderByDescending(collection, order);
+        }
+
+        public static IEnumerable<TEntity> Exclude<TEntity>(this IEnumerable<TEntity> collection,
+                                                            params Func<TEntity, Object>[] excludeFields)
             where TEntity : class, IEntityCore
         {
             return collection;
         }
 
-        public static CollectionCore<TEntity> SortBy<TEntity>(this CollectionCore<TEntity> collection,
-                                                             Expression<Func<TEntity, Object>> order)
+        public static IEnumerable<TEntity> Include<TEntity>(this IEnumerable<TEntity> collection,
+                                                            params Func<TEntity, Object>[] includeFields)
             where TEntity : class, IEntityCore
         {
             return collection;
         }
 
-        public static CollectionCore<TEntity> SortByDescending<TEntity>(this CollectionCore<TEntity> collection,
-                                                                       Expression<Func<TEntity, Object>> order)
-            where TEntity : class, IEntityCore
-        {
-            return collection;
-        }
-
-        public static CollectionCore<TEntity> LimitTo<TEntity>(this CollectionCore<TEntity> collection,
-                                                             Int32 limit)
-            where TEntity : class, IEntityCore
-        {
-            return collection;
-        }
-
-        public static CollectionCore<TEntity> Exclude<TEntity>(this CollectionCore<TEntity> collection,
-                                                               params Expression<Func<TEntity, Object>>[] excludeFields)
-            where TEntity : class, IEntityCore
-        {
-            return collection;
-        }
-
-        public static CollectionCore<TEntity> Include<TEntity>(this CollectionCore<TEntity> collection,
-                                                               params Expression<Func<TEntity, Object>>[] includeFields)
-            where TEntity : class, IEntityCore
-        {
-            return collection;
-        }
-
-        public static Object With<TEntity>(this CollectionCore<TEntity> collection,
-                                           params Expression<Func<TEntity, Object>>[] prefetch)
+        public static Object With<TEntity>(this IEnumerable<TEntity> collection,
+                                           params Func<TEntity, Object>[] prefetch)
             where TEntity : class, IEntityCore
         {
             return null;
         }
 
         public static TEntity FilterBy<TEntity>(this TEntity entity,
-                                              Expression<Func<TEntity, Boolean>> filter)
+                                                Func<TEntity, Boolean> filter)
             where TEntity : class, IEntityCore
         {
             return entity;
         }
 
-        public static TEntity SortBy<TEntity>(this TEntity entity,
-                                             Expression<Func<TEntity, Object>> order)
+        public static TEntity OrderBy<TEntity>(this TEntity entity,
+                                               Func<TEntity, Object> order)
             where TEntity : class, IEntityCore
         {
             return entity;
         }
 
-        public static TEntity SortByDescending<TEntity>(this TEntity entity,
-                                                       Expression<Func<TEntity, Object>> order)
+        public static TEntity OrderByDescending<TEntity>(this TEntity entity,
+                                                         Func<TEntity, Object> order)
             where TEntity : class, IEntityCore
         {
             return entity;
         }
 
         public static TEntity Exclude<TEntity>(this TEntity entity,
-                                               params Expression<Func<TEntity, Object>>[] excludeFields)
+                                               params Func<TEntity, Object>[] excludeFields)
             where TEntity : class, IEntityCore
         {
             return entity;
         }
 
         public static TEntity Include<TEntity>(this TEntity entity,
-                                               params Expression<Func<TEntity, Object>>[] includeFields)
+                                               params Func<TEntity, Object>[] includeFields)
             where TEntity : class, IEntityCore
         {
             return entity;
         }
 
         public static Object With<TEntity>(this TEntity entity,
-                                           params Expression<Func<TEntity, Object>>[] prefetch)
+                                           params Func<TEntity, Object>[] prefetch)
             where TEntity : class, IEntityCore
         {
             return null;
@@ -175,7 +176,7 @@ namespace LLBLGen.Linq.Prefetch
                     targetEdge.FilterLambda = GetExpression<LambdaExpression>(argumentExpression);
                     break;
                 }
-                case "SortBy":
+                case "OrderBy":
                 {
                     var sortClauseExpression = new SortClauseExpression(sourceType,
                                                                         SortOperator.Ascending,
@@ -184,7 +185,7 @@ namespace LLBLGen.Linq.Prefetch
                     targetEdge.SortClauseExpressions.Add(sortClauseExpression);
                     break;
                 }
-                case "SortByDescending":
+                case "OrderByDescending":
                 {
                     var sortClauseExpression = new SortClauseExpression(sourceType,
                                                                         SortOperator.Descending,

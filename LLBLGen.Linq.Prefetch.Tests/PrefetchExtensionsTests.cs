@@ -147,7 +147,7 @@ namespace LLBLGen.Linq.Prefetch.Tests
                 var metaData = new LinqMetaData(adapter);
                 var q = (from c in metaData.Customer
                          where !(new[] {"FISSA", "PARIS"}.Contains(c.CustomerId))
-                         select c).With(c => c.Orders.SortByDescending(o => o.OrderDate)
+                         select c).With(c => c.Orders.OrderByDescending(o => o.OrderDate)
                                                  .LimitTo(2));
 
                 int count = 0;
@@ -169,7 +169,7 @@ namespace LLBLGen.Linq.Prefetch.Tests
                 var q = (from c in metaData.Customer
                          where !(new[] {"FISSA", "PARIS"}.Contains(c.CustomerId))
                          select c).With(c => c.Orders.FilterBy(o => o.EmployeeId == 2)
-                                                 .SortByDescending(o => o.OrderDate)
+                                                 .OrderByDescending(o => o.OrderDate)
                                                  .LimitTo(2));
 
                 int count = 0;
@@ -197,7 +197,7 @@ namespace LLBLGen.Linq.Prefetch.Tests
                 var metaData = new LinqMetaData(adapter);
                 var q = (from c in metaData.Customer
                          where !(new[] {"FISSA", "PARIS"}.Contains(c.CustomerId))
-                         select c).With(c => c.Orders.SortByDescending(o => o.OrderDate)
+                         select c).With(c => c.Orders.OrderByDescending(o => o.OrderDate)
                                                  .LimitTo(2)
                                                  .With(o => o.OrderDetails,
                                                        o => o.Employee));
@@ -312,7 +312,7 @@ namespace LLBLGen.Linq.Prefetch.Tests
                 var metaData = new LinqMetaData(adapter);
                 var q = (from od in metaData.OrderDetail
                          where od.ProductId > 10
-                         select od).With(od => od.Order.SortBy(o => o.Customer.Country));
+                         select od).With(od => od.Order.OrderBy(o => o.Customer.Country));
 
                 int count = q.ToArray().Count();
                 Assert.AreEqual(1939, count);
@@ -328,7 +328,7 @@ namespace LLBLGen.Linq.Prefetch.Tests
                 var q = (from c in metaData.Customer
                          where c.CustomerId == "ALFKI"
                          select c)
-                    .With(c => c.Orders.SortBy(o => o.Freight)
+                    .With(c => c.Orders.OrderBy(o => o.Freight)
                         .LimitTo(2));
 
                 foreach (var v in q)
