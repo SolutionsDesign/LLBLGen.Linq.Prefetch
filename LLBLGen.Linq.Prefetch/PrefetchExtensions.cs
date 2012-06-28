@@ -30,14 +30,14 @@ namespace LLBLGen.Linq.Prefetch
             return Enumerable.Take(collection, limit);
         }
 
-        public static IEnumerable<TEntity> OrderBy<TEntity>(this IEnumerable<TEntity> collection,
+        public static IOrderedEnumerable<TEntity> OrderBy<TEntity>(this IEnumerable<TEntity> collection,
                                                             Func<TEntity, Object> order)
             where TEntity : class, IEntityCore
         {
             return Enumerable.OrderBy(collection, order);
         }
 
-        public static IEnumerable<TEntity> OrderByDescending<TEntity>(this IEnumerable<TEntity> collection,
+        public static IOrderedEnumerable<TEntity> OrderByDescending<TEntity>(this IEnumerable<TEntity> collection,
                                                                       Func<TEntity, Object> order)
             where TEntity : class, IEntityCore
         {
