@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using NUnit.Framework;
 using NW26.DatabaseSpecific;
+using NW26.EntityClasses;
 using NW26.Linq;
 using SD.LLBLGen.Pro.ORMSupportClasses;
 
@@ -337,6 +340,133 @@ namespace LLBLGen.Linq.Prefetch.Tests
                     Assert.AreEqual("ALFKI", v.CustomerId);
                 }
             }
+        }
+
+        [Test]
+        public void GetTerritoriesWithEmployeesAndCustomersOrdersInComplexPath_ArrayConstant()
+        {
+            using (var adapter = new DataAccessAdapter())
+            {
+                var metaData = new LinqMetaData(adapter);
+                var paths = new Expression<Func<EmployeeEntity, Object>>[]
+                {
+                    e => e.Orders,
+                    e => e.CustomerCollectionViaOrder.With(c => c.Orders)
+                };
+                var q = (from t in metaData.Territory
+                         select t)
+                    .With(t => t.EmployeeCollectionViaEmployeeTerritory
+                                   .With(paths));
+
+                int count = 0;
+                foreach (var v in q)
+                {
+                    count++;
+                    if (new[] { "29202", "72716", "75234", "78759" }.Contains(v.TerritoryId))
+                    {
+                        // territory has no employees
+                        continue;
+                    }
+                    Assert.IsTrue(v.EmployeeCollectionViaEmployeeTerritory.Count > 0);
+                    foreach (var e in v.EmployeeCollectionViaEmployeeTerritory)
+                    {
+                        Assert.IsTrue(e.Orders.Count > 0);
+                        Assert.IsTrue(e.CustomerCollectionViaOrder.Count > 0);
+                        foreach (var c in e.CustomerCollectionViaOrder)
+                        {
+                            if (!(new[] { "FISSA", "PARIS" }.Contains(c.CustomerId)))
+                            {
+                                Assert.IsTrue(c.Orders.Count > 0);
+                            }
+                        }
+                    }
+                }
+                Assert.AreEqual(53, count);
+            }
+        }
+
+        [Test]
+        public void GetTerritoriesWithEmployeesAndCustomersOrdersInComplexPath_EnumerableConstant()
+        {
+            using (var adapter = new DataAccessAdapter())
+            {
+                var metaData = new LinqMetaData(adapter);
+                var paths = GetExpressions(true);
+                var q = (from t in metaData.Territory
+                         select t)
+                    .With(t => t.EmployeeCollectionViaEmployeeTerritory
+                                   .With(paths));
+
+                int count = 0;
+                foreach (var v in q)
+                {
+                    count++;
+                    if (new[] { "29202", "72716", "75234", "78759" }.Contains(v.TerritoryId))
+                    {
+                        // territory has no employees
+                        continue;
+                    }
+                    Assert.IsTrue(v.EmployeeCollectionViaEmployeeTerritory.Count > 0);
+                    foreach (var e in v.EmployeeCollectionViaEmployeeTerritory)
+                    {
+                        Assert.IsTrue(e.Orders.Count > 0);
+                        Assert.IsTrue(e.CustomerCollectionViaOrder.Count > 0);
+                        foreach (var c in e.CustomerCollectionViaOrder)
+                        {
+                            if (!(new[] { "FISSA", "PARIS" }.Contains(c.CustomerId)))
+                            {
+                                Assert.IsTrue(c.Orders.Count > 0);
+                            }
+                        }
+                    }
+                }
+                Assert.AreEqual(53, count);
+            }
+        }
+
+        [Test]
+        public void GetTerritoriesWithEmployeesAndCustomersOrdersInComplexPath_MethodCall()
+        {
+            using (var adapter = new DataAccessAdapter())
+            {
+                var someValue = true;
+                var metaData = new LinqMetaData(adapter);
+                var q = (from t in metaData.Territory
+                         select t)
+                    .With(t => t.EmployeeCollectionViaEmployeeTerritory
+                                   .With(GetExpressions(someValue)));
+
+                int count = 0;
+                foreach (var v in q)
+                {
+                    count++;
+                    if (new[] { "29202", "72716", "75234", "78759" }.Contains(v.TerritoryId))
+                    {
+                        // territory has no employees
+                        continue;
+                    }
+                    Assert.IsTrue(v.EmployeeCollectionViaEmployeeTerritory.Count > 0);
+                    foreach (var e in v.EmployeeCollectionViaEmployeeTerritory)
+                    {
+                        Assert.IsTrue(e.Orders.Count > 0);
+                        Assert.IsTrue(e.CustomerCollectionViaOrder.Count > 0);
+                        foreach (var c in e.CustomerCollectionViaOrder)
+                        {
+                            if (!(new[] { "FISSA", "PARIS" }.Contains(c.CustomerId)))
+                            {
+                                Assert.IsTrue(c.Orders.Count > 0);
+                            }
+                        }
+                    }
+                }
+                Assert.AreEqual(53, count);
+            }
+        }
+
+        private static IEnumerable<Expression<Func<EmployeeEntity, object>>> GetExpressions(Boolean someValue)
+        {
+            yield return e => e.Orders;
+            yield return e => e.CustomerCollectionViaOrder.With(c => c.Orders);
         }
 
         [TestFixtureSetUp]

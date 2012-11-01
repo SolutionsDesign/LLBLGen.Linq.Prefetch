@@ -65,6 +65,13 @@ namespace LLBLGen.Linq.Prefetch
             return null;
         }
 
+        public static Object With<TEntity>(this IEnumerable<TEntity> collection,
+                                           IEnumerable<Expression<Func<TEntity, Object>>> prefetch)
+            where TEntity : class, IEntityCore
+        {
+            return null;
+        }
+
         public static TEntity FilterBy<TEntity>(this TEntity entity,
                                                 Expression<Func<TEntity, Boolean>> filter)
             where TEntity : class, IEntityCore
@@ -121,10 +128,24 @@ namespace LLBLGen.Linq.Prefetch
             return null;
         }
 
+        public static Object With<TEntity>(this TEntity entity,
+                                           IEnumerable<Expression<Func<TEntity, Object>>> prefetch)
+            where TEntity : class, IEntityCore
+        {
+            return null;
+        }
+
         #endregion
 
         public static IQueryable<TEntity> With<TEntity>(this IQueryable<TEntity> query,
                                                         params Expression<Func<TEntity, Object>>[] prefetch)
+            where TEntity : class, IEntityCore
+        {
+            return With(query, prefetch.AsEnumerable());
+        }
+
+        public static IQueryable<TEntity> With<TEntity>(this IQueryable<TEntity> query,
+                                                        IEnumerable<Expression<Func<TEntity, Object>>> prefetch)
             where TEntity : class, IEntityCore
         {
             var creator = LinqUtils.GetElementCreator(query);
@@ -253,8 +274,14 @@ namespace LLBLGen.Linq.Prefetch
                                                            IElementCreatorCore creator,
                                                            Type sourceType)
         {
-            var arrayExpression = GetExpression<NewArrayExpression>(expression);
-            return GetPathEdges(arrayExpression.Expressions, creator, sourceType);
+            var expressions = GetExpressions(expression);
+            return GetPathEdges(expressions, creator, sourceType);
+        }
+
+        private static IEnumerable<Expression> GetExpressions(Expression expression)
+        {
+            var result = UnwrapUnaryExpression(expression) as NewArrayExpression;
+            return result != null ? result.Expressions : Expression.Lambda<Func<IEnumerable<Expression>>>(expression).Compile()();
         }
 
         private static PathEdgeNonGeneric GetPathEdge(IElementCreatorCore creator,
@@ -339,6 +366,12 @@ namespace LLBLGen.Linq.Prefetch
         {
             var unaryExpression = expression as UnaryExpression;
             return unaryExpression != null ? unaryExpression.Operand : expression;
+        }
+
+        private static Expression UnwrapMemberExpression(Expression expression)
+        {
+            var memberExpression = expression as MemberExpression;
+            return memberExpression != null ? memberExpression.Expression : expression;
         }
     }
 }
