@@ -15,7 +15,7 @@ namespace LLBLGen.Linq.Prefetch
         #region Expression Tree Methods
 
         // these methods don't do anything really - they just provide the declarations for the expression tree syntax
-        
+
         public static IEnumerable<TEntity> FilterBy<TEntity>(this IEnumerable<TEntity> collection,
                                                              Expression<Func<TEntity, Boolean>> filter)
             where TEntity : class, IEntityCore
@@ -175,21 +175,29 @@ namespace LLBLGen.Linq.Prefetch
             var methodCallExpression = expression as MethodCallExpression;
             if (methodCallExpression != null)
             {
-                return GetPathEdge(creator, sourceType, methodCallExpression);
+                return IsGenericTypeDefinition(methodCallExpression.Type, typeof(Expression<>))
+                           ? GetPathEdgeFromCompiledExpression(creator, sourceType, methodCallExpression)
+                           : GetPathEdgeFromMethodCallExpression(creator, sourceType, methodCallExpression);
             }
             var memberExpression = expression as MemberExpression;
             if (memberExpression != null)
             {
-                return GetPathEdge(creator, sourceType, memberExpression);
+                return GetPathEdgeFromMemberExpression(creator, sourceType, memberExpression);
             }
 
             // if it gets here then something is wrong
             throw new Exception(String.Format("Cannot handle {0}", expression.GetType().Name));
         }
 
-        private static PathEdgeNonGeneric GetPathEdge(IElementCreatorCore creator,
-                                                      Type sourceType,
-                                                      MethodCallExpression expression)
+        private static bool IsGenericTypeDefinition(Type type, Type match)
+        {
+            return type.IsGenericType &&
+                   type.GetGenericTypeDefinition() == match;
+        }
+
+        private static PathEdgeNonGeneric GetPathEdgeFromMethodCallExpression(IElementCreatorCore creator,
+                                                                              Type sourceType,
+                                                                              MethodCallExpression expression)
         {
             var pathEdge = GetPathEdge(expression.Arguments[0], creator, sourceType);
             var targetEdge = pathEdge;
@@ -217,8 +225,7 @@ namespace LLBLGen.Linq.Prefetch
                 {
                     var sortClauseExpression = new SortClauseExpression(sourceType,
                                                                         SortOperator.Ascending,
-                                                                        GetExpression<LambdaExpression>(
-                                                                                                        argumentExpression));
+                                                                        GetExpression<LambdaExpression>(argumentExpression));
                     targetEdge.SortClauseExpressions.Add(sortClauseExpression);
                     break;
                 }
@@ -227,8 +234,7 @@ namespace LLBLGen.Linq.Prefetch
                 {
                     var sortClauseExpression = new SortClauseExpression(sourceType,
                                                                         SortOperator.Descending,
-                                                                        GetExpression<LambdaExpression>(
-                                                                                                        argumentExpression));
+                                                                        GetExpression<LambdaExpression>(argumentExpression));
                     targetEdge.SortClauseExpressions.Add(sortClauseExpression);
                     break;
                 }
@@ -266,13 +272,13 @@ namespace LLBLGen.Linq.Prefetch
                                           PathEdgeNonGeneric targetEdge)
         {
             var destinationType = targetEdge.EndNodeType;
-            var pathEdges = GetPathEdges(childExpression, creator, destinationType);
+            var pathEdges = GetChildPathEdges(childExpression, creator, destinationType);
             targetEdge.ChildEdges.AddRange(pathEdges);
         }
 
-        private static IEnumerable<IPathEdge> GetPathEdges(Expression expression,
-                                                           IElementCreatorCore creator,
-                                                           Type sourceType)
+        private static IEnumerable<IPathEdge> GetChildPathEdges(Expression expression,
+                                                                IElementCreatorCore creator,
+                                                                Type sourceType)
         {
             var expressions = GetExpressions(expression);
             return GetPathEdges(expressions, creator, sourceType);
@@ -280,33 +286,46 @@ namespace LLBLGen.Linq.Prefetch
 
         private static IEnumerable<Expression> GetExpressions(Expression expression)
         {
-            var result = UnwrapUnaryExpression(expression) as NewArrayExpression;
-            return result != null ? result.Expressions : Expression.Lambda<Func<IEnumerable<Expression>>>(expression).Compile()();
+            var newArrayExpression = UnwrapUnaryExpression(expression) as NewArrayExpression;
+            return newArrayExpression != null ? newArrayExpression.Expressions : Expression.Lambda<Func<IEnumerable<Expression>>>(expression).Compile()();
         }
 
-        private static PathEdgeNonGeneric GetPathEdge(IElementCreatorCore creator,
-                                                      Type sourceType,
-                                                      MemberExpression expression)
+        private static PathEdgeNonGeneric GetPathEdgeFromMemberExpression(IElementCreatorCore creator,
+                                                                          Type sourceType,
+                                                                          MemberExpression expression)
         {
             var nodeType = expression.Expression.NodeType;
             var propertyName = expression.Member.Name;
-            var destinationType = DetermineEntityType(expression);
             switch (nodeType)
             {
                 case ExpressionType.Parameter:
                 {
+                    var destinationType = DetermineEntityType(expression);
                     return CreatePathEdge(creator, destinationType, sourceType, propertyName);
                 }
                 case ExpressionType.MemberAccess:
                 case ExpressionType.Call:
                 {
                     var pathEdge = GetPathEdge(expression.Expression, creator, sourceType);
+                    var destinationType = DetermineEntityType(expression);
                     var childEdge = CreatePathEdge(creator, destinationType, pathEdge.EndNodeType, propertyName);
                     pathEdge.ChildEdges.Add(childEdge);
                     return pathEdge;
                 }
+                case ExpressionType.Constant:
+                {
+                    return GetPathEdgeFromCompiledExpression(creator, sourceType, expression);
+                }
             }
             throw new Exception(String.Format("Cannot Handle NodeType: {0}", nodeType));
+        }
+
+        private static PathEdgeNonGeneric GetPathEdgeFromCompiledExpression(IElementCreatorCore creator,
+                                                                            Type sourceType,
+                                                                            Expression expression)
+        {
+            var resultExpression = Expression.Lambda<Func<Expression>>(expression).Compile()();
+            return GetPathEdge(resultExpression, creator, sourceType);
         }
 
         private static PathEdgeNonGeneric CreatePathEdge(IElementCreatorCore creator,
@@ -329,9 +348,10 @@ namespace LLBLGen.Linq.Prefetch
 
         private static Type DetermineEntityType(Expression expression)
         {
-            return typeof(IEntityCore).IsAssignableFrom(expression.Type)
-                       ? expression.Type
-                       : LinqUtils.DetermineEntityTypeFromEntityCollectionType(expression.Type);
+            var type = expression.Type;
+            return typeof(IEntityCore).IsAssignableFrom(type)
+                       ? type
+                       : LinqUtils.DetermineEntityTypeFromEntityCollectionType(type);
         }
 
         private static void HandleIncludeExcludeFields(PathEdgeNonGeneric targetEdge,
@@ -366,12 +386,6 @@ namespace LLBLGen.Linq.Prefetch
         {
             var unaryExpression = expression as UnaryExpression;
             return unaryExpression != null ? unaryExpression.Operand : expression;
-        }
-
-        private static Expression UnwrapMemberExpression(Expression expression)
-        {
-            var memberExpression = expression as MemberExpression;
-            return memberExpression != null ? memberExpression.Expression : expression;
         }
     }
 }

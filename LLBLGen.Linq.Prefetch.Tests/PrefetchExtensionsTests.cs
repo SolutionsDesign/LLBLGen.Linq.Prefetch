@@ -151,7 +151,7 @@ namespace LLBLGen.Linq.Prefetch.Tests
                 var q = (from c in metaData.Customer
                          where !(new[] {"FISSA", "PARIS"}.Contains(c.CustomerId))
                          select c).With(c => c.Orders.OrderByDescending(o => o.OrderDate)
-                                                 .LimitTo(2));
+                                              .LimitTo(2));
 
                 int count = 0;
                 foreach (var v in q)
@@ -172,8 +172,8 @@ namespace LLBLGen.Linq.Prefetch.Tests
                 var q = (from c in metaData.Customer
                          where !(new[] {"FISSA", "PARIS"}.Contains(c.CustomerId))
                          select c).With(c => c.Orders.FilterBy(o => o.EmployeeId == 2)
-                                                 .OrderByDescending(o => o.OrderDate)
-                                                 .LimitTo(2));
+                                              .OrderByDescending(o => o.OrderDate)
+                                              .LimitTo(2));
 
                 int count = 0;
                 foreach (var v in q)
@@ -201,9 +201,9 @@ namespace LLBLGen.Linq.Prefetch.Tests
                 var q = (from c in metaData.Customer
                          where !(new[] {"FISSA", "PARIS"}.Contains(c.CustomerId))
                          select c).With(c => c.Orders.OrderByDescending(o => o.OrderDate)
-                                                 .LimitTo(2)
-                                                 .With(o => o.OrderDetails,
-                                                       o => o.Employee));
+                                              .LimitTo(2)
+                                              .With(o => o.OrderDetails,
+                                                    o => o.Employee));
 
                 int count = 0;
                 foreach (var v in q)
@@ -235,8 +235,8 @@ namespace LLBLGen.Linq.Prefetch.Tests
                 var q = (from t in metaData.Territory
                          select t)
                     .With(t => t.EmployeeCollectionViaEmployeeTerritory
-                                   .With(e => e.Orders,
-                                         e => e.CustomerCollectionViaOrder.With(c => c.Orders)));
+                                .With(e => e.Orders,
+                                      e => e.CustomerCollectionViaOrder.With(c => c.Orders)));
 
                 int count = 0;
                 foreach (var v in q)
@@ -273,7 +273,7 @@ namespace LLBLGen.Linq.Prefetch.Tests
                 var metaData = new LinqMetaData(adapter);
                 var q = (from c in metaData.Customer
                          select c).With(c => c.Orders)
-                    .Single(c => c.CustomerId == "CHOPS");
+                                  .Single(c => c.CustomerId == "CHOPS");
 
                 Assert.AreEqual("CHOPS", q.CustomerId);
                 Assert.IsTrue(q.Orders.Count > 0);
@@ -332,7 +332,7 @@ namespace LLBLGen.Linq.Prefetch.Tests
                          where c.CustomerId == "ALFKI"
                          select c)
                     .With(c => c.Orders.OrderBy(o => o.Freight)
-                        .LimitTo(2));
+                                .LimitTo(2));
 
                 foreach (var v in q)
                 {
@@ -343,7 +343,7 @@ namespace LLBLGen.Linq.Prefetch.Tests
         }
 
         [Test]
-        public void GetTerritoriesWithEmployeesAndCustomersOrdersInComplexPath_ArrayConstant()
+        public void GetTerritoriesWithEmployeesAndCustomersOrdersInComplexPathUsingArrayConstantPaths()
         {
             using (var adapter = new DataAccessAdapter())
             {
@@ -356,13 +356,13 @@ namespace LLBLGen.Linq.Prefetch.Tests
                 var q = (from t in metaData.Territory
                          select t)
                     .With(t => t.EmployeeCollectionViaEmployeeTerritory
-                                   .With(paths));
+                                .With(paths));
 
                 int count = 0;
                 foreach (var v in q)
                 {
                     count++;
-                    if (new[] { "29202", "72716", "75234", "78759" }.Contains(v.TerritoryId))
+                    if (new[] {"29202", "72716", "75234", "78759"}.Contains(v.TerritoryId))
                     {
                         // territory has no employees
                         continue;
@@ -374,7 +374,7 @@ namespace LLBLGen.Linq.Prefetch.Tests
                         Assert.IsTrue(e.CustomerCollectionViaOrder.Count > 0);
                         foreach (var c in e.CustomerCollectionViaOrder)
                         {
-                            if (!(new[] { "FISSA", "PARIS" }.Contains(c.CustomerId)))
+                            if (!(new[] {"FISSA", "PARIS"}.Contains(c.CustomerId)))
                             {
                                 Assert.IsTrue(c.Orders.Count > 0);
                             }
@@ -386,22 +386,23 @@ namespace LLBLGen.Linq.Prefetch.Tests
         }
 
         [Test]
-        public void GetTerritoriesWithEmployeesAndCustomersOrdersInComplexPath_EnumerableConstant()
+        public void GetTerritoriesWithEmployeesAndCustomersOrdersInComplexPathUsingMixedInlinePaths()
         {
             using (var adapter = new DataAccessAdapter())
             {
                 var metaData = new LinqMetaData(adapter);
-                var paths = GetExpressions(true);
+                Expression<Func<EmployeeEntity, object>> employeeOrdersPath = e => e.Orders;
                 var q = (from t in metaData.Territory
                          select t)
                     .With(t => t.EmployeeCollectionViaEmployeeTerritory
-                                   .With(paths));
+                                .With(employeeOrdersPath,
+                                      GetCustomerCollectionViaOrderWithOrdersPath(false).First()));
 
                 int count = 0;
                 foreach (var v in q)
                 {
                     count++;
-                    if (new[] { "29202", "72716", "75234", "78759" }.Contains(v.TerritoryId))
+                    if (new[] {"29202", "72716", "75234", "78759"}.Contains(v.TerritoryId))
                     {
                         // territory has no employees
                         continue;
@@ -413,7 +414,7 @@ namespace LLBLGen.Linq.Prefetch.Tests
                         Assert.IsTrue(e.CustomerCollectionViaOrder.Count > 0);
                         foreach (var c in e.CustomerCollectionViaOrder)
                         {
-                            if (!(new[] { "FISSA", "PARIS" }.Contains(c.CustomerId)))
+                            if (!(new[] {"FISSA", "PARIS"}.Contains(c.CustomerId)))
                             {
                                 Assert.IsTrue(c.Orders.Count > 0);
                             }
@@ -425,22 +426,22 @@ namespace LLBLGen.Linq.Prefetch.Tests
         }
 
         [Test]
-        public void GetTerritoriesWithEmployeesAndCustomersOrdersInComplexPath_MethodCall()
+        public void GetTerritoriesWithEmployeesAndCustomersOrdersInComplexPathUsingEnumerableConstantPaths()
         {
             using (var adapter = new DataAccessAdapter())
             {
-                var someValue = true;
                 var metaData = new LinqMetaData(adapter);
+                var paths = GetCustomerCollectionViaOrderWithOrdersPath(true);
                 var q = (from t in metaData.Territory
                          select t)
                     .With(t => t.EmployeeCollectionViaEmployeeTerritory
-                                   .With(GetExpressions(someValue)));
+                                .With(paths));
 
                 int count = 0;
                 foreach (var v in q)
                 {
                     count++;
-                    if (new[] { "29202", "72716", "75234", "78759" }.Contains(v.TerritoryId))
+                    if (new[] {"29202", "72716", "75234", "78759"}.Contains(v.TerritoryId))
                     {
                         // territory has no employees
                         continue;
@@ -452,7 +453,7 @@ namespace LLBLGen.Linq.Prefetch.Tests
                         Assert.IsTrue(e.CustomerCollectionViaOrder.Count > 0);
                         foreach (var c in e.CustomerCollectionViaOrder)
                         {
-                            if (!(new[] { "FISSA", "PARIS" }.Contains(c.CustomerId)))
+                            if (!(new[] {"FISSA", "PARIS"}.Contains(c.CustomerId)))
                             {
                                 Assert.IsTrue(c.Orders.Count > 0);
                             }
@@ -463,9 +464,49 @@ namespace LLBLGen.Linq.Prefetch.Tests
             }
         }
 
-        private static IEnumerable<Expression<Func<EmployeeEntity, object>>> GetExpressions(Boolean someValue)
+        [Test]
+        public void GetTerritoriesWithEmployeesAndCustomersOrdersInComplexPathUsingMethodCallPaths()
         {
-            yield return e => e.Orders;
+            using (var adapter = new DataAccessAdapter())
+            {
+                const bool yieldOrders = true;
+                var metaData = new LinqMetaData(adapter);
+                var q = (from t in metaData.Territory
+                         select t)
+                    .With(t => t.EmployeeCollectionViaEmployeeTerritory
+                                .With(GetCustomerCollectionViaOrderWithOrdersPath(yieldOrders)));
+
+                int count = 0;
+                foreach (var v in q)
+                {
+                    count++;
+                    if (new[] {"29202", "72716", "75234", "78759"}.Contains(v.TerritoryId))
+                    {
+                        // territory has no employees
+                        continue;
+                    }
+                    Assert.IsTrue(v.EmployeeCollectionViaEmployeeTerritory.Count > 0);
+                    foreach (var e in v.EmployeeCollectionViaEmployeeTerritory)
+                    {
+                        Assert.IsTrue(e.Orders.Count > 0);
+                        Assert.IsTrue(e.CustomerCollectionViaOrder.Count > 0);
+                        foreach (var c in e.CustomerCollectionViaOrder)
+                        {
+                            if (!(new[] {"FISSA", "PARIS"}.Contains(c.CustomerId)))
+                            {
+                                Assert.IsTrue(c.Orders.Count > 0);
+                            }
+                        }
+                    }
+                }
+                Assert.AreEqual(53, count);
+            }
+        }
+
+        private static IEnumerable<Expression<Func<EmployeeEntity, object>>> GetCustomerCollectionViaOrderWithOrdersPath(Boolean yieldOrders)
+        {
+            if (yieldOrders)
+                yield return e => e.Orders;
             yield return e => e.CustomerCollectionViaOrder.With(c => c.Orders);
         }
 
