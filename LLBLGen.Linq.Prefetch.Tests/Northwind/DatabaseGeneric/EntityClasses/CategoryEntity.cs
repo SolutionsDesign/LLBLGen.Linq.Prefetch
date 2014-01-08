@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.5
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -33,6 +33,7 @@ namespace NW26.EntityClasses
 	{
 		#region Class Member Declarations
 		private EntityCollection<ProductEntity> _products;
+		private EntityCollection<SupplierEntity> _supplierCollectionViaProduct;
 
 		// __LLBLGENPRO_USER_CODE_REGION_START PrivateMembers
 		// __LLBLGENPRO_USER_CODE_REGION_END
@@ -47,6 +48,8 @@ namespace NW26.EntityClasses
 		{
 			/// <summary>Member name Products</summary>
 			public static readonly string Products = "Products";
+			/// <summary>Member name SupplierCollectionViaProduct</summary>
+			public static readonly string SupplierCollectionViaProduct = "SupplierCollectionViaProduct";
 		}
 		#endregion
 		
@@ -105,6 +108,7 @@ namespace NW26.EntityClasses
 			if(SerializationHelper.Optimization != SerializationOptimization.Fast) 
 			{
 				_products = (EntityCollection<ProductEntity>)info.GetValue("_products", typeof(EntityCollection<ProductEntity>));
+				_supplierCollectionViaProduct = (EntityCollection<SupplierEntity>)info.GetValue("_supplierCollectionViaProduct", typeof(EntityCollection<SupplierEntity>));
 				this.FixupDeserialization(FieldInfoProviderSingleton.GetInstance());
 			}
 			// __LLBLGENPRO_USER_CODE_REGION_START DeserializationConstructor
@@ -122,6 +126,11 @@ namespace NW26.EntityClasses
 			{
 				case "Products":
 					this.Products.Add((ProductEntity)entity);
+					break;
+				case "SupplierCollectionViaProduct":
+					this.SupplierCollectionViaProduct.IsReadOnly = false;
+					this.SupplierCollectionViaProduct.Add((SupplierEntity)entity);
+					this.SupplierCollectionViaProduct.IsReadOnly = true;
 					break;
 				default:
 					this.OnSetRelatedEntityProperty(propertyName, entity);
@@ -147,6 +156,10 @@ namespace NW26.EntityClasses
 			{
 				case "Products":
 					toReturn.Add(Relations.ProductEntityUsingCategoryId);
+					break;
+				case "SupplierCollectionViaProduct":
+					toReturn.Add(Relations.ProductEntityUsingCategoryId, "CategoryEntity__", "Product_", JoinHint.None);
+					toReturn.Add(ProductEntity.Relations.SupplierEntityUsingSupplierId, "Product_", string.Empty, JoinHint.None);
 					break;
 				default:
 					break;				
@@ -235,6 +248,7 @@ namespace NW26.EntityClasses
 			if (SerializationHelper.Optimization != SerializationOptimization.Fast) 
 			{
 				info.AddValue("_products", ((_products!=null) && (_products.Count>0) && !this.MarkedForDeletion)?_products:null);
+				info.AddValue("_supplierCollectionViaProduct", ((_supplierCollectionViaProduct!=null) && (_supplierCollectionViaProduct.Count>0) && !this.MarkedForDeletion)?_supplierCollectionViaProduct:null);
 			}
 			// __LLBLGENPRO_USER_CODE_REGION_START GetObjectInfo
 			// __LLBLGENPRO_USER_CODE_REGION_END
@@ -258,6 +272,16 @@ namespace NW26.EntityClasses
 			bucket.PredicateExpression.Add(new FieldCompareValuePredicate(ProductFields.CategoryId, null, ComparisonOperator.Equal, this.CategoryId));
 			return bucket;
 		}
+
+		/// <summary> Creates a new IRelationPredicateBucket object which contains the predicate expression and relation collection to fetch the related entities of type 'Supplier' to this entity.</summary>
+		/// <returns></returns>
+		public virtual IRelationPredicateBucket GetRelationInfoSupplierCollectionViaProduct()
+		{
+			IRelationPredicateBucket bucket = new RelationPredicateBucket();
+			bucket.Relations.AddRange(GetRelationsForFieldOfType("SupplierCollectionViaProduct"));
+			bucket.PredicateExpression.Add(new FieldCompareValuePredicate(CategoryFields.CategoryId, null, ComparisonOperator.Equal, this.CategoryId, "CategoryEntity__"));
+			return bucket;
+		}
 		
 
 		/// <summary>Creates a new instance of the factory related to this entity</summary>
@@ -272,6 +296,7 @@ namespace NW26.EntityClasses
 		{
 			base.AddToMemberEntityCollectionsQueue(collectionsQueue);
 			collectionsQueue.Enqueue(this._products);
+			collectionsQueue.Enqueue(this._supplierCollectionViaProduct);
 		}
 		
 		/// <summary>Gets the member collections queue from the queue (base first)</summary>
@@ -280,6 +305,7 @@ namespace NW26.EntityClasses
 		{
 			base.GetFromMemberEntityCollectionsQueue(collectionsQueue);
 			this._products = (EntityCollection<ProductEntity>) collectionsQueue.Dequeue();
+			this._supplierCollectionViaProduct = (EntityCollection<SupplierEntity>) collectionsQueue.Dequeue();
 
 		}
 		
@@ -289,6 +315,7 @@ namespace NW26.EntityClasses
 		{
 			bool toReturn = false;
 			toReturn |=(this._products != null);
+			toReturn |= (this._supplierCollectionViaProduct != null);
 			return toReturn ? true : base.HasPopulatedMemberEntityCollections();
 		}
 		
@@ -299,6 +326,7 @@ namespace NW26.EntityClasses
 		{
 			base.CreateMemberEntityCollectionsQueue(collectionsQueue, requiredQueue);
 			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<ProductEntity>(EntityFactoryCache2.GetEntityFactory(typeof(ProductEntityFactory))) : null);
+			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<SupplierEntity>(EntityFactoryCache2.GetEntityFactory(typeof(SupplierEntityFactory))) : null);
 		}
 #endif
 		/// <summary>Gets all related data objects, stored by name. The name is the field name mapped onto the relation for that particular data element.</summary>
@@ -307,6 +335,7 @@ namespace NW26.EntityClasses
 		{
 			Dictionary<string, object> toReturn = new Dictionary<string, object>();
 			toReturn.Add("Products", _products);
+			toReturn.Add("SupplierCollectionViaProduct", _supplierCollectionViaProduct);
 			return toReturn;
 		}
 
@@ -375,6 +404,19 @@ namespace NW26.EntityClasses
 		public static IPrefetchPathElement2 PrefetchPathProducts
 		{
 			get	{ return new PrefetchPathElement2( new EntityCollection<ProductEntity>(EntityFactoryCache2.GetEntityFactory(typeof(ProductEntityFactory))), (IEntityRelation)GetRelationsForField("Products")[0], (int)NW26.EntityType.CategoryEntity, (int)NW26.EntityType.ProductEntity, 0, null, null, null, null, "Products", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.OneToMany);	}
+		}
+
+		/// <summary> Creates a new PrefetchPathElement2 object which contains all the information to prefetch the related entities of type 'Supplier' for this entity.</summary>
+		/// <returns>Ready to use IPrefetchPathElement2 implementation.</returns>
+		public static IPrefetchPathElement2 PrefetchPathSupplierCollectionViaProduct
+		{
+			get
+			{
+				IEntityRelation intermediateRelation = Relations.ProductEntityUsingCategoryId;
+				intermediateRelation.SetAliases(string.Empty, "Product_");
+				return new PrefetchPathElement2(new EntityCollection<SupplierEntity>(EntityFactoryCache2.GetEntityFactory(typeof(SupplierEntityFactory))), intermediateRelation,
+					(int)NW26.EntityType.CategoryEntity, (int)NW26.EntityType.SupplierEntity, 0, null, null, GetRelationsForField("SupplierCollectionViaProduct"), null, "SupplierCollectionViaProduct", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToMany);
+			}
 		}
 
 
@@ -446,6 +488,13 @@ namespace NW26.EntityClasses
 		public virtual EntityCollection<ProductEntity> Products
 		{
 			get { return GetOrCreateEntityCollection<ProductEntity, ProductEntityFactory>("Category", true, false, ref _products);	}
+		}
+
+		/// <summary> Gets the EntityCollection with the related entities of type 'SupplierEntity' which are related to this entity via a relation of type 'm:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
+		[TypeContainedAttribute(typeof(SupplierEntity))]
+		public virtual EntityCollection<SupplierEntity> SupplierCollectionViaProduct
+		{
+			get { return GetOrCreateEntityCollection<SupplierEntity, SupplierEntityFactory>("CategoryCollectionViaProduct", false, true, ref _supplierCollectionViaProduct);	}
 		}
 	
 		/// <summary> Gets the type of the hierarchy this entity is in. </summary>

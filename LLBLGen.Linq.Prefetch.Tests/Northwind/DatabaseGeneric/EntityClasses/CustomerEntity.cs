@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.5
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -34,7 +34,9 @@ namespace NW26.EntityClasses
 		#region Class Member Declarations
 		private EntityCollection<CustomerCustomerDemoEntity> _customerCustomerDemos;
 		private EntityCollection<OrderEntity> _orders;
+		private EntityCollection<CustomerDemographicEntity> _customerDemographicCollectionViaCustomerCustomerDemo;
 		private EntityCollection<EmployeeEntity> _employeeCollectionViaOrder;
+		private EntityCollection<ShipperEntity> _shipperCollectionViaOrder;
 
 		// __LLBLGENPRO_USER_CODE_REGION_START PrivateMembers
 		// __LLBLGENPRO_USER_CODE_REGION_END
@@ -51,8 +53,12 @@ namespace NW26.EntityClasses
 			public static readonly string CustomerCustomerDemos = "CustomerCustomerDemos";
 			/// <summary>Member name Orders</summary>
 			public static readonly string Orders = "Orders";
+			/// <summary>Member name CustomerDemographicCollectionViaCustomerCustomerDemo</summary>
+			public static readonly string CustomerDemographicCollectionViaCustomerCustomerDemo = "CustomerDemographicCollectionViaCustomerCustomerDemo";
 			/// <summary>Member name EmployeeCollectionViaOrder</summary>
 			public static readonly string EmployeeCollectionViaOrder = "EmployeeCollectionViaOrder";
+			/// <summary>Member name ShipperCollectionViaOrder</summary>
+			public static readonly string ShipperCollectionViaOrder = "ShipperCollectionViaOrder";
 		}
 		#endregion
 		
@@ -112,7 +118,9 @@ namespace NW26.EntityClasses
 			{
 				_customerCustomerDemos = (EntityCollection<CustomerCustomerDemoEntity>)info.GetValue("_customerCustomerDemos", typeof(EntityCollection<CustomerCustomerDemoEntity>));
 				_orders = (EntityCollection<OrderEntity>)info.GetValue("_orders", typeof(EntityCollection<OrderEntity>));
+				_customerDemographicCollectionViaCustomerCustomerDemo = (EntityCollection<CustomerDemographicEntity>)info.GetValue("_customerDemographicCollectionViaCustomerCustomerDemo", typeof(EntityCollection<CustomerDemographicEntity>));
 				_employeeCollectionViaOrder = (EntityCollection<EmployeeEntity>)info.GetValue("_employeeCollectionViaOrder", typeof(EntityCollection<EmployeeEntity>));
+				_shipperCollectionViaOrder = (EntityCollection<ShipperEntity>)info.GetValue("_shipperCollectionViaOrder", typeof(EntityCollection<ShipperEntity>));
 				this.FixupDeserialization(FieldInfoProviderSingleton.GetInstance());
 			}
 			// __LLBLGENPRO_USER_CODE_REGION_START DeserializationConstructor
@@ -134,10 +142,20 @@ namespace NW26.EntityClasses
 				case "Orders":
 					this.Orders.Add((OrderEntity)entity);
 					break;
+				case "CustomerDemographicCollectionViaCustomerCustomerDemo":
+					this.CustomerDemographicCollectionViaCustomerCustomerDemo.IsReadOnly = false;
+					this.CustomerDemographicCollectionViaCustomerCustomerDemo.Add((CustomerDemographicEntity)entity);
+					this.CustomerDemographicCollectionViaCustomerCustomerDemo.IsReadOnly = true;
+					break;
 				case "EmployeeCollectionViaOrder":
 					this.EmployeeCollectionViaOrder.IsReadOnly = false;
 					this.EmployeeCollectionViaOrder.Add((EmployeeEntity)entity);
 					this.EmployeeCollectionViaOrder.IsReadOnly = true;
+					break;
+				case "ShipperCollectionViaOrder":
+					this.ShipperCollectionViaOrder.IsReadOnly = false;
+					this.ShipperCollectionViaOrder.Add((ShipperEntity)entity);
+					this.ShipperCollectionViaOrder.IsReadOnly = true;
 					break;
 				default:
 					this.OnSetRelatedEntityProperty(propertyName, entity);
@@ -167,9 +185,17 @@ namespace NW26.EntityClasses
 				case "Orders":
 					toReturn.Add(Relations.OrderEntityUsingCustomerId);
 					break;
+				case "CustomerDemographicCollectionViaCustomerCustomerDemo":
+					toReturn.Add(Relations.CustomerCustomerDemoEntityUsingCustomerId, "CustomerEntity__", "CustomerCustomerDemo_", JoinHint.None);
+					toReturn.Add(CustomerCustomerDemoEntity.Relations.CustomerDemographicEntityUsingCustomerTypeId, "CustomerCustomerDemo_", string.Empty, JoinHint.None);
+					break;
 				case "EmployeeCollectionViaOrder":
 					toReturn.Add(Relations.OrderEntityUsingCustomerId, "CustomerEntity__", "Order_", JoinHint.None);
 					toReturn.Add(OrderEntity.Relations.EmployeeEntityUsingEmployeeId, "Order_", string.Empty, JoinHint.None);
+					break;
+				case "ShipperCollectionViaOrder":
+					toReturn.Add(Relations.OrderEntityUsingCustomerId, "CustomerEntity__", "Order_", JoinHint.None);
+					toReturn.Add(OrderEntity.Relations.ShipperEntityUsingShipVia, "Order_", string.Empty, JoinHint.None);
 					break;
 				default:
 					break;				
@@ -266,7 +292,9 @@ namespace NW26.EntityClasses
 			{
 				info.AddValue("_customerCustomerDemos", ((_customerCustomerDemos!=null) && (_customerCustomerDemos.Count>0) && !this.MarkedForDeletion)?_customerCustomerDemos:null);
 				info.AddValue("_orders", ((_orders!=null) && (_orders.Count>0) && !this.MarkedForDeletion)?_orders:null);
+				info.AddValue("_customerDemographicCollectionViaCustomerCustomerDemo", ((_customerDemographicCollectionViaCustomerCustomerDemo!=null) && (_customerDemographicCollectionViaCustomerCustomerDemo.Count>0) && !this.MarkedForDeletion)?_customerDemographicCollectionViaCustomerCustomerDemo:null);
 				info.AddValue("_employeeCollectionViaOrder", ((_employeeCollectionViaOrder!=null) && (_employeeCollectionViaOrder.Count>0) && !this.MarkedForDeletion)?_employeeCollectionViaOrder:null);
+				info.AddValue("_shipperCollectionViaOrder", ((_shipperCollectionViaOrder!=null) && (_shipperCollectionViaOrder.Count>0) && !this.MarkedForDeletion)?_shipperCollectionViaOrder:null);
 			}
 			// __LLBLGENPRO_USER_CODE_REGION_START GetObjectInfo
 			// __LLBLGENPRO_USER_CODE_REGION_END
@@ -300,12 +328,32 @@ namespace NW26.EntityClasses
 			return bucket;
 		}
 
+		/// <summary> Creates a new IRelationPredicateBucket object which contains the predicate expression and relation collection to fetch the related entities of type 'CustomerDemographic' to this entity.</summary>
+		/// <returns></returns>
+		public virtual IRelationPredicateBucket GetRelationInfoCustomerDemographicCollectionViaCustomerCustomerDemo()
+		{
+			IRelationPredicateBucket bucket = new RelationPredicateBucket();
+			bucket.Relations.AddRange(GetRelationsForFieldOfType("CustomerDemographicCollectionViaCustomerCustomerDemo"));
+			bucket.PredicateExpression.Add(new FieldCompareValuePredicate(CustomerFields.CustomerId, null, ComparisonOperator.Equal, this.CustomerId, "CustomerEntity__"));
+			return bucket;
+		}
+
 		/// <summary> Creates a new IRelationPredicateBucket object which contains the predicate expression and relation collection to fetch the related entities of type 'Employee' to this entity.</summary>
 		/// <returns></returns>
 		public virtual IRelationPredicateBucket GetRelationInfoEmployeeCollectionViaOrder()
 		{
 			IRelationPredicateBucket bucket = new RelationPredicateBucket();
 			bucket.Relations.AddRange(GetRelationsForFieldOfType("EmployeeCollectionViaOrder"));
+			bucket.PredicateExpression.Add(new FieldCompareValuePredicate(CustomerFields.CustomerId, null, ComparisonOperator.Equal, this.CustomerId, "CustomerEntity__"));
+			return bucket;
+		}
+
+		/// <summary> Creates a new IRelationPredicateBucket object which contains the predicate expression and relation collection to fetch the related entities of type 'Shipper' to this entity.</summary>
+		/// <returns></returns>
+		public virtual IRelationPredicateBucket GetRelationInfoShipperCollectionViaOrder()
+		{
+			IRelationPredicateBucket bucket = new RelationPredicateBucket();
+			bucket.Relations.AddRange(GetRelationsForFieldOfType("ShipperCollectionViaOrder"));
 			bucket.PredicateExpression.Add(new FieldCompareValuePredicate(CustomerFields.CustomerId, null, ComparisonOperator.Equal, this.CustomerId, "CustomerEntity__"));
 			return bucket;
 		}
@@ -324,7 +372,9 @@ namespace NW26.EntityClasses
 			base.AddToMemberEntityCollectionsQueue(collectionsQueue);
 			collectionsQueue.Enqueue(this._customerCustomerDemos);
 			collectionsQueue.Enqueue(this._orders);
+			collectionsQueue.Enqueue(this._customerDemographicCollectionViaCustomerCustomerDemo);
 			collectionsQueue.Enqueue(this._employeeCollectionViaOrder);
+			collectionsQueue.Enqueue(this._shipperCollectionViaOrder);
 		}
 		
 		/// <summary>Gets the member collections queue from the queue (base first)</summary>
@@ -334,7 +384,9 @@ namespace NW26.EntityClasses
 			base.GetFromMemberEntityCollectionsQueue(collectionsQueue);
 			this._customerCustomerDemos = (EntityCollection<CustomerCustomerDemoEntity>) collectionsQueue.Dequeue();
 			this._orders = (EntityCollection<OrderEntity>) collectionsQueue.Dequeue();
+			this._customerDemographicCollectionViaCustomerCustomerDemo = (EntityCollection<CustomerDemographicEntity>) collectionsQueue.Dequeue();
 			this._employeeCollectionViaOrder = (EntityCollection<EmployeeEntity>) collectionsQueue.Dequeue();
+			this._shipperCollectionViaOrder = (EntityCollection<ShipperEntity>) collectionsQueue.Dequeue();
 
 		}
 		
@@ -345,7 +397,9 @@ namespace NW26.EntityClasses
 			bool toReturn = false;
 			toReturn |=(this._customerCustomerDemos != null);
 			toReturn |=(this._orders != null);
+			toReturn |= (this._customerDemographicCollectionViaCustomerCustomerDemo != null);
 			toReturn |= (this._employeeCollectionViaOrder != null);
+			toReturn |= (this._shipperCollectionViaOrder != null);
 			return toReturn ? true : base.HasPopulatedMemberEntityCollections();
 		}
 		
@@ -357,7 +411,9 @@ namespace NW26.EntityClasses
 			base.CreateMemberEntityCollectionsQueue(collectionsQueue, requiredQueue);
 			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<CustomerCustomerDemoEntity>(EntityFactoryCache2.GetEntityFactory(typeof(CustomerCustomerDemoEntityFactory))) : null);
 			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<OrderEntity>(EntityFactoryCache2.GetEntityFactory(typeof(OrderEntityFactory))) : null);
+			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<CustomerDemographicEntity>(EntityFactoryCache2.GetEntityFactory(typeof(CustomerDemographicEntityFactory))) : null);
 			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<EmployeeEntity>(EntityFactoryCache2.GetEntityFactory(typeof(EmployeeEntityFactory))) : null);
+			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<ShipperEntity>(EntityFactoryCache2.GetEntityFactory(typeof(ShipperEntityFactory))) : null);
 		}
 #endif
 		/// <summary>Gets all related data objects, stored by name. The name is the field name mapped onto the relation for that particular data element.</summary>
@@ -367,7 +423,9 @@ namespace NW26.EntityClasses
 			Dictionary<string, object> toReturn = new Dictionary<string, object>();
 			toReturn.Add("CustomerCustomerDemos", _customerCustomerDemos);
 			toReturn.Add("Orders", _orders);
+			toReturn.Add("CustomerDemographicCollectionViaCustomerCustomerDemo", _customerDemographicCollectionViaCustomerCustomerDemo);
 			toReturn.Add("EmployeeCollectionViaOrder", _employeeCollectionViaOrder);
+			toReturn.Add("ShipperCollectionViaOrder", _shipperCollectionViaOrder);
 			return toReturn;
 		}
 
@@ -459,6 +517,19 @@ namespace NW26.EntityClasses
 			get	{ return new PrefetchPathElement2( new EntityCollection<OrderEntity>(EntityFactoryCache2.GetEntityFactory(typeof(OrderEntityFactory))), (IEntityRelation)GetRelationsForField("Orders")[0], (int)NW26.EntityType.CustomerEntity, (int)NW26.EntityType.OrderEntity, 0, null, null, null, null, "Orders", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.OneToMany);	}
 		}
 
+		/// <summary> Creates a new PrefetchPathElement2 object which contains all the information to prefetch the related entities of type 'CustomerDemographic' for this entity.</summary>
+		/// <returns>Ready to use IPrefetchPathElement2 implementation.</returns>
+		public static IPrefetchPathElement2 PrefetchPathCustomerDemographicCollectionViaCustomerCustomerDemo
+		{
+			get
+			{
+				IEntityRelation intermediateRelation = Relations.CustomerCustomerDemoEntityUsingCustomerId;
+				intermediateRelation.SetAliases(string.Empty, "CustomerCustomerDemo_");
+				return new PrefetchPathElement2(new EntityCollection<CustomerDemographicEntity>(EntityFactoryCache2.GetEntityFactory(typeof(CustomerDemographicEntityFactory))), intermediateRelation,
+					(int)NW26.EntityType.CustomerEntity, (int)NW26.EntityType.CustomerDemographicEntity, 0, null, null, GetRelationsForField("CustomerDemographicCollectionViaCustomerCustomerDemo"), null, "CustomerDemographicCollectionViaCustomerCustomerDemo", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToMany);
+			}
+		}
+
 		/// <summary> Creates a new PrefetchPathElement2 object which contains all the information to prefetch the related entities of type 'Employee' for this entity.</summary>
 		/// <returns>Ready to use IPrefetchPathElement2 implementation.</returns>
 		public static IPrefetchPathElement2 PrefetchPathEmployeeCollectionViaOrder
@@ -469,6 +540,19 @@ namespace NW26.EntityClasses
 				intermediateRelation.SetAliases(string.Empty, "Order_");
 				return new PrefetchPathElement2(new EntityCollection<EmployeeEntity>(EntityFactoryCache2.GetEntityFactory(typeof(EmployeeEntityFactory))), intermediateRelation,
 					(int)NW26.EntityType.CustomerEntity, (int)NW26.EntityType.EmployeeEntity, 0, null, null, GetRelationsForField("EmployeeCollectionViaOrder"), null, "EmployeeCollectionViaOrder", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToMany);
+			}
+		}
+
+		/// <summary> Creates a new PrefetchPathElement2 object which contains all the information to prefetch the related entities of type 'Shipper' for this entity.</summary>
+		/// <returns>Ready to use IPrefetchPathElement2 implementation.</returns>
+		public static IPrefetchPathElement2 PrefetchPathShipperCollectionViaOrder
+		{
+			get
+			{
+				IEntityRelation intermediateRelation = Relations.OrderEntityUsingCustomerId;
+				intermediateRelation.SetAliases(string.Empty, "Order_");
+				return new PrefetchPathElement2(new EntityCollection<ShipperEntity>(EntityFactoryCache2.GetEntityFactory(typeof(ShipperEntityFactory))), intermediateRelation,
+					(int)NW26.EntityType.CustomerEntity, (int)NW26.EntityType.ShipperEntity, 0, null, null, GetRelationsForField("ShipperCollectionViaOrder"), null, "ShipperCollectionViaOrder", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToMany);
 			}
 		}
 
@@ -620,11 +704,25 @@ namespace NW26.EntityClasses
 			get { return GetOrCreateEntityCollection<OrderEntity, OrderEntityFactory>("Customer", true, false, ref _orders);	}
 		}
 
+		/// <summary> Gets the EntityCollection with the related entities of type 'CustomerDemographicEntity' which are related to this entity via a relation of type 'm:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
+		[TypeContainedAttribute(typeof(CustomerDemographicEntity))]
+		public virtual EntityCollection<CustomerDemographicEntity> CustomerDemographicCollectionViaCustomerCustomerDemo
+		{
+			get { return GetOrCreateEntityCollection<CustomerDemographicEntity, CustomerDemographicEntityFactory>("CustomerCollectionViaCustomerCustomerDemo", false, true, ref _customerDemographicCollectionViaCustomerCustomerDemo);	}
+		}
+
 		/// <summary> Gets the EntityCollection with the related entities of type 'EmployeeEntity' which are related to this entity via a relation of type 'm:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
 		[TypeContainedAttribute(typeof(EmployeeEntity))]
 		public virtual EntityCollection<EmployeeEntity> EmployeeCollectionViaOrder
 		{
 			get { return GetOrCreateEntityCollection<EmployeeEntity, EmployeeEntityFactory>("CustomerCollectionViaOrder", false, true, ref _employeeCollectionViaOrder);	}
+		}
+
+		/// <summary> Gets the EntityCollection with the related entities of type 'ShipperEntity' which are related to this entity via a relation of type 'm:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
+		[TypeContainedAttribute(typeof(ShipperEntity))]
+		public virtual EntityCollection<ShipperEntity> ShipperCollectionViaOrder
+		{
+			get { return GetOrCreateEntityCollection<ShipperEntity, ShipperEntityFactory>("CustomerCollectionViaOrder", false, true, ref _shipperCollectionViaOrder);	}
 		}
 	
 		/// <summary> Gets the type of the hierarchy this entity is in. </summary>

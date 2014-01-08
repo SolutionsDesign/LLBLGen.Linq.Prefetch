@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.5
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -11,34 +11,6 @@ using System;
 
 namespace NW26
 {
-	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: AlphabeticalListOfProduct.</summary>
-	public enum AlphabeticalListOfProductFieldIndex
-	{
-		///<summary>CategoryId. </summary>
-		CategoryId,
-		///<summary>CategoryName. </summary>
-		CategoryName,
-		///<summary>Discontinued. </summary>
-		Discontinued,
-		///<summary>ProductId. </summary>
-		ProductId,
-		///<summary>ProductName. </summary>
-		ProductName,
-		///<summary>QuantityPerUnit. </summary>
-		QuantityPerUnit,
-		///<summary>ReorderLevel. </summary>
-		ReorderLevel,
-		///<summary>SupplierId. </summary>
-		SupplierId,
-		///<summary>UnitPrice. </summary>
-		UnitPrice,
-		///<summary>UnitsInStock. </summary>
-		UnitsInStock,
-		///<summary>UnitsOnOrder. </summary>
-		UnitsOnOrder,
-		/// <summary></summary>
-		AmountOfFields
-	}
 	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: Category.</summary>
 	public enum CategoryFieldIndex
 	{
@@ -50,26 +22,6 @@ namespace NW26
 		Description,
 		///<summary>Picture. </summary>
 		Picture,
-		/// <summary></summary>
-		AmountOfFields
-	}
-	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: CategorySalesFor1997.</summary>
-	public enum CategorySalesFor1997FieldIndex
-	{
-		///<summary>CategoryName. </summary>
-		CategoryName,
-		///<summary>CategorySales. </summary>
-		CategorySales,
-		/// <summary></summary>
-		AmountOfFields
-	}
-	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: CurrentProductList.</summary>
-	public enum CurrentProductListFieldIndex
-	{
-		///<summary>ProductId. </summary>
-		ProductId,
-		///<summary>ProductName. </summary>
-		ProductName,
 		/// <summary></summary>
 		AmountOfFields
 	}
@@ -98,20 +50,6 @@ namespace NW26
 		PostalCode,
 		///<summary>Region. </summary>
 		Region,
-		/// <summary></summary>
-		AmountOfFields
-	}
-	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: CustomerAndSuppliersByCity.</summary>
-	public enum CustomerAndSuppliersByCityFieldIndex
-	{
-		///<summary>City. </summary>
-		City,
-		///<summary>CompanyName. </summary>
-		CompanyName,
-		///<summary>ContactName. </summary>
-		ContactName,
-		///<summary>Relationship. </summary>
-		Relationship,
 		/// <summary></summary>
 		AmountOfFields
 	}
@@ -187,64 +125,6 @@ namespace NW26
 		/// <summary></summary>
 		AmountOfFields
 	}
-	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: Invoice.</summary>
-	public enum InvoiceFieldIndex
-	{
-		///<summary>Address. </summary>
-		Address,
-		///<summary>City. </summary>
-		City,
-		///<summary>Country. </summary>
-		Country,
-		///<summary>CustomerId. </summary>
-		CustomerId,
-		///<summary>CustomerName. </summary>
-		CustomerName,
-		///<summary>Discount. </summary>
-		Discount,
-		///<summary>ExtendedPrice. </summary>
-		ExtendedPrice,
-		///<summary>Freight. </summary>
-		Freight,
-		///<summary>OrderDate. </summary>
-		OrderDate,
-		///<summary>OrderId. </summary>
-		OrderId,
-		///<summary>PostalCode. </summary>
-		PostalCode,
-		///<summary>ProductId. </summary>
-		ProductId,
-		///<summary>ProductName. </summary>
-		ProductName,
-		///<summary>Quantity. </summary>
-		Quantity,
-		///<summary>Region. </summary>
-		Region,
-		///<summary>RequiredDate. </summary>
-		RequiredDate,
-		///<summary>Salesperson. </summary>
-		Salesperson,
-		///<summary>ShipAddress. </summary>
-		ShipAddress,
-		///<summary>ShipCity. </summary>
-		ShipCity,
-		///<summary>ShipCountry. </summary>
-		ShipCountry,
-		///<summary>ShipName. </summary>
-		ShipName,
-		///<summary>ShippedDate. </summary>
-		ShippedDate,
-		///<summary>ShipperName. </summary>
-		ShipperName,
-		///<summary>ShipPostalCode. </summary>
-		ShipPostalCode,
-		///<summary>ShipRegion. </summary>
-		ShipRegion,
-		///<summary>UnitPrice. </summary>
-		UnitPrice,
-		/// <summary></summary>
-		AmountOfFields
-	}
 	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: Order.</summary>
 	public enum OrderFieldIndex
 	{
@@ -295,82 +175,6 @@ namespace NW26
 		/// <summary></summary>
 		AmountOfFields
 	}
-	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: OrderDetailsExtended.</summary>
-	public enum OrderDetailsExtendedFieldIndex
-	{
-		///<summary>Discount. </summary>
-		Discount,
-		///<summary>ExtendedPrice. </summary>
-		ExtendedPrice,
-		///<summary>OrderId. </summary>
-		OrderId,
-		///<summary>ProductId. </summary>
-		ProductId,
-		///<summary>ProductName. </summary>
-		ProductName,
-		///<summary>Quantity. </summary>
-		Quantity,
-		///<summary>UnitPrice. </summary>
-		UnitPrice,
-		/// <summary></summary>
-		AmountOfFields
-	}
-	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: OrdersQry.</summary>
-	public enum OrdersQryFieldIndex
-	{
-		///<summary>Address. </summary>
-		Address,
-		///<summary>City. </summary>
-		City,
-		///<summary>CompanyName. </summary>
-		CompanyName,
-		///<summary>Country. </summary>
-		Country,
-		///<summary>CustomerId. </summary>
-		CustomerId,
-		///<summary>EmployeeId. </summary>
-		EmployeeId,
-		///<summary>Freight. </summary>
-		Freight,
-		///<summary>OrderDate. </summary>
-		OrderDate,
-		///<summary>OrderId. </summary>
-		OrderId,
-		///<summary>PostalCode. </summary>
-		PostalCode,
-		///<summary>Region. </summary>
-		Region,
-		///<summary>RequiredDate. </summary>
-		RequiredDate,
-		///<summary>ShipAddress. </summary>
-		ShipAddress,
-		///<summary>ShipCity. </summary>
-		ShipCity,
-		///<summary>ShipCountry. </summary>
-		ShipCountry,
-		///<summary>ShipName. </summary>
-		ShipName,
-		///<summary>ShippedDate. </summary>
-		ShippedDate,
-		///<summary>ShipPostalCode. </summary>
-		ShipPostalCode,
-		///<summary>ShipRegion. </summary>
-		ShipRegion,
-		///<summary>ShipVia. </summary>
-		ShipVia,
-		/// <summary></summary>
-		AmountOfFields
-	}
-	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: OrderSubtotal.</summary>
-	public enum OrderSubtotalFieldIndex
-	{
-		///<summary>OrderId. </summary>
-		OrderId,
-		///<summary>Subtotal. </summary>
-		Subtotal,
-		/// <summary></summary>
-		AmountOfFields
-	}
 	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: Product.</summary>
 	public enum ProductFieldIndex
 	{
@@ -397,58 +201,6 @@ namespace NW26
 		/// <summary></summary>
 		AmountOfFields
 	}
-	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: ProductsAboveAveragePrice.</summary>
-	public enum ProductsAboveAveragePriceFieldIndex
-	{
-		///<summary>ProductName. </summary>
-		ProductName,
-		///<summary>UnitPrice. </summary>
-		UnitPrice,
-		/// <summary></summary>
-		AmountOfFields
-	}
-	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: ProductSalesFor1997.</summary>
-	public enum ProductSalesFor1997FieldIndex
-	{
-		///<summary>CategoryName. </summary>
-		CategoryName,
-		///<summary>ProductName. </summary>
-		ProductName,
-		///<summary>ProductSales. </summary>
-		ProductSales,
-		/// <summary></summary>
-		AmountOfFields
-	}
-	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: ProductsByCategory.</summary>
-	public enum ProductsByCategoryFieldIndex
-	{
-		///<summary>CategoryName. </summary>
-		CategoryName,
-		///<summary>Discontinued. </summary>
-		Discontinued,
-		///<summary>ProductName. </summary>
-		ProductName,
-		///<summary>QuantityPerUnit. </summary>
-		QuantityPerUnit,
-		///<summary>UnitsInStock. </summary>
-		UnitsInStock,
-		/// <summary></summary>
-		AmountOfFields
-	}
-	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: QuarterlyOrder.</summary>
-	public enum QuarterlyOrderFieldIndex
-	{
-		///<summary>City. </summary>
-		City,
-		///<summary>CompanyName. </summary>
-		CompanyName,
-		///<summary>Country. </summary>
-		Country,
-		///<summary>CustomerId. </summary>
-		CustomerId,
-		/// <summary></summary>
-		AmountOfFields
-	}
 	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: Region.</summary>
 	public enum RegionFieldIndex
 	{
@@ -456,34 +208,6 @@ namespace NW26
 		RegionDescription,
 		///<summary>RegionId. </summary>
 		RegionId,
-		/// <summary></summary>
-		AmountOfFields
-	}
-	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: SalesByCategory.</summary>
-	public enum SalesByCategoryFieldIndex
-	{
-		///<summary>CategoryId. </summary>
-		CategoryId,
-		///<summary>CategoryName. </summary>
-		CategoryName,
-		///<summary>ProductName. </summary>
-		ProductName,
-		///<summary>ProductSales. </summary>
-		ProductSales,
-		/// <summary></summary>
-		AmountOfFields
-	}
-	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: SalesTotalsByAmount.</summary>
-	public enum SalesTotalsByAmountFieldIndex
-	{
-		///<summary>CompanyName. </summary>
-		CompanyName,
-		///<summary>OrderId. </summary>
-		OrderId,
-		///<summary>SaleAmount. </summary>
-		SaleAmount,
-		///<summary>ShippedDate. </summary>
-		ShippedDate,
 		/// <summary></summary>
 		AmountOfFields
 	}
@@ -496,30 +220,6 @@ namespace NW26
 		Phone,
 		///<summary>ShipperId. </summary>
 		ShipperId,
-		/// <summary></summary>
-		AmountOfFields
-	}
-	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: SummaryOfSalesByQuarter.</summary>
-	public enum SummaryOfSalesByQuarterFieldIndex
-	{
-		///<summary>OrderId. </summary>
-		OrderId,
-		///<summary>ShippedDate. </summary>
-		ShippedDate,
-		///<summary>Subtotal. </summary>
-		Subtotal,
-		/// <summary></summary>
-		AmountOfFields
-	}
-	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: SummaryOfSalesByYear.</summary>
-	public enum SummaryOfSalesByYearFieldIndex
-	{
-		///<summary>OrderId. </summary>
-		OrderId,
-		///<summary>ShippedDate. </summary>
-		ShippedDate,
-		///<summary>Subtotal. </summary>
-		Subtotal,
 		/// <summary></summary>
 		AmountOfFields
 	}
@@ -571,18 +271,10 @@ namespace NW26
 	/// <summary>Enum definition for all the entity types defined in this namespace. Used by the entityfields factory.</summary>
 	public enum EntityType
 	{
-		///<summary>AlphabeticalListOfProduct</summary>
-		AlphabeticalListOfProductEntity,
 		///<summary>Category</summary>
 		CategoryEntity,
-		///<summary>CategorySalesFor1997</summary>
-		CategorySalesFor1997Entity,
-		///<summary>CurrentProductList</summary>
-		CurrentProductListEntity,
 		///<summary>Customer</summary>
 		CustomerEntity,
-		///<summary>CustomerAndSuppliersByCity</summary>
-		CustomerAndSuppliersByCityEntity,
 		///<summary>CustomerCustomerDemo</summary>
 		CustomerCustomerDemoEntity,
 		///<summary>CustomerDemographic</summary>
@@ -591,40 +283,16 @@ namespace NW26
 		EmployeeEntity,
 		///<summary>EmployeeTerritory</summary>
 		EmployeeTerritoryEntity,
-		///<summary>Invoice</summary>
-		InvoiceEntity,
 		///<summary>Order</summary>
 		OrderEntity,
 		///<summary>OrderDetail</summary>
 		OrderDetailEntity,
-		///<summary>OrderDetailsExtended</summary>
-		OrderDetailsExtendedEntity,
-		///<summary>OrdersQry</summary>
-		OrdersQryEntity,
-		///<summary>OrderSubtotal</summary>
-		OrderSubtotalEntity,
 		///<summary>Product</summary>
 		ProductEntity,
-		///<summary>ProductsAboveAveragePrice</summary>
-		ProductsAboveAveragePriceEntity,
-		///<summary>ProductSalesFor1997</summary>
-		ProductSalesFor1997Entity,
-		///<summary>ProductsByCategory</summary>
-		ProductsByCategoryEntity,
-		///<summary>QuarterlyOrder</summary>
-		QuarterlyOrderEntity,
 		///<summary>Region</summary>
 		RegionEntity,
-		///<summary>SalesByCategory</summary>
-		SalesByCategoryEntity,
-		///<summary>SalesTotalsByAmount</summary>
-		SalesTotalsByAmountEntity,
 		///<summary>Shipper</summary>
 		ShipperEntity,
-		///<summary>SummaryOfSalesByQuarter</summary>
-		SummaryOfSalesByQuarterEntity,
-		///<summary>SummaryOfSalesByYear</summary>
-		SummaryOfSalesByYearEntity,
 		///<summary>Supplier</summary>
 		SupplierEntity,
 		///<summary>Territory</summary>

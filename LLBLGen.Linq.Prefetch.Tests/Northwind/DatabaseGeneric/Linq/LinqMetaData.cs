@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.5
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET35
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 //////////////////////////////////////////////////////////////
 using System;
@@ -61,23 +61,11 @@ namespace NW26.Linq
 			IDataSource toReturn = null;
 			switch((NW26.EntityType)typeOfEntity)
 			{
-				case NW26.EntityType.AlphabeticalListOfProductEntity:
-					toReturn = this.AlphabeticalListOfProduct;
-					break;
 				case NW26.EntityType.CategoryEntity:
 					toReturn = this.Category;
 					break;
-				case NW26.EntityType.CategorySalesFor1997Entity:
-					toReturn = this.CategorySalesFor1997;
-					break;
-				case NW26.EntityType.CurrentProductListEntity:
-					toReturn = this.CurrentProductList;
-					break;
 				case NW26.EntityType.CustomerEntity:
 					toReturn = this.Customer;
-					break;
-				case NW26.EntityType.CustomerAndSuppliersByCityEntity:
-					toReturn = this.CustomerAndSuppliersByCity;
 					break;
 				case NW26.EntityType.CustomerCustomerDemoEntity:
 					toReturn = this.CustomerCustomerDemo;
@@ -91,56 +79,20 @@ namespace NW26.Linq
 				case NW26.EntityType.EmployeeTerritoryEntity:
 					toReturn = this.EmployeeTerritory;
 					break;
-				case NW26.EntityType.InvoiceEntity:
-					toReturn = this.Invoice;
-					break;
 				case NW26.EntityType.OrderEntity:
 					toReturn = this.Order;
 					break;
 				case NW26.EntityType.OrderDetailEntity:
 					toReturn = this.OrderDetail;
 					break;
-				case NW26.EntityType.OrderDetailsExtendedEntity:
-					toReturn = this.OrderDetailsExtended;
-					break;
-				case NW26.EntityType.OrdersQryEntity:
-					toReturn = this.OrdersQry;
-					break;
-				case NW26.EntityType.OrderSubtotalEntity:
-					toReturn = this.OrderSubtotal;
-					break;
 				case NW26.EntityType.ProductEntity:
 					toReturn = this.Product;
-					break;
-				case NW26.EntityType.ProductsAboveAveragePriceEntity:
-					toReturn = this.ProductsAboveAveragePrice;
-					break;
-				case NW26.EntityType.ProductSalesFor1997Entity:
-					toReturn = this.ProductSalesFor1997;
-					break;
-				case NW26.EntityType.ProductsByCategoryEntity:
-					toReturn = this.ProductsByCategory;
-					break;
-				case NW26.EntityType.QuarterlyOrderEntity:
-					toReturn = this.QuarterlyOrder;
 					break;
 				case NW26.EntityType.RegionEntity:
 					toReturn = this.Region;
 					break;
-				case NW26.EntityType.SalesByCategoryEntity:
-					toReturn = this.SalesByCategory;
-					break;
-				case NW26.EntityType.SalesTotalsByAmountEntity:
-					toReturn = this.SalesTotalsByAmount;
-					break;
 				case NW26.EntityType.ShipperEntity:
 					toReturn = this.Shipper;
-					break;
-				case NW26.EntityType.SummaryOfSalesByQuarterEntity:
-					toReturn = this.SummaryOfSalesByQuarter;
-					break;
-				case NW26.EntityType.SummaryOfSalesByYearEntity:
-					toReturn = this.SummaryOfSalesByYear;
 					break;
 				case NW26.EntityType.SupplierEntity:
 					toReturn = this.Supplier;
@@ -155,40 +107,25 @@ namespace NW26.Linq
 			return toReturn;
 		}
 
-		/// <summary>returns the datasource to use in a Linq query when targeting AlphabeticalListOfProductEntity instances in the database.</summary>
-		public DataSource2<AlphabeticalListOfProductEntity> AlphabeticalListOfProduct
+		/// <summary>returns the datasource to use in a Linq query for the entity type specified</summary>
+		/// <typeparam name="TEntity">the type of the entity to get the datasource for</typeparam>
+		/// <returns>the requested datasource</returns>
+		public DataSource2<TEntity> GetQueryableForEntity<TEntity>()
+			    where TEntity : class
 		{
-			get { return new DataSource2<AlphabeticalListOfProductEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
+    		return new DataSource2<TEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse);
 		}
-		
+
 		/// <summary>returns the datasource to use in a Linq query when targeting CategoryEntity instances in the database.</summary>
 		public DataSource2<CategoryEntity> Category
 		{
 			get { return new DataSource2<CategoryEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
 		}
 		
-		/// <summary>returns the datasource to use in a Linq query when targeting CategorySalesFor1997Entity instances in the database.</summary>
-		public DataSource2<CategorySalesFor1997Entity> CategorySalesFor1997
-		{
-			get { return new DataSource2<CategorySalesFor1997Entity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
-		}
-		
-		/// <summary>returns the datasource to use in a Linq query when targeting CurrentProductListEntity instances in the database.</summary>
-		public DataSource2<CurrentProductListEntity> CurrentProductList
-		{
-			get { return new DataSource2<CurrentProductListEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
-		}
-		
 		/// <summary>returns the datasource to use in a Linq query when targeting CustomerEntity instances in the database.</summary>
 		public DataSource2<CustomerEntity> Customer
 		{
 			get { return new DataSource2<CustomerEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
-		}
-		
-		/// <summary>returns the datasource to use in a Linq query when targeting CustomerAndSuppliersByCityEntity instances in the database.</summary>
-		public DataSource2<CustomerAndSuppliersByCityEntity> CustomerAndSuppliersByCity
-		{
-			get { return new DataSource2<CustomerAndSuppliersByCityEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
 		}
 		
 		/// <summary>returns the datasource to use in a Linq query when targeting CustomerCustomerDemoEntity instances in the database.</summary>
@@ -215,12 +152,6 @@ namespace NW26.Linq
 			get { return new DataSource2<EmployeeTerritoryEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
 		}
 		
-		/// <summary>returns the datasource to use in a Linq query when targeting InvoiceEntity instances in the database.</summary>
-		public DataSource2<InvoiceEntity> Invoice
-		{
-			get { return new DataSource2<InvoiceEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
-		}
-		
 		/// <summary>returns the datasource to use in a Linq query when targeting OrderEntity instances in the database.</summary>
 		public DataSource2<OrderEntity> Order
 		{
@@ -233,52 +164,10 @@ namespace NW26.Linq
 			get { return new DataSource2<OrderDetailEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
 		}
 		
-		/// <summary>returns the datasource to use in a Linq query when targeting OrderDetailsExtendedEntity instances in the database.</summary>
-		public DataSource2<OrderDetailsExtendedEntity> OrderDetailsExtended
-		{
-			get { return new DataSource2<OrderDetailsExtendedEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
-		}
-		
-		/// <summary>returns the datasource to use in a Linq query when targeting OrdersQryEntity instances in the database.</summary>
-		public DataSource2<OrdersQryEntity> OrdersQry
-		{
-			get { return new DataSource2<OrdersQryEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
-		}
-		
-		/// <summary>returns the datasource to use in a Linq query when targeting OrderSubtotalEntity instances in the database.</summary>
-		public DataSource2<OrderSubtotalEntity> OrderSubtotal
-		{
-			get { return new DataSource2<OrderSubtotalEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
-		}
-		
 		/// <summary>returns the datasource to use in a Linq query when targeting ProductEntity instances in the database.</summary>
 		public DataSource2<ProductEntity> Product
 		{
 			get { return new DataSource2<ProductEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
-		}
-		
-		/// <summary>returns the datasource to use in a Linq query when targeting ProductsAboveAveragePriceEntity instances in the database.</summary>
-		public DataSource2<ProductsAboveAveragePriceEntity> ProductsAboveAveragePrice
-		{
-			get { return new DataSource2<ProductsAboveAveragePriceEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
-		}
-		
-		/// <summary>returns the datasource to use in a Linq query when targeting ProductSalesFor1997Entity instances in the database.</summary>
-		public DataSource2<ProductSalesFor1997Entity> ProductSalesFor1997
-		{
-			get { return new DataSource2<ProductSalesFor1997Entity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
-		}
-		
-		/// <summary>returns the datasource to use in a Linq query when targeting ProductsByCategoryEntity instances in the database.</summary>
-		public DataSource2<ProductsByCategoryEntity> ProductsByCategory
-		{
-			get { return new DataSource2<ProductsByCategoryEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
-		}
-		
-		/// <summary>returns the datasource to use in a Linq query when targeting QuarterlyOrderEntity instances in the database.</summary>
-		public DataSource2<QuarterlyOrderEntity> QuarterlyOrder
-		{
-			get { return new DataSource2<QuarterlyOrderEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
 		}
 		
 		/// <summary>returns the datasource to use in a Linq query when targeting RegionEntity instances in the database.</summary>
@@ -287,34 +176,10 @@ namespace NW26.Linq
 			get { return new DataSource2<RegionEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
 		}
 		
-		/// <summary>returns the datasource to use in a Linq query when targeting SalesByCategoryEntity instances in the database.</summary>
-		public DataSource2<SalesByCategoryEntity> SalesByCategory
-		{
-			get { return new DataSource2<SalesByCategoryEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
-		}
-		
-		/// <summary>returns the datasource to use in a Linq query when targeting SalesTotalsByAmountEntity instances in the database.</summary>
-		public DataSource2<SalesTotalsByAmountEntity> SalesTotalsByAmount
-		{
-			get { return new DataSource2<SalesTotalsByAmountEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
-		}
-		
 		/// <summary>returns the datasource to use in a Linq query when targeting ShipperEntity instances in the database.</summary>
 		public DataSource2<ShipperEntity> Shipper
 		{
 			get { return new DataSource2<ShipperEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
-		}
-		
-		/// <summary>returns the datasource to use in a Linq query when targeting SummaryOfSalesByQuarterEntity instances in the database.</summary>
-		public DataSource2<SummaryOfSalesByQuarterEntity> SummaryOfSalesByQuarter
-		{
-			get { return new DataSource2<SummaryOfSalesByQuarterEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
-		}
-		
-		/// <summary>returns the datasource to use in a Linq query when targeting SummaryOfSalesByYearEntity instances in the database.</summary>
-		public DataSource2<SummaryOfSalesByYearEntity> SummaryOfSalesByYear
-		{
-			get { return new DataSource2<SummaryOfSalesByYearEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
 		}
 		
 		/// <summary>returns the datasource to use in a Linq query when targeting SupplierEntity instances in the database.</summary>
@@ -329,7 +194,7 @@ namespace NW26.Linq
 			get { return new DataSource2<TerritoryEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
 		}
 		
-		
+ 
 		#region Class Property Declarations
 		/// <summary> Gets / sets the IDataAccessAdapter to use for the queries created with this meta data object.</summary>
 		/// <remarks> Be aware that the IDataAccessAdapter object set via this property is kept alive by the LLBLGenProQuery objects created with this meta data

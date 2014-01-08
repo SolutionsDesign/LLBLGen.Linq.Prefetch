@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLBLGen.Linq.Prefetch.Tests", "LLBLGen.Linq.Prefetch.Tests\LLBLGen.Linq.Prefetch.Tests.csproj", "{011C2CCB-938B-4AAD-9035-7CE04D511079}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NW26", "LLBLGen.Linq.Prefetch.Tests\Northwind\NW26.csproj", "{1F675E2D-229F-4DDB-B977-D0693B5ED469}"
@@ -8,6 +8,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NW26DBSpecific", "LLBLGen.Linq.Prefetch.Tests\Northwind\NW26DBSpecific.csproj", "{C1F6E6F4-616F-4D35-A230-8C03A3973EBD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLBLGen.Linq.Prefetch", "LLBLGen.Linq.Prefetch\LLBLGen.Linq.Prefetch.csproj", "{9B0CB7DF-C146-4733-91D5-D9D931ECA434}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{04167838-43DC-4222-A2B2-522A3BC27460}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.5
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -99,26 +99,6 @@ namespace NW26.FactoryClasses
 		}
 	}
 
-	/// <summary>Factory to create new, empty AlphabeticalListOfProductEntity objects.</summary>
-	[Serializable]
-	public partial class AlphabeticalListOfProductEntityFactory : EntityFactoryBase2<AlphabeticalListOfProductEntity> {
-		/// <summary>CTor</summary>
-		public AlphabeticalListOfProductEntityFactory() : base("AlphabeticalListOfProductEntity", NW26.EntityType.AlphabeticalListOfProductEntity, false) { }
-		
-		/// <summary>Creates a new AlphabeticalListOfProductEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
-		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
-		/// <returns>Fully created and populated (due to the IEntityFields2 object) IEntity2 object</returns>
-		public override IEntity2 Create(IEntityFields2 fields) {
-			IEntity2 toReturn = new AlphabeticalListOfProductEntity(fields);
-			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewAlphabeticalListOfProductUsingFields
-			// __LLBLGENPRO_USER_CODE_REGION_END
-			return toReturn;
-		}
-		#region Included Code
-
-		#endregion
-	}
-
 	/// <summary>Factory to create new, empty CategoryEntity objects.</summary>
 	[Serializable]
 	public partial class CategoryEntityFactory : EntityFactoryBase2<CategoryEntity> {
@@ -139,46 +119,6 @@ namespace NW26.FactoryClasses
 		#endregion
 	}
 
-	/// <summary>Factory to create new, empty CategorySalesFor1997Entity objects.</summary>
-	[Serializable]
-	public partial class CategorySalesFor1997EntityFactory : EntityFactoryBase2<CategorySalesFor1997Entity> {
-		/// <summary>CTor</summary>
-		public CategorySalesFor1997EntityFactory() : base("CategorySalesFor1997Entity", NW26.EntityType.CategorySalesFor1997Entity, false) { }
-		
-		/// <summary>Creates a new CategorySalesFor1997Entity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
-		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
-		/// <returns>Fully created and populated (due to the IEntityFields2 object) IEntity2 object</returns>
-		public override IEntity2 Create(IEntityFields2 fields) {
-			IEntity2 toReturn = new CategorySalesFor1997Entity(fields);
-			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewCategorySalesFor1997UsingFields
-			// __LLBLGENPRO_USER_CODE_REGION_END
-			return toReturn;
-		}
-		#region Included Code
-
-		#endregion
-	}
-
-	/// <summary>Factory to create new, empty CurrentProductListEntity objects.</summary>
-	[Serializable]
-	public partial class CurrentProductListEntityFactory : EntityFactoryBase2<CurrentProductListEntity> {
-		/// <summary>CTor</summary>
-		public CurrentProductListEntityFactory() : base("CurrentProductListEntity", NW26.EntityType.CurrentProductListEntity, false) { }
-		
-		/// <summary>Creates a new CurrentProductListEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
-		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
-		/// <returns>Fully created and populated (due to the IEntityFields2 object) IEntity2 object</returns>
-		public override IEntity2 Create(IEntityFields2 fields) {
-			IEntity2 toReturn = new CurrentProductListEntity(fields);
-			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewCurrentProductListUsingFields
-			// __LLBLGENPRO_USER_CODE_REGION_END
-			return toReturn;
-		}
-		#region Included Code
-
-		#endregion
-	}
-
 	/// <summary>Factory to create new, empty CustomerEntity objects.</summary>
 	[Serializable]
 	public partial class CustomerEntityFactory : EntityFactoryBase2<CustomerEntity> {
@@ -191,26 +131,6 @@ namespace NW26.FactoryClasses
 		public override IEntity2 Create(IEntityFields2 fields) {
 			IEntity2 toReturn = new CustomerEntity(fields);
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewCustomerUsingFields
-			// __LLBLGENPRO_USER_CODE_REGION_END
-			return toReturn;
-		}
-		#region Included Code
-
-		#endregion
-	}
-
-	/// <summary>Factory to create new, empty CustomerAndSuppliersByCityEntity objects.</summary>
-	[Serializable]
-	public partial class CustomerAndSuppliersByCityEntityFactory : EntityFactoryBase2<CustomerAndSuppliersByCityEntity> {
-		/// <summary>CTor</summary>
-		public CustomerAndSuppliersByCityEntityFactory() : base("CustomerAndSuppliersByCityEntity", NW26.EntityType.CustomerAndSuppliersByCityEntity, false) { }
-		
-		/// <summary>Creates a new CustomerAndSuppliersByCityEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
-		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
-		/// <returns>Fully created and populated (due to the IEntityFields2 object) IEntity2 object</returns>
-		public override IEntity2 Create(IEntityFields2 fields) {
-			IEntity2 toReturn = new CustomerAndSuppliersByCityEntity(fields);
-			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewCustomerAndSuppliersByCityUsingFields
 			// __LLBLGENPRO_USER_CODE_REGION_END
 			return toReturn;
 		}
@@ -299,26 +219,6 @@ namespace NW26.FactoryClasses
 		#endregion
 	}
 
-	/// <summary>Factory to create new, empty InvoiceEntity objects.</summary>
-	[Serializable]
-	public partial class InvoiceEntityFactory : EntityFactoryBase2<InvoiceEntity> {
-		/// <summary>CTor</summary>
-		public InvoiceEntityFactory() : base("InvoiceEntity", NW26.EntityType.InvoiceEntity, false) { }
-		
-		/// <summary>Creates a new InvoiceEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
-		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
-		/// <returns>Fully created and populated (due to the IEntityFields2 object) IEntity2 object</returns>
-		public override IEntity2 Create(IEntityFields2 fields) {
-			IEntity2 toReturn = new InvoiceEntity(fields);
-			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewInvoiceUsingFields
-			// __LLBLGENPRO_USER_CODE_REGION_END
-			return toReturn;
-		}
-		#region Included Code
-
-		#endregion
-	}
-
 	/// <summary>Factory to create new, empty OrderEntity objects.</summary>
 	[Serializable]
 	public partial class OrderEntityFactory : EntityFactoryBase2<OrderEntity> {
@@ -359,66 +259,6 @@ namespace NW26.FactoryClasses
 		#endregion
 	}
 
-	/// <summary>Factory to create new, empty OrderDetailsExtendedEntity objects.</summary>
-	[Serializable]
-	public partial class OrderDetailsExtendedEntityFactory : EntityFactoryBase2<OrderDetailsExtendedEntity> {
-		/// <summary>CTor</summary>
-		public OrderDetailsExtendedEntityFactory() : base("OrderDetailsExtendedEntity", NW26.EntityType.OrderDetailsExtendedEntity, false) { }
-		
-		/// <summary>Creates a new OrderDetailsExtendedEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
-		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
-		/// <returns>Fully created and populated (due to the IEntityFields2 object) IEntity2 object</returns>
-		public override IEntity2 Create(IEntityFields2 fields) {
-			IEntity2 toReturn = new OrderDetailsExtendedEntity(fields);
-			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewOrderDetailsExtendedUsingFields
-			// __LLBLGENPRO_USER_CODE_REGION_END
-			return toReturn;
-		}
-		#region Included Code
-
-		#endregion
-	}
-
-	/// <summary>Factory to create new, empty OrdersQryEntity objects.</summary>
-	[Serializable]
-	public partial class OrdersQryEntityFactory : EntityFactoryBase2<OrdersQryEntity> {
-		/// <summary>CTor</summary>
-		public OrdersQryEntityFactory() : base("OrdersQryEntity", NW26.EntityType.OrdersQryEntity, false) { }
-		
-		/// <summary>Creates a new OrdersQryEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
-		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
-		/// <returns>Fully created and populated (due to the IEntityFields2 object) IEntity2 object</returns>
-		public override IEntity2 Create(IEntityFields2 fields) {
-			IEntity2 toReturn = new OrdersQryEntity(fields);
-			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewOrdersQryUsingFields
-			// __LLBLGENPRO_USER_CODE_REGION_END
-			return toReturn;
-		}
-		#region Included Code
-
-		#endregion
-	}
-
-	/// <summary>Factory to create new, empty OrderSubtotalEntity objects.</summary>
-	[Serializable]
-	public partial class OrderSubtotalEntityFactory : EntityFactoryBase2<OrderSubtotalEntity> {
-		/// <summary>CTor</summary>
-		public OrderSubtotalEntityFactory() : base("OrderSubtotalEntity", NW26.EntityType.OrderSubtotalEntity, false) { }
-		
-		/// <summary>Creates a new OrderSubtotalEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
-		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
-		/// <returns>Fully created and populated (due to the IEntityFields2 object) IEntity2 object</returns>
-		public override IEntity2 Create(IEntityFields2 fields) {
-			IEntity2 toReturn = new OrderSubtotalEntity(fields);
-			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewOrderSubtotalUsingFields
-			// __LLBLGENPRO_USER_CODE_REGION_END
-			return toReturn;
-		}
-		#region Included Code
-
-		#endregion
-	}
-
 	/// <summary>Factory to create new, empty ProductEntity objects.</summary>
 	[Serializable]
 	public partial class ProductEntityFactory : EntityFactoryBase2<ProductEntity> {
@@ -431,86 +271,6 @@ namespace NW26.FactoryClasses
 		public override IEntity2 Create(IEntityFields2 fields) {
 			IEntity2 toReturn = new ProductEntity(fields);
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewProductUsingFields
-			// __LLBLGENPRO_USER_CODE_REGION_END
-			return toReturn;
-		}
-		#region Included Code
-
-		#endregion
-	}
-
-	/// <summary>Factory to create new, empty ProductsAboveAveragePriceEntity objects.</summary>
-	[Serializable]
-	public partial class ProductsAboveAveragePriceEntityFactory : EntityFactoryBase2<ProductsAboveAveragePriceEntity> {
-		/// <summary>CTor</summary>
-		public ProductsAboveAveragePriceEntityFactory() : base("ProductsAboveAveragePriceEntity", NW26.EntityType.ProductsAboveAveragePriceEntity, false) { }
-		
-		/// <summary>Creates a new ProductsAboveAveragePriceEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
-		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
-		/// <returns>Fully created and populated (due to the IEntityFields2 object) IEntity2 object</returns>
-		public override IEntity2 Create(IEntityFields2 fields) {
-			IEntity2 toReturn = new ProductsAboveAveragePriceEntity(fields);
-			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewProductsAboveAveragePriceUsingFields
-			// __LLBLGENPRO_USER_CODE_REGION_END
-			return toReturn;
-		}
-		#region Included Code
-
-		#endregion
-	}
-
-	/// <summary>Factory to create new, empty ProductSalesFor1997Entity objects.</summary>
-	[Serializable]
-	public partial class ProductSalesFor1997EntityFactory : EntityFactoryBase2<ProductSalesFor1997Entity> {
-		/// <summary>CTor</summary>
-		public ProductSalesFor1997EntityFactory() : base("ProductSalesFor1997Entity", NW26.EntityType.ProductSalesFor1997Entity, false) { }
-		
-		/// <summary>Creates a new ProductSalesFor1997Entity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
-		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
-		/// <returns>Fully created and populated (due to the IEntityFields2 object) IEntity2 object</returns>
-		public override IEntity2 Create(IEntityFields2 fields) {
-			IEntity2 toReturn = new ProductSalesFor1997Entity(fields);
-			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewProductSalesFor1997UsingFields
-			// __LLBLGENPRO_USER_CODE_REGION_END
-			return toReturn;
-		}
-		#region Included Code
-
-		#endregion
-	}
-
-	/// <summary>Factory to create new, empty ProductsByCategoryEntity objects.</summary>
-	[Serializable]
-	public partial class ProductsByCategoryEntityFactory : EntityFactoryBase2<ProductsByCategoryEntity> {
-		/// <summary>CTor</summary>
-		public ProductsByCategoryEntityFactory() : base("ProductsByCategoryEntity", NW26.EntityType.ProductsByCategoryEntity, false) { }
-		
-		/// <summary>Creates a new ProductsByCategoryEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
-		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
-		/// <returns>Fully created and populated (due to the IEntityFields2 object) IEntity2 object</returns>
-		public override IEntity2 Create(IEntityFields2 fields) {
-			IEntity2 toReturn = new ProductsByCategoryEntity(fields);
-			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewProductsByCategoryUsingFields
-			// __LLBLGENPRO_USER_CODE_REGION_END
-			return toReturn;
-		}
-		#region Included Code
-
-		#endregion
-	}
-
-	/// <summary>Factory to create new, empty QuarterlyOrderEntity objects.</summary>
-	[Serializable]
-	public partial class QuarterlyOrderEntityFactory : EntityFactoryBase2<QuarterlyOrderEntity> {
-		/// <summary>CTor</summary>
-		public QuarterlyOrderEntityFactory() : base("QuarterlyOrderEntity", NW26.EntityType.QuarterlyOrderEntity, false) { }
-		
-		/// <summary>Creates a new QuarterlyOrderEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
-		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
-		/// <returns>Fully created and populated (due to the IEntityFields2 object) IEntity2 object</returns>
-		public override IEntity2 Create(IEntityFields2 fields) {
-			IEntity2 toReturn = new QuarterlyOrderEntity(fields);
-			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewQuarterlyOrderUsingFields
 			// __LLBLGENPRO_USER_CODE_REGION_END
 			return toReturn;
 		}
@@ -539,46 +299,6 @@ namespace NW26.FactoryClasses
 		#endregion
 	}
 
-	/// <summary>Factory to create new, empty SalesByCategoryEntity objects.</summary>
-	[Serializable]
-	public partial class SalesByCategoryEntityFactory : EntityFactoryBase2<SalesByCategoryEntity> {
-		/// <summary>CTor</summary>
-		public SalesByCategoryEntityFactory() : base("SalesByCategoryEntity", NW26.EntityType.SalesByCategoryEntity, false) { }
-		
-		/// <summary>Creates a new SalesByCategoryEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
-		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
-		/// <returns>Fully created and populated (due to the IEntityFields2 object) IEntity2 object</returns>
-		public override IEntity2 Create(IEntityFields2 fields) {
-			IEntity2 toReturn = new SalesByCategoryEntity(fields);
-			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewSalesByCategoryUsingFields
-			// __LLBLGENPRO_USER_CODE_REGION_END
-			return toReturn;
-		}
-		#region Included Code
-
-		#endregion
-	}
-
-	/// <summary>Factory to create new, empty SalesTotalsByAmountEntity objects.</summary>
-	[Serializable]
-	public partial class SalesTotalsByAmountEntityFactory : EntityFactoryBase2<SalesTotalsByAmountEntity> {
-		/// <summary>CTor</summary>
-		public SalesTotalsByAmountEntityFactory() : base("SalesTotalsByAmountEntity", NW26.EntityType.SalesTotalsByAmountEntity, false) { }
-		
-		/// <summary>Creates a new SalesTotalsByAmountEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
-		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
-		/// <returns>Fully created and populated (due to the IEntityFields2 object) IEntity2 object</returns>
-		public override IEntity2 Create(IEntityFields2 fields) {
-			IEntity2 toReturn = new SalesTotalsByAmountEntity(fields);
-			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewSalesTotalsByAmountUsingFields
-			// __LLBLGENPRO_USER_CODE_REGION_END
-			return toReturn;
-		}
-		#region Included Code
-
-		#endregion
-	}
-
 	/// <summary>Factory to create new, empty ShipperEntity objects.</summary>
 	[Serializable]
 	public partial class ShipperEntityFactory : EntityFactoryBase2<ShipperEntity> {
@@ -591,46 +311,6 @@ namespace NW26.FactoryClasses
 		public override IEntity2 Create(IEntityFields2 fields) {
 			IEntity2 toReturn = new ShipperEntity(fields);
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewShipperUsingFields
-			// __LLBLGENPRO_USER_CODE_REGION_END
-			return toReturn;
-		}
-		#region Included Code
-
-		#endregion
-	}
-
-	/// <summary>Factory to create new, empty SummaryOfSalesByQuarterEntity objects.</summary>
-	[Serializable]
-	public partial class SummaryOfSalesByQuarterEntityFactory : EntityFactoryBase2<SummaryOfSalesByQuarterEntity> {
-		/// <summary>CTor</summary>
-		public SummaryOfSalesByQuarterEntityFactory() : base("SummaryOfSalesByQuarterEntity", NW26.EntityType.SummaryOfSalesByQuarterEntity, false) { }
-		
-		/// <summary>Creates a new SummaryOfSalesByQuarterEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
-		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
-		/// <returns>Fully created and populated (due to the IEntityFields2 object) IEntity2 object</returns>
-		public override IEntity2 Create(IEntityFields2 fields) {
-			IEntity2 toReturn = new SummaryOfSalesByQuarterEntity(fields);
-			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewSummaryOfSalesByQuarterUsingFields
-			// __LLBLGENPRO_USER_CODE_REGION_END
-			return toReturn;
-		}
-		#region Included Code
-
-		#endregion
-	}
-
-	/// <summary>Factory to create new, empty SummaryOfSalesByYearEntity objects.</summary>
-	[Serializable]
-	public partial class SummaryOfSalesByYearEntityFactory : EntityFactoryBase2<SummaryOfSalesByYearEntity> {
-		/// <summary>CTor</summary>
-		public SummaryOfSalesByYearEntityFactory() : base("SummaryOfSalesByYearEntity", NW26.EntityType.SummaryOfSalesByYearEntity, false) { }
-		
-		/// <summary>Creates a new SummaryOfSalesByYearEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
-		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
-		/// <returns>Fully created and populated (due to the IEntityFields2 object) IEntity2 object</returns>
-		public override IEntity2 Create(IEntityFields2 fields) {
-			IEntity2 toReturn = new SummaryOfSalesByYearEntity(fields);
-			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewSummaryOfSalesByYearUsingFields
 			// __LLBLGENPRO_USER_CODE_REGION_END
 			return toReturn;
 		}
@@ -691,23 +371,11 @@ namespace NW26.FactoryClasses
 			IEntityFactory2 factoryToUse = null;
 			switch(entityTypeToCreate)
 			{
-				case NW26.EntityType.AlphabeticalListOfProductEntity:
-					factoryToUse = new AlphabeticalListOfProductEntityFactory();
-					break;
 				case NW26.EntityType.CategoryEntity:
 					factoryToUse = new CategoryEntityFactory();
 					break;
-				case NW26.EntityType.CategorySalesFor1997Entity:
-					factoryToUse = new CategorySalesFor1997EntityFactory();
-					break;
-				case NW26.EntityType.CurrentProductListEntity:
-					factoryToUse = new CurrentProductListEntityFactory();
-					break;
 				case NW26.EntityType.CustomerEntity:
 					factoryToUse = new CustomerEntityFactory();
-					break;
-				case NW26.EntityType.CustomerAndSuppliersByCityEntity:
-					factoryToUse = new CustomerAndSuppliersByCityEntityFactory();
 					break;
 				case NW26.EntityType.CustomerCustomerDemoEntity:
 					factoryToUse = new CustomerCustomerDemoEntityFactory();
@@ -721,56 +389,20 @@ namespace NW26.FactoryClasses
 				case NW26.EntityType.EmployeeTerritoryEntity:
 					factoryToUse = new EmployeeTerritoryEntityFactory();
 					break;
-				case NW26.EntityType.InvoiceEntity:
-					factoryToUse = new InvoiceEntityFactory();
-					break;
 				case NW26.EntityType.OrderEntity:
 					factoryToUse = new OrderEntityFactory();
 					break;
 				case NW26.EntityType.OrderDetailEntity:
 					factoryToUse = new OrderDetailEntityFactory();
 					break;
-				case NW26.EntityType.OrderDetailsExtendedEntity:
-					factoryToUse = new OrderDetailsExtendedEntityFactory();
-					break;
-				case NW26.EntityType.OrdersQryEntity:
-					factoryToUse = new OrdersQryEntityFactory();
-					break;
-				case NW26.EntityType.OrderSubtotalEntity:
-					factoryToUse = new OrderSubtotalEntityFactory();
-					break;
 				case NW26.EntityType.ProductEntity:
 					factoryToUse = new ProductEntityFactory();
-					break;
-				case NW26.EntityType.ProductsAboveAveragePriceEntity:
-					factoryToUse = new ProductsAboveAveragePriceEntityFactory();
-					break;
-				case NW26.EntityType.ProductSalesFor1997Entity:
-					factoryToUse = new ProductSalesFor1997EntityFactory();
-					break;
-				case NW26.EntityType.ProductsByCategoryEntity:
-					factoryToUse = new ProductsByCategoryEntityFactory();
-					break;
-				case NW26.EntityType.QuarterlyOrderEntity:
-					factoryToUse = new QuarterlyOrderEntityFactory();
 					break;
 				case NW26.EntityType.RegionEntity:
 					factoryToUse = new RegionEntityFactory();
 					break;
-				case NW26.EntityType.SalesByCategoryEntity:
-					factoryToUse = new SalesByCategoryEntityFactory();
-					break;
-				case NW26.EntityType.SalesTotalsByAmountEntity:
-					factoryToUse = new SalesTotalsByAmountEntityFactory();
-					break;
 				case NW26.EntityType.ShipperEntity:
 					factoryToUse = new ShipperEntityFactory();
-					break;
-				case NW26.EntityType.SummaryOfSalesByQuarterEntity:
-					factoryToUse = new SummaryOfSalesByQuarterEntityFactory();
-					break;
-				case NW26.EntityType.SummaryOfSalesByYearEntity:
-					factoryToUse = new SummaryOfSalesByYearEntityFactory();
 					break;
 				case NW26.EntityType.SupplierEntity:
 					factoryToUse = new SupplierEntityFactory();
@@ -792,15 +424,6 @@ namespace NW26.FactoryClasses
 	[Serializable]
 	public static class EntityFactoryFactory
 	{
-#if CF
-		/// <summary>Gets the factory of the entity with the NW26.EntityType specified</summary>
-		/// <param name="typeOfEntity">The type of entity.</param>
-		/// <returns>factory to use or null if not found</returns>
-		public static IEntityFactory2 GetFactory(NW26.EntityType typeOfEntity)
-		{
-			return GeneralEntityFactory.Create(typeOfEntity).GetEntityFactory();
-		}
-#else
 		private static Dictionary<Type, IEntityFactory2> _factoryPerType = new Dictionary<Type, IEntityFactory2>();
 
 		/// <summary>Initializes the <see cref="EntityFactoryFactory"/> class.</summary>
@@ -831,7 +454,6 @@ namespace NW26.FactoryClasses
 		{
 			return GetFactory(GeneralEntityFactory.Create(typeOfEntity).GetType());
 		}
-#endif		
 	}
 		
 	/// <summary>Element creator for creating project elements from somewhere else, like inside Linq providers.</summary>
@@ -879,6 +501,13 @@ namespace NW26.FactoryClasses
 		{
 			return new DynamicRelation(leftOperand, joinType, rightOperand, onClause);
 		}
+		
+		/// <summary>Obtains the inheritance info provider instance from the singleton </summary>
+		/// <returns>The singleton instance of the inheritance info provider</returns>
+		public override IInheritanceInfoProvider ObtainInheritanceInfoProviderInstance()
+		{
+			return InheritanceInfoProviderSingleton.GetInstance();
+		}
 
 		/// <summary>Creates a new dynamic relation instance</summary>
 		/// <param name="leftOperand">The left operand.</param>
@@ -905,13 +534,6 @@ namespace NW26.FactoryClasses
 			return new DynamicRelation((NW26.EntityType)Enum.Parse(typeof(NW26.EntityType), leftOperandEntityName, false), joinType, (NW26.EntityType)Enum.Parse(typeof(NW26.EntityType), rightOperandEntityName, false), aliasLeftOperand, aliasRightOperand, onClause);
 		}
 		
-		/// <summary>Obtains the inheritance info provider instance from the singleton </summary>
-		/// <returns>The singleton instance of the inheritance info provider</returns>
-		public override IInheritanceInfoProvider ObtainInheritanceInfoProviderInstance()
-		{
-			return InheritanceInfoProviderSingleton.GetInstance();
-		}
-		
 		/// <summary>Implementation of the routine which gets the factory of the Entity type with the NW26.EntityType value passed in</summary>
 		/// <param name="entityTypeValue">The entity type value.</param>
 		/// <returns>the entity factory of the entity type or null if not found</returns>
@@ -919,7 +541,7 @@ namespace NW26.FactoryClasses
 		{
 			return EntityFactoryFactory.GetFactory((NW26.EntityType)entityTypeValue);
 		}
-#if !CF		
+
 		/// <summary>Implementation of the routine which gets the factory of the Entity type with the .NET type passed in</summary>
 		/// <param name="typeOfEntity">The type of entity.</param>
 		/// <returns>the entity factory of the entity type or null if not found</returns>
@@ -927,6 +549,6 @@ namespace NW26.FactoryClasses
 		{
 			return EntityFactoryFactory.GetFactory(typeOfEntity);
 		}
-#endif
+
 	}
 }

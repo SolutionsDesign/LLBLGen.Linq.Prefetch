@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.5
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -33,6 +33,7 @@ namespace NW26.EntityClasses
 	{
 		#region Class Member Declarations
 		private EntityCollection<CustomerCustomerDemoEntity> _customerCustomerDemos;
+		private EntityCollection<CustomerEntity> _customerCollectionViaCustomerCustomerDemo;
 
 		// __LLBLGENPRO_USER_CODE_REGION_START PrivateMembers
 		// __LLBLGENPRO_USER_CODE_REGION_END
@@ -47,6 +48,8 @@ namespace NW26.EntityClasses
 		{
 			/// <summary>Member name CustomerCustomerDemos</summary>
 			public static readonly string CustomerCustomerDemos = "CustomerCustomerDemos";
+			/// <summary>Member name CustomerCollectionViaCustomerCustomerDemo</summary>
+			public static readonly string CustomerCollectionViaCustomerCustomerDemo = "CustomerCollectionViaCustomerCustomerDemo";
 		}
 		#endregion
 		
@@ -105,6 +108,7 @@ namespace NW26.EntityClasses
 			if(SerializationHelper.Optimization != SerializationOptimization.Fast) 
 			{
 				_customerCustomerDemos = (EntityCollection<CustomerCustomerDemoEntity>)info.GetValue("_customerCustomerDemos", typeof(EntityCollection<CustomerCustomerDemoEntity>));
+				_customerCollectionViaCustomerCustomerDemo = (EntityCollection<CustomerEntity>)info.GetValue("_customerCollectionViaCustomerCustomerDemo", typeof(EntityCollection<CustomerEntity>));
 				this.FixupDeserialization(FieldInfoProviderSingleton.GetInstance());
 			}
 			// __LLBLGENPRO_USER_CODE_REGION_START DeserializationConstructor
@@ -122,6 +126,11 @@ namespace NW26.EntityClasses
 			{
 				case "CustomerCustomerDemos":
 					this.CustomerCustomerDemos.Add((CustomerCustomerDemoEntity)entity);
+					break;
+				case "CustomerCollectionViaCustomerCustomerDemo":
+					this.CustomerCollectionViaCustomerCustomerDemo.IsReadOnly = false;
+					this.CustomerCollectionViaCustomerCustomerDemo.Add((CustomerEntity)entity);
+					this.CustomerCollectionViaCustomerCustomerDemo.IsReadOnly = true;
 					break;
 				default:
 					this.OnSetRelatedEntityProperty(propertyName, entity);
@@ -147,6 +156,10 @@ namespace NW26.EntityClasses
 			{
 				case "CustomerCustomerDemos":
 					toReturn.Add(Relations.CustomerCustomerDemoEntityUsingCustomerTypeId);
+					break;
+				case "CustomerCollectionViaCustomerCustomerDemo":
+					toReturn.Add(Relations.CustomerCustomerDemoEntityUsingCustomerTypeId, "CustomerDemographicEntity__", "CustomerCustomerDemo_", JoinHint.None);
+					toReturn.Add(CustomerCustomerDemoEntity.Relations.CustomerEntityUsingCustomerId, "CustomerCustomerDemo_", string.Empty, JoinHint.None);
 					break;
 				default:
 					break;				
@@ -235,6 +248,7 @@ namespace NW26.EntityClasses
 			if (SerializationHelper.Optimization != SerializationOptimization.Fast) 
 			{
 				info.AddValue("_customerCustomerDemos", ((_customerCustomerDemos!=null) && (_customerCustomerDemos.Count>0) && !this.MarkedForDeletion)?_customerCustomerDemos:null);
+				info.AddValue("_customerCollectionViaCustomerCustomerDemo", ((_customerCollectionViaCustomerCustomerDemo!=null) && (_customerCollectionViaCustomerCustomerDemo.Count>0) && !this.MarkedForDeletion)?_customerCollectionViaCustomerCustomerDemo:null);
 			}
 			// __LLBLGENPRO_USER_CODE_REGION_START GetObjectInfo
 			// __LLBLGENPRO_USER_CODE_REGION_END
@@ -258,6 +272,16 @@ namespace NW26.EntityClasses
 			bucket.PredicateExpression.Add(new FieldCompareValuePredicate(CustomerCustomerDemoFields.CustomerTypeId, null, ComparisonOperator.Equal, this.CustomerTypeId));
 			return bucket;
 		}
+
+		/// <summary> Creates a new IRelationPredicateBucket object which contains the predicate expression and relation collection to fetch the related entities of type 'Customer' to this entity.</summary>
+		/// <returns></returns>
+		public virtual IRelationPredicateBucket GetRelationInfoCustomerCollectionViaCustomerCustomerDemo()
+		{
+			IRelationPredicateBucket bucket = new RelationPredicateBucket();
+			bucket.Relations.AddRange(GetRelationsForFieldOfType("CustomerCollectionViaCustomerCustomerDemo"));
+			bucket.PredicateExpression.Add(new FieldCompareValuePredicate(CustomerDemographicFields.CustomerTypeId, null, ComparisonOperator.Equal, this.CustomerTypeId, "CustomerDemographicEntity__"));
+			return bucket;
+		}
 		
 
 		/// <summary>Creates a new instance of the factory related to this entity</summary>
@@ -272,6 +296,7 @@ namespace NW26.EntityClasses
 		{
 			base.AddToMemberEntityCollectionsQueue(collectionsQueue);
 			collectionsQueue.Enqueue(this._customerCustomerDemos);
+			collectionsQueue.Enqueue(this._customerCollectionViaCustomerCustomerDemo);
 		}
 		
 		/// <summary>Gets the member collections queue from the queue (base first)</summary>
@@ -280,6 +305,7 @@ namespace NW26.EntityClasses
 		{
 			base.GetFromMemberEntityCollectionsQueue(collectionsQueue);
 			this._customerCustomerDemos = (EntityCollection<CustomerCustomerDemoEntity>) collectionsQueue.Dequeue();
+			this._customerCollectionViaCustomerCustomerDemo = (EntityCollection<CustomerEntity>) collectionsQueue.Dequeue();
 
 		}
 		
@@ -289,6 +315,7 @@ namespace NW26.EntityClasses
 		{
 			bool toReturn = false;
 			toReturn |=(this._customerCustomerDemos != null);
+			toReturn |= (this._customerCollectionViaCustomerCustomerDemo != null);
 			return toReturn ? true : base.HasPopulatedMemberEntityCollections();
 		}
 		
@@ -299,6 +326,7 @@ namespace NW26.EntityClasses
 		{
 			base.CreateMemberEntityCollectionsQueue(collectionsQueue, requiredQueue);
 			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<CustomerCustomerDemoEntity>(EntityFactoryCache2.GetEntityFactory(typeof(CustomerCustomerDemoEntityFactory))) : null);
+			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<CustomerEntity>(EntityFactoryCache2.GetEntityFactory(typeof(CustomerEntityFactory))) : null);
 		}
 #endif
 		/// <summary>Gets all related data objects, stored by name. The name is the field name mapped onto the relation for that particular data element.</summary>
@@ -307,6 +335,7 @@ namespace NW26.EntityClasses
 		{
 			Dictionary<string, object> toReturn = new Dictionary<string, object>();
 			toReturn.Add("CustomerCustomerDemos", _customerCustomerDemos);
+			toReturn.Add("CustomerCollectionViaCustomerCustomerDemo", _customerCollectionViaCustomerCustomerDemo);
 			return toReturn;
 		}
 
@@ -373,6 +402,19 @@ namespace NW26.EntityClasses
 			get	{ return new PrefetchPathElement2( new EntityCollection<CustomerCustomerDemoEntity>(EntityFactoryCache2.GetEntityFactory(typeof(CustomerCustomerDemoEntityFactory))), (IEntityRelation)GetRelationsForField("CustomerCustomerDemos")[0], (int)NW26.EntityType.CustomerDemographicEntity, (int)NW26.EntityType.CustomerCustomerDemoEntity, 0, null, null, null, null, "CustomerCustomerDemos", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.OneToMany);	}
 		}
 
+		/// <summary> Creates a new PrefetchPathElement2 object which contains all the information to prefetch the related entities of type 'Customer' for this entity.</summary>
+		/// <returns>Ready to use IPrefetchPathElement2 implementation.</returns>
+		public static IPrefetchPathElement2 PrefetchPathCustomerCollectionViaCustomerCustomerDemo
+		{
+			get
+			{
+				IEntityRelation intermediateRelation = Relations.CustomerCustomerDemoEntityUsingCustomerTypeId;
+				intermediateRelation.SetAliases(string.Empty, "CustomerCustomerDemo_");
+				return new PrefetchPathElement2(new EntityCollection<CustomerEntity>(EntityFactoryCache2.GetEntityFactory(typeof(CustomerEntityFactory))), intermediateRelation,
+					(int)NW26.EntityType.CustomerDemographicEntity, (int)NW26.EntityType.CustomerEntity, 0, null, null, GetRelationsForField("CustomerCollectionViaCustomerCustomerDemo"), null, "CustomerCollectionViaCustomerCustomerDemo", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToMany);
+			}
+		}
+
 
 		/// <summary> The custom properties for the type of this entity instance.</summary>
 		/// <remarks>The data returned from this property should be considered read-only: it is not thread safe to alter this data at runtime.</remarks>
@@ -422,6 +464,13 @@ namespace NW26.EntityClasses
 		public virtual EntityCollection<CustomerCustomerDemoEntity> CustomerCustomerDemos
 		{
 			get { return GetOrCreateEntityCollection<CustomerCustomerDemoEntity, CustomerCustomerDemoEntityFactory>("CustomerDemographic", true, false, ref _customerCustomerDemos);	}
+		}
+
+		/// <summary> Gets the EntityCollection with the related entities of type 'CustomerEntity' which are related to this entity via a relation of type 'm:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
+		[TypeContainedAttribute(typeof(CustomerEntity))]
+		public virtual EntityCollection<CustomerEntity> CustomerCollectionViaCustomerCustomerDemo
+		{
+			get { return GetOrCreateEntityCollection<CustomerEntity, CustomerEntityFactory>("CustomerDemographicCollectionViaCustomerCustomerDemo", false, true, ref _customerCollectionViaCustomerCustomerDemo);	}
 		}
 	
 		/// <summary> Gets the type of the hierarchy this entity is in. </summary>
