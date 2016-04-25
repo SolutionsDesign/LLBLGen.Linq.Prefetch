@@ -1,7 +1,7 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
+// Code is generated using LLBLGen Pro version: 5.0
 // Code is generated on: 
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
@@ -12,10 +12,10 @@ using System;
 using System.Runtime.Serialization;
 #endif
 using System.Collections.Generic;
-using NW26.FactoryClasses;
+using Northwind.FactoryClasses;
 using SD.LLBLGen.Pro.ORMSupportClasses;
 
-namespace NW26.HelperClasses
+namespace Northwind.HelperClasses
 {
 	/// <summary>
 	/// Helper class which will eases the creation of custom made resultsets. Usable in typed lists

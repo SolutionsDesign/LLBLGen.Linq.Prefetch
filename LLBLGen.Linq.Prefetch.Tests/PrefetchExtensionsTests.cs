@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using NUnit.Framework;
-using NW26.DatabaseSpecific;
-using NW26.EntityClasses;
-using NW26.Linq;
+using Northwind.DatabaseSpecific;
+using Northwind.EntityClasses;
+using Northwind.Linq;
 using SD.LLBLGen.Pro.ORMSupportClasses;
 
 namespace LLBLGen.Linq.Prefetch.Tests
@@ -303,7 +303,7 @@ namespace LLBLGen.Linq.Prefetch.Tests
                         Assert.IsNull(v.Customer);
                     }
                 }
-                Assert.AreEqual(127, count);
+                Assert.AreEqual(115, count);
             }
         }
 
@@ -318,7 +318,7 @@ namespace LLBLGen.Linq.Prefetch.Tests
                          select od).With(od => od.Order.OrderBy(o => o.Customer.Country));
 
                 int count = q.ToArray().Count();
-                Assert.AreEqual(1939, count);
+                Assert.AreEqual(1806, count);
             }
         }
 

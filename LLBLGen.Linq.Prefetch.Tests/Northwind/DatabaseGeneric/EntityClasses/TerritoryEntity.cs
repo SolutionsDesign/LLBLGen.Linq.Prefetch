@@ -1,7 +1,7 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
+// Code is generated using LLBLGen Pro version: 5.0
 // Code is generated on: 
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
@@ -14,14 +14,14 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 #endif
 using System.Xml.Serialization;
-using NW26;
-using NW26.HelperClasses;
-using NW26.FactoryClasses;
-using NW26.RelationClasses;
+using Northwind;
+using Northwind.HelperClasses;
+using Northwind.FactoryClasses;
+using Northwind.RelationClasses;
 
 using SD.LLBLGen.Pro.ORMSupportClasses;
 
-namespace NW26.EntityClasses
+namespace Northwind.EntityClasses
 {
 	// __LLBLGENPRO_USER_CODE_REGION_START AdditionalNamespaces
 	// __LLBLGENPRO_USER_CODE_REGION_END
@@ -413,6 +413,8 @@ namespace NW26.EntityClasses
 			_fieldsCustomProperties.Add("TerritoryDescription", fieldHashtable);
 			fieldHashtable = new Dictionary<string, string>();
 			_fieldsCustomProperties.Add("TerritoryId", fieldHashtable);
+			fieldHashtable = new Dictionary<string, string>();
+			_fieldsCustomProperties.Add("Test", fieldHashtable);
 		}
 		#endregion
 
@@ -421,7 +423,7 @@ namespace NW26.EntityClasses
 		/// <param name="resetFKFields">if set to true it will also reset the FK fields pointing to the related entity</param>
 		private void DesetupSyncRegion(bool signalRelatedEntity, bool resetFKFields)
 		{
-			this.PerformDesetupSyncRelatedEntity( _region, new PropertyChangedEventHandler( OnRegionPropertyChanged ), "Region", NW26.RelationClasses.StaticTerritoryRelations.RegionEntityUsingRegionIdStatic, true, signalRelatedEntity, "Territories", resetFKFields, new int[] { (int)TerritoryFieldIndex.RegionId } );
+			this.PerformDesetupSyncRelatedEntity( _region, new PropertyChangedEventHandler( OnRegionPropertyChanged ), "Region", Northwind.RelationClasses.StaticTerritoryRelations.RegionEntityUsingRegionIdStatic, true, signalRelatedEntity, "Territories", resetFKFields, new int[] { (int)TerritoryFieldIndex.RegionId } );
 			_region = null;
 		}
 
@@ -433,7 +435,7 @@ namespace NW26.EntityClasses
 			{
 				DesetupSyncRegion(true, true);
 				_region = (RegionEntity)relatedEntity;
-				this.PerformSetupSyncRelatedEntity( _region, new PropertyChangedEventHandler( OnRegionPropertyChanged ), "Region", NW26.RelationClasses.StaticTerritoryRelations.RegionEntityUsingRegionIdStatic, true, new string[] {  } );
+				this.PerformSetupSyncRelatedEntity( _region, new PropertyChangedEventHandler( OnRegionPropertyChanged ), "Region", Northwind.RelationClasses.StaticTerritoryRelations.RegionEntityUsingRegionIdStatic, true, new string[] {  } );
 			}
 		}
 		
@@ -484,7 +486,7 @@ namespace NW26.EntityClasses
 		/// <returns>Ready to use IPrefetchPathElement2 implementation.</returns>
 		public static IPrefetchPathElement2 PrefetchPathEmployeeTerritories
 		{
-			get	{ return new PrefetchPathElement2( new EntityCollection<EmployeeTerritoryEntity>(EntityFactoryCache2.GetEntityFactory(typeof(EmployeeTerritoryEntityFactory))), (IEntityRelation)GetRelationsForField("EmployeeTerritories")[0], (int)NW26.EntityType.TerritoryEntity, (int)NW26.EntityType.EmployeeTerritoryEntity, 0, null, null, null, null, "EmployeeTerritories", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.OneToMany);	}
+			get	{ return new PrefetchPathElement2( new EntityCollection<EmployeeTerritoryEntity>(EntityFactoryCache2.GetEntityFactory(typeof(EmployeeTerritoryEntityFactory))), (IEntityRelation)GetRelationsForField("EmployeeTerritories")[0], (int)Northwind.EntityType.TerritoryEntity, (int)Northwind.EntityType.EmployeeTerritoryEntity, 0, null, null, null, null, "EmployeeTerritories", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.OneToMany);	}
 		}
 
 		/// <summary> Creates a new PrefetchPathElement2 object which contains all the information to prefetch the related entities of type 'Employee' for this entity.</summary>
@@ -496,7 +498,7 @@ namespace NW26.EntityClasses
 				IEntityRelation intermediateRelation = Relations.EmployeeTerritoryEntityUsingTerritoryId;
 				intermediateRelation.SetAliases(string.Empty, "EmployeeTerritory_");
 				return new PrefetchPathElement2(new EntityCollection<EmployeeEntity>(EntityFactoryCache2.GetEntityFactory(typeof(EmployeeEntityFactory))), intermediateRelation,
-					(int)NW26.EntityType.TerritoryEntity, (int)NW26.EntityType.EmployeeEntity, 0, null, null, GetRelationsForField("EmployeeCollectionViaEmployeeTerritory"), null, "EmployeeCollectionViaEmployeeTerritory", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToMany);
+					(int)Northwind.EntityType.TerritoryEntity, (int)Northwind.EntityType.EmployeeEntity, 0, null, null, GetRelationsForField("EmployeeCollectionViaEmployeeTerritory"), null, "EmployeeCollectionViaEmployeeTerritory", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToMany);
 			}
 		}
 
@@ -504,7 +506,7 @@ namespace NW26.EntityClasses
 		/// <returns>Ready to use IPrefetchPathElement2 implementation.</returns>
 		public static IPrefetchPathElement2 PrefetchPathRegion
 		{
-			get	{ return new PrefetchPathElement2(new EntityCollection(EntityFactoryCache2.GetEntityFactory(typeof(RegionEntityFactory))),	(IEntityRelation)GetRelationsForField("Region")[0], (int)NW26.EntityType.TerritoryEntity, (int)NW26.EntityType.RegionEntity, 0, null, null, null, null, "Region", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToOne); }
+			get	{ return new PrefetchPathElement2(new EntityCollection(EntityFactoryCache2.GetEntityFactory(typeof(RegionEntityFactory))),	(IEntityRelation)GetRelationsForField("Region")[0], (int)Northwind.EntityType.TerritoryEntity, (int)Northwind.EntityType.RegionEntity, 0, null, null, null, null, "Region", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToOne); }
 		}
 
 
@@ -561,6 +563,16 @@ namespace NW26.EntityClasses
 			set	{ SetValue((int)TerritoryFieldIndex.TerritoryId, value); }
 		}
 
+		/// <summary> The Test property of the Entity Territory<br/><br/></summary>
+		/// <remarks>Mapped on  table field: "Territories"."test"<br/>
+		/// Table field type characteristics (type, precision, scale, length): Binary, 0, 0, 50<br/>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		public virtual System.Byte[] Test
+		{
+			get { return (System.Byte[])GetValue((int)TerritoryFieldIndex.Test, true); }
+			set	{ SetValue((int)TerritoryFieldIndex.Test, value); }
+		}
+
 		/// <summary> Gets the EntityCollection with the related entities of type 'EmployeeTerritoryEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
 		[TypeContainedAttribute(typeof(EmployeeTerritoryEntity))]
 		public virtual EntityCollection<EmployeeTerritoryEntity> EmployeeTerritories
@@ -605,11 +617,11 @@ namespace NW26.EntityClasses
 			get { return false;}
 		}
 		
-		/// <summary>Returns the NW26.EntityType enum value for this entity.</summary>
+		/// <summary>Returns the Northwind.EntityType enum value for this entity.</summary>
 		[Browsable(false), XmlIgnore]
 		protected override int LLBLGenProEntityTypeValue 
 		{ 
-			get { return (int)NW26.EntityType.TerritoryEntity; }
+			get { return (int)Northwind.EntityType.TerritoryEntity; }
 		}
 
 		#endregion

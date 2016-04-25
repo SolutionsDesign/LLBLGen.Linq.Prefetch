@@ -1,5 +1,6 @@
 # LLBLGen.Linq.Prefetch
 Prefetch extensions for the Linq Provider in LLBLGen.
+
 ## What is it?
 Each time you build prefetches for LLBLGen Linq queries the syntax can be a bit much.  These extensions add some simplified prefetch building logic.
 
@@ -39,3 +40,6 @@ The test suite included in the source is based on the standard Northwind databas
 ## Other business
 
 Check this out on Nuget: https://www.nuget.org/packages/LLBLGen.Linq.Prefetch
+
+## Special thanks
+This library was originally written by Richard Hopton.

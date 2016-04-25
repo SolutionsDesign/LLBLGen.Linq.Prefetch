@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C1F6E6F4-616F-4D35-A230-8C03A3973EBD}</ProjectGuid>
+    <ProjectGuid>{EDF3F435-69BF-4D2C-A177-3C22DE4007EE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NW26.DatabaseSpecific</RootNamespace>
-    <AssemblyName>NW26DBSpecific</AssemblyName>
+    <RootNamespace>Northwind.DatabaseSpecific</RootNamespace>
+    <AssemblyName>NorthwindDBSpecific</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,13 +31,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
-      <SpecificVersion>True</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Solutions Design\LLBLGen Pro v4.1\Frameworks\LLBLGen Pro\RuntimeLibraries\CompiledRuntimeLibraries\</HintPath>
+    <Reference Include="SD.LLBLGen.Pro.DQE.SqlServer, Version=5.0.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SD.LLBLGen.Pro.DQE.SqlServer.5.0.0\lib\net35\SD.LLBLGen.Pro.DQE.SqlServer.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="SD.LLBLGen.Pro.DQE.SqlServer, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
-      <SpecificVersion>True</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Solutions Design\LLBLGen Pro v4.1\Frameworks\LLBLGen Pro\RuntimeLibraries\CompiledRuntimeLibraries\</HintPath>
+    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses, Version=5.0.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SD.LLBLGen.Pro.ORMSupportClasses.5.0.0\lib\net35\SD.LLBLGen.Pro.ORMSupportClasses.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <AppDesigner Include="Properties\" />
+    <None Include="packages.config" />
     <Compile Include="DatabaseSpecific\ActionProcedures.cs">
       <GeneratedBy>LLBLGen Pro</GeneratedBy>
     </Compile>

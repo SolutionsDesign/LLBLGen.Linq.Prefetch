@@ -1,7 +1,7 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
+// Code is generated using LLBLGen Pro version: 5.0
 // Code is generated on: 
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
@@ -14,14 +14,14 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 #endif
 using System.Xml.Serialization;
-using NW26;
-using NW26.HelperClasses;
-using NW26.FactoryClasses;
-using NW26.RelationClasses;
+using Northwind;
+using Northwind.HelperClasses;
+using Northwind.FactoryClasses;
+using Northwind.RelationClasses;
 
 using SD.LLBLGen.Pro.ORMSupportClasses;
 
-namespace NW26.EntityClasses
+namespace Northwind.EntityClasses
 {
 	// __LLBLGENPRO_USER_CODE_REGION_START AdditionalNamespaces
 	// __LLBLGENPRO_USER_CODE_REGION_END
@@ -403,7 +403,7 @@ namespace NW26.EntityClasses
 		/// <returns>Ready to use IPrefetchPathElement2 implementation.</returns>
 		public static IPrefetchPathElement2 PrefetchPathProducts
 		{
-			get	{ return new PrefetchPathElement2( new EntityCollection<ProductEntity>(EntityFactoryCache2.GetEntityFactory(typeof(ProductEntityFactory))), (IEntityRelation)GetRelationsForField("Products")[0], (int)NW26.EntityType.CategoryEntity, (int)NW26.EntityType.ProductEntity, 0, null, null, null, null, "Products", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.OneToMany);	}
+			get	{ return new PrefetchPathElement2( new EntityCollection<ProductEntity>(EntityFactoryCache2.GetEntityFactory(typeof(ProductEntityFactory))), (IEntityRelation)GetRelationsForField("Products")[0], (int)Northwind.EntityType.CategoryEntity, (int)Northwind.EntityType.ProductEntity, 0, null, null, null, null, "Products", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.OneToMany);	}
 		}
 
 		/// <summary> Creates a new PrefetchPathElement2 object which contains all the information to prefetch the related entities of type 'Supplier' for this entity.</summary>
@@ -415,7 +415,7 @@ namespace NW26.EntityClasses
 				IEntityRelation intermediateRelation = Relations.ProductEntityUsingCategoryId;
 				intermediateRelation.SetAliases(string.Empty, "Product_");
 				return new PrefetchPathElement2(new EntityCollection<SupplierEntity>(EntityFactoryCache2.GetEntityFactory(typeof(SupplierEntityFactory))), intermediateRelation,
-					(int)NW26.EntityType.CategoryEntity, (int)NW26.EntityType.SupplierEntity, 0, null, null, GetRelationsForField("SupplierCollectionViaProduct"), null, "SupplierCollectionViaProduct", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToMany);
+					(int)Northwind.EntityType.CategoryEntity, (int)Northwind.EntityType.SupplierEntity, 0, null, null, GetRelationsForField("SupplierCollectionViaProduct"), null, "SupplierCollectionViaProduct", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToMany);
 			}
 		}
 
@@ -509,11 +509,11 @@ namespace NW26.EntityClasses
 			get { return false;}
 		}
 		
-		/// <summary>Returns the NW26.EntityType enum value for this entity.</summary>
+		/// <summary>Returns the Northwind.EntityType enum value for this entity.</summary>
 		[Browsable(false), XmlIgnore]
 		protected override int LLBLGenProEntityTypeValue 
 		{ 
-			get { return (int)NW26.EntityType.CategoryEntity; }
+			get { return (int)Northwind.EntityType.CategoryEntity; }
 		}
 
 		#endregion

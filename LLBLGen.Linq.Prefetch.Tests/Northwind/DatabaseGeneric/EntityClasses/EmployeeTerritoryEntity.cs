@@ -1,7 +1,7 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
+// Code is generated using LLBLGen Pro version: 5.0
 // Code is generated on: 
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
@@ -14,14 +14,14 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 #endif
 using System.Xml.Serialization;
-using NW26;
-using NW26.HelperClasses;
-using NW26.FactoryClasses;
-using NW26.RelationClasses;
+using Northwind;
+using Northwind.HelperClasses;
+using Northwind.FactoryClasses;
+using Northwind.RelationClasses;
 
 using SD.LLBLGen.Pro.ORMSupportClasses;
 
-namespace NW26.EntityClasses
+namespace Northwind.EntityClasses
 {
 	// __LLBLGENPRO_USER_CODE_REGION_START AdditionalNamespaces
 	// __LLBLGENPRO_USER_CODE_REGION_END
@@ -400,7 +400,7 @@ namespace NW26.EntityClasses
 		/// <param name="resetFKFields">if set to true it will also reset the FK fields pointing to the related entity</param>
 		private void DesetupSyncEmployee(bool signalRelatedEntity, bool resetFKFields)
 		{
-			this.PerformDesetupSyncRelatedEntity( _employee, new PropertyChangedEventHandler( OnEmployeePropertyChanged ), "Employee", NW26.RelationClasses.StaticEmployeeTerritoryRelations.EmployeeEntityUsingEmployeeIdStatic, true, signalRelatedEntity, "EmployeeTerritories", resetFKFields, new int[] { (int)EmployeeTerritoryFieldIndex.EmployeeId } );
+			this.PerformDesetupSyncRelatedEntity( _employee, new PropertyChangedEventHandler( OnEmployeePropertyChanged ), "Employee", Northwind.RelationClasses.StaticEmployeeTerritoryRelations.EmployeeEntityUsingEmployeeIdStatic, true, signalRelatedEntity, "EmployeeTerritories", resetFKFields, new int[] { (int)EmployeeTerritoryFieldIndex.EmployeeId } );
 			_employee = null;
 		}
 
@@ -412,7 +412,7 @@ namespace NW26.EntityClasses
 			{
 				DesetupSyncEmployee(true, true);
 				_employee = (EmployeeEntity)relatedEntity;
-				this.PerformSetupSyncRelatedEntity( _employee, new PropertyChangedEventHandler( OnEmployeePropertyChanged ), "Employee", NW26.RelationClasses.StaticEmployeeTerritoryRelations.EmployeeEntityUsingEmployeeIdStatic, true, new string[] {  } );
+				this.PerformSetupSyncRelatedEntity( _employee, new PropertyChangedEventHandler( OnEmployeePropertyChanged ), "Employee", Northwind.RelationClasses.StaticEmployeeTerritoryRelations.EmployeeEntityUsingEmployeeIdStatic, true, new string[] {  } );
 			}
 		}
 		
@@ -433,7 +433,7 @@ namespace NW26.EntityClasses
 		/// <param name="resetFKFields">if set to true it will also reset the FK fields pointing to the related entity</param>
 		private void DesetupSyncTerritory(bool signalRelatedEntity, bool resetFKFields)
 		{
-			this.PerformDesetupSyncRelatedEntity( _territory, new PropertyChangedEventHandler( OnTerritoryPropertyChanged ), "Territory", NW26.RelationClasses.StaticEmployeeTerritoryRelations.TerritoryEntityUsingTerritoryIdStatic, true, signalRelatedEntity, "EmployeeTerritories", resetFKFields, new int[] { (int)EmployeeTerritoryFieldIndex.TerritoryId } );
+			this.PerformDesetupSyncRelatedEntity( _territory, new PropertyChangedEventHandler( OnTerritoryPropertyChanged ), "Territory", Northwind.RelationClasses.StaticEmployeeTerritoryRelations.TerritoryEntityUsingTerritoryIdStatic, true, signalRelatedEntity, "EmployeeTerritories", resetFKFields, new int[] { (int)EmployeeTerritoryFieldIndex.TerritoryId } );
 			_territory = null;
 		}
 
@@ -445,7 +445,7 @@ namespace NW26.EntityClasses
 			{
 				DesetupSyncTerritory(true, true);
 				_territory = (TerritoryEntity)relatedEntity;
-				this.PerformSetupSyncRelatedEntity( _territory, new PropertyChangedEventHandler( OnTerritoryPropertyChanged ), "Territory", NW26.RelationClasses.StaticEmployeeTerritoryRelations.TerritoryEntityUsingTerritoryIdStatic, true, new string[] {  } );
+				this.PerformSetupSyncRelatedEntity( _territory, new PropertyChangedEventHandler( OnTerritoryPropertyChanged ), "Territory", Northwind.RelationClasses.StaticEmployeeTerritoryRelations.TerritoryEntityUsingTerritoryIdStatic, true, new string[] {  } );
 			}
 		}
 		
@@ -496,14 +496,14 @@ namespace NW26.EntityClasses
 		/// <returns>Ready to use IPrefetchPathElement2 implementation.</returns>
 		public static IPrefetchPathElement2 PrefetchPathEmployee
 		{
-			get	{ return new PrefetchPathElement2(new EntityCollection(EntityFactoryCache2.GetEntityFactory(typeof(EmployeeEntityFactory))),	(IEntityRelation)GetRelationsForField("Employee")[0], (int)NW26.EntityType.EmployeeTerritoryEntity, (int)NW26.EntityType.EmployeeEntity, 0, null, null, null, null, "Employee", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToOne); }
+			get	{ return new PrefetchPathElement2(new EntityCollection(EntityFactoryCache2.GetEntityFactory(typeof(EmployeeEntityFactory))),	(IEntityRelation)GetRelationsForField("Employee")[0], (int)Northwind.EntityType.EmployeeTerritoryEntity, (int)Northwind.EntityType.EmployeeEntity, 0, null, null, null, null, "Employee", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToOne); }
 		}
 
 		/// <summary> Creates a new PrefetchPathElement2 object which contains all the information to prefetch the related entities of type 'Territory' for this entity.</summary>
 		/// <returns>Ready to use IPrefetchPathElement2 implementation.</returns>
 		public static IPrefetchPathElement2 PrefetchPathTerritory
 		{
-			get	{ return new PrefetchPathElement2(new EntityCollection(EntityFactoryCache2.GetEntityFactory(typeof(TerritoryEntityFactory))),	(IEntityRelation)GetRelationsForField("Territory")[0], (int)NW26.EntityType.EmployeeTerritoryEntity, (int)NW26.EntityType.TerritoryEntity, 0, null, null, null, null, "Territory", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToOne); }
+			get	{ return new PrefetchPathElement2(new EntityCollection(EntityFactoryCache2.GetEntityFactory(typeof(TerritoryEntityFactory))),	(IEntityRelation)GetRelationsForField("Territory")[0], (int)Northwind.EntityType.EmployeeTerritoryEntity, (int)Northwind.EntityType.TerritoryEntity, 0, null, null, null, null, "Territory", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToOne); }
 		}
 
 
@@ -598,11 +598,11 @@ namespace NW26.EntityClasses
 			get { return false;}
 		}
 		
-		/// <summary>Returns the NW26.EntityType enum value for this entity.</summary>
+		/// <summary>Returns the Northwind.EntityType enum value for this entity.</summary>
 		[Browsable(false), XmlIgnore]
 		protected override int LLBLGenProEntityTypeValue 
 		{ 
-			get { return (int)NW26.EntityType.EmployeeTerritoryEntity; }
+			get { return (int)Northwind.EntityType.EmployeeTerritoryEntity; }
 		}
 
 		#endregion

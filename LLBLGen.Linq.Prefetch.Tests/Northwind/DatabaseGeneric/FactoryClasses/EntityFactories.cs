@@ -1,7 +1,7 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
+// Code is generated using LLBLGen Pro version: 5.0
 // Code is generated on: 
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
@@ -9,12 +9,12 @@
 //////////////////////////////////////////////////////////////
 using System;
 using System.Collections.Generic;
-using NW26.EntityClasses;
-using NW26.HelperClasses;
-using NW26.RelationClasses;
+using Northwind.EntityClasses;
+using Northwind.HelperClasses;
+using Northwind.RelationClasses;
 using SD.LLBLGen.Pro.ORMSupportClasses;
 
-namespace NW26.FactoryClasses
+namespace Northwind.FactoryClasses
 {
 	
 	// __LLBLGENPRO_USER_CODE_REGION_START AdditionalNamespaces
@@ -25,14 +25,14 @@ namespace NW26.FactoryClasses
 	public partial class EntityFactoryBase2<TEntity> : EntityFactoryCore2
 		where TEntity : EntityBase2, IEntity2
 	{
-		private readonly NW26.EntityType _typeOfEntity;
+		private readonly Northwind.EntityType _typeOfEntity;
 		private readonly bool _isInHierarchy;
 		
 		/// <summary>CTor</summary>
 		/// <param name="entityName">Name of the entity.</param>
 		/// <param name="typeOfEntity">The type of entity.</param>
 		/// <param name="isInHierarchy">If true, the entity of this factory is in an inheritance hierarchy, false otherwise</param>
-		public EntityFactoryBase2(string entityName, NW26.EntityType typeOfEntity, bool isInHierarchy) : base(entityName)
+		public EntityFactoryBase2(string entityName, Northwind.EntityType typeOfEntity, bool isInHierarchy) : base(entityName)
 		{
 			_typeOfEntity = typeOfEntity;
 			_isInHierarchy = isInHierarchy;
@@ -50,7 +50,7 @@ namespace NW26.FactoryClasses
 		/// <returns>new IEntity instance</returns>
 		public override IEntity2 CreateEntityFromEntityTypeValue(int entityTypeValue)
 		{
-			return GeneralEntityFactory.Create((NW26.EntityType)entityTypeValue);
+			return GeneralEntityFactory.Create((Northwind.EntityType)entityTypeValue);
 		}
 
 		/// <summary>Creates the relations collection to the entity to join all targets so this entity can be fetched. </summary>
@@ -103,7 +103,7 @@ namespace NW26.FactoryClasses
 	[Serializable]
 	public partial class CategoryEntityFactory : EntityFactoryBase2<CategoryEntity> {
 		/// <summary>CTor</summary>
-		public CategoryEntityFactory() : base("CategoryEntity", NW26.EntityType.CategoryEntity, false) { }
+		public CategoryEntityFactory() : base("CategoryEntity", Northwind.EntityType.CategoryEntity, false) { }
 		
 		/// <summary>Creates a new CategoryEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
 		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
@@ -123,7 +123,7 @@ namespace NW26.FactoryClasses
 	[Serializable]
 	public partial class CustomerEntityFactory : EntityFactoryBase2<CustomerEntity> {
 		/// <summary>CTor</summary>
-		public CustomerEntityFactory() : base("CustomerEntity", NW26.EntityType.CustomerEntity, false) { }
+		public CustomerEntityFactory() : base("CustomerEntity", Northwind.EntityType.CustomerEntity, false) { }
 		
 		/// <summary>Creates a new CustomerEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
 		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
@@ -139,51 +139,11 @@ namespace NW26.FactoryClasses
 		#endregion
 	}
 
-	/// <summary>Factory to create new, empty CustomerCustomerDemoEntity objects.</summary>
-	[Serializable]
-	public partial class CustomerCustomerDemoEntityFactory : EntityFactoryBase2<CustomerCustomerDemoEntity> {
-		/// <summary>CTor</summary>
-		public CustomerCustomerDemoEntityFactory() : base("CustomerCustomerDemoEntity", NW26.EntityType.CustomerCustomerDemoEntity, false) { }
-		
-		/// <summary>Creates a new CustomerCustomerDemoEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
-		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
-		/// <returns>Fully created and populated (due to the IEntityFields2 object) IEntity2 object</returns>
-		public override IEntity2 Create(IEntityFields2 fields) {
-			IEntity2 toReturn = new CustomerCustomerDemoEntity(fields);
-			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewCustomerCustomerDemoUsingFields
-			// __LLBLGENPRO_USER_CODE_REGION_END
-			return toReturn;
-		}
-		#region Included Code
-
-		#endregion
-	}
-
-	/// <summary>Factory to create new, empty CustomerDemographicEntity objects.</summary>
-	[Serializable]
-	public partial class CustomerDemographicEntityFactory : EntityFactoryBase2<CustomerDemographicEntity> {
-		/// <summary>CTor</summary>
-		public CustomerDemographicEntityFactory() : base("CustomerDemographicEntity", NW26.EntityType.CustomerDemographicEntity, false) { }
-		
-		/// <summary>Creates a new CustomerDemographicEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
-		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
-		/// <returns>Fully created and populated (due to the IEntityFields2 object) IEntity2 object</returns>
-		public override IEntity2 Create(IEntityFields2 fields) {
-			IEntity2 toReturn = new CustomerDemographicEntity(fields);
-			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewCustomerDemographicUsingFields
-			// __LLBLGENPRO_USER_CODE_REGION_END
-			return toReturn;
-		}
-		#region Included Code
-
-		#endregion
-	}
-
 	/// <summary>Factory to create new, empty EmployeeEntity objects.</summary>
 	[Serializable]
 	public partial class EmployeeEntityFactory : EntityFactoryBase2<EmployeeEntity> {
 		/// <summary>CTor</summary>
-		public EmployeeEntityFactory() : base("EmployeeEntity", NW26.EntityType.EmployeeEntity, false) { }
+		public EmployeeEntityFactory() : base("EmployeeEntity", Northwind.EntityType.EmployeeEntity, false) { }
 		
 		/// <summary>Creates a new EmployeeEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
 		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
@@ -203,7 +163,7 @@ namespace NW26.FactoryClasses
 	[Serializable]
 	public partial class EmployeeTerritoryEntityFactory : EntityFactoryBase2<EmployeeTerritoryEntity> {
 		/// <summary>CTor</summary>
-		public EmployeeTerritoryEntityFactory() : base("EmployeeTerritoryEntity", NW26.EntityType.EmployeeTerritoryEntity, false) { }
+		public EmployeeTerritoryEntityFactory() : base("EmployeeTerritoryEntity", Northwind.EntityType.EmployeeTerritoryEntity, false) { }
 		
 		/// <summary>Creates a new EmployeeTerritoryEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
 		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
@@ -223,7 +183,7 @@ namespace NW26.FactoryClasses
 	[Serializable]
 	public partial class OrderEntityFactory : EntityFactoryBase2<OrderEntity> {
 		/// <summary>CTor</summary>
-		public OrderEntityFactory() : base("OrderEntity", NW26.EntityType.OrderEntity, false) { }
+		public OrderEntityFactory() : base("OrderEntity", Northwind.EntityType.OrderEntity, false) { }
 		
 		/// <summary>Creates a new OrderEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
 		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
@@ -243,7 +203,7 @@ namespace NW26.FactoryClasses
 	[Serializable]
 	public partial class OrderDetailEntityFactory : EntityFactoryBase2<OrderDetailEntity> {
 		/// <summary>CTor</summary>
-		public OrderDetailEntityFactory() : base("OrderDetailEntity", NW26.EntityType.OrderDetailEntity, false) { }
+		public OrderDetailEntityFactory() : base("OrderDetailEntity", Northwind.EntityType.OrderDetailEntity, false) { }
 		
 		/// <summary>Creates a new OrderDetailEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
 		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
@@ -263,7 +223,7 @@ namespace NW26.FactoryClasses
 	[Serializable]
 	public partial class ProductEntityFactory : EntityFactoryBase2<ProductEntity> {
 		/// <summary>CTor</summary>
-		public ProductEntityFactory() : base("ProductEntity", NW26.EntityType.ProductEntity, false) { }
+		public ProductEntityFactory() : base("ProductEntity", Northwind.EntityType.ProductEntity, false) { }
 		
 		/// <summary>Creates a new ProductEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
 		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
@@ -283,7 +243,7 @@ namespace NW26.FactoryClasses
 	[Serializable]
 	public partial class RegionEntityFactory : EntityFactoryBase2<RegionEntity> {
 		/// <summary>CTor</summary>
-		public RegionEntityFactory() : base("RegionEntity", NW26.EntityType.RegionEntity, false) { }
+		public RegionEntityFactory() : base("RegionEntity", Northwind.EntityType.RegionEntity, false) { }
 		
 		/// <summary>Creates a new RegionEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
 		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
@@ -303,7 +263,7 @@ namespace NW26.FactoryClasses
 	[Serializable]
 	public partial class ShipperEntityFactory : EntityFactoryBase2<ShipperEntity> {
 		/// <summary>CTor</summary>
-		public ShipperEntityFactory() : base("ShipperEntity", NW26.EntityType.ShipperEntity, false) { }
+		public ShipperEntityFactory() : base("ShipperEntity", Northwind.EntityType.ShipperEntity, false) { }
 		
 		/// <summary>Creates a new ShipperEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
 		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
@@ -323,7 +283,7 @@ namespace NW26.FactoryClasses
 	[Serializable]
 	public partial class SupplierEntityFactory : EntityFactoryBase2<SupplierEntity> {
 		/// <summary>CTor</summary>
-		public SupplierEntityFactory() : base("SupplierEntity", NW26.EntityType.SupplierEntity, false) { }
+		public SupplierEntityFactory() : base("SupplierEntity", Northwind.EntityType.SupplierEntity, false) { }
 		
 		/// <summary>Creates a new SupplierEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
 		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
@@ -343,7 +303,7 @@ namespace NW26.FactoryClasses
 	[Serializable]
 	public partial class TerritoryEntityFactory : EntityFactoryBase2<TerritoryEntity> {
 		/// <summary>CTor</summary>
-		public TerritoryEntityFactory() : base("TerritoryEntity", NW26.EntityType.TerritoryEntity, false) { }
+		public TerritoryEntityFactory() : base("TerritoryEntity", Northwind.EntityType.TerritoryEntity, false) { }
 		
 		/// <summary>Creates a new TerritoryEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
 		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
@@ -366,48 +326,42 @@ namespace NW26.FactoryClasses
 		/// <summary>Creates a new, empty Entity object of the type specified</summary>
 		/// <param name="entityTypeToCreate">The entity type to create.</param>
 		/// <returns>A new, empty Entity object.</returns>
-		public static IEntity2 Create(NW26.EntityType entityTypeToCreate)
+		public static IEntity2 Create(Northwind.EntityType entityTypeToCreate)
 		{
 			IEntityFactory2 factoryToUse = null;
 			switch(entityTypeToCreate)
 			{
-				case NW26.EntityType.CategoryEntity:
+				case Northwind.EntityType.CategoryEntity:
 					factoryToUse = new CategoryEntityFactory();
 					break;
-				case NW26.EntityType.CustomerEntity:
+				case Northwind.EntityType.CustomerEntity:
 					factoryToUse = new CustomerEntityFactory();
 					break;
-				case NW26.EntityType.CustomerCustomerDemoEntity:
-					factoryToUse = new CustomerCustomerDemoEntityFactory();
-					break;
-				case NW26.EntityType.CustomerDemographicEntity:
-					factoryToUse = new CustomerDemographicEntityFactory();
-					break;
-				case NW26.EntityType.EmployeeEntity:
+				case Northwind.EntityType.EmployeeEntity:
 					factoryToUse = new EmployeeEntityFactory();
 					break;
-				case NW26.EntityType.EmployeeTerritoryEntity:
+				case Northwind.EntityType.EmployeeTerritoryEntity:
 					factoryToUse = new EmployeeTerritoryEntityFactory();
 					break;
-				case NW26.EntityType.OrderEntity:
+				case Northwind.EntityType.OrderEntity:
 					factoryToUse = new OrderEntityFactory();
 					break;
-				case NW26.EntityType.OrderDetailEntity:
+				case Northwind.EntityType.OrderDetailEntity:
 					factoryToUse = new OrderDetailEntityFactory();
 					break;
-				case NW26.EntityType.ProductEntity:
+				case Northwind.EntityType.ProductEntity:
 					factoryToUse = new ProductEntityFactory();
 					break;
-				case NW26.EntityType.RegionEntity:
+				case Northwind.EntityType.RegionEntity:
 					factoryToUse = new RegionEntityFactory();
 					break;
-				case NW26.EntityType.ShipperEntity:
+				case Northwind.EntityType.ShipperEntity:
 					factoryToUse = new ShipperEntityFactory();
 					break;
-				case NW26.EntityType.SupplierEntity:
+				case Northwind.EntityType.SupplierEntity:
 					factoryToUse = new SupplierEntityFactory();
 					break;
-				case NW26.EntityType.TerritoryEntity:
+				case Northwind.EntityType.TerritoryEntity:
 					factoryToUse = new TerritoryEntityFactory();
 					break;
 			}
@@ -429,10 +383,10 @@ namespace NW26.FactoryClasses
 		/// <summary>Initializes the <see cref="EntityFactoryFactory"/> class.</summary>
 		static EntityFactoryFactory()
 		{
-			Array entityTypeValues = Enum.GetValues(typeof(NW26.EntityType));
+			Array entityTypeValues = Enum.GetValues(typeof(Northwind.EntityType));
 			foreach(int entityTypeValue in entityTypeValues)
 			{
-				IEntity2 dummy = GeneralEntityFactory.Create((NW26.EntityType)entityTypeValue);
+				IEntity2 dummy = GeneralEntityFactory.Create((Northwind.EntityType)entityTypeValue);
 				_factoryPerType.Add(dummy.GetType(), dummy.GetEntityFactory());
 			}
 		}
@@ -447,10 +401,10 @@ namespace NW26.FactoryClasses
 			return toReturn;
 		}
 
-		/// <summary>Gets the factory of the entity with the NW26.EntityType specified</summary>
+		/// <summary>Gets the factory of the entity with the Northwind.EntityType specified</summary>
 		/// <param name="typeOfEntity">The type of entity.</param>
 		/// <returns>factory to use or null if not found</returns>
-		public static IEntityFactory2 GetFactory(NW26.EntityType typeOfEntity)
+		public static IEntityFactory2 GetFactory(Northwind.EntityType typeOfEntity)
 		{
 			return GetFactory(GeneralEntityFactory.Create(typeOfEntity).GetType());
 		}
@@ -459,7 +413,7 @@ namespace NW26.FactoryClasses
 	/// <summary>Element creator for creating project elements from somewhere else, like inside Linq providers.</summary>
 	public class ElementCreator : ElementCreatorBase, IElementCreator2
 	{
-		/// <summary>Gets the factory of the Entity type with the NW26.EntityType value passed in</summary>
+		/// <summary>Gets the factory of the Entity type with the Northwind.EntityType value passed in</summary>
 		/// <param name="entityTypeValue">The entity type value.</param>
 		/// <returns>the entity factory of the entity type or null if not found</returns>
 		public IEntityFactory2 GetFactory(int entityTypeValue)
@@ -482,6 +436,14 @@ namespace NW26.FactoryClasses
 		{
 			return new ResultsetFields(numberOfFields);
 		}
+		
+		/// <summary>Obtains the inheritance info provider instance from the singleton </summary>
+		/// <returns>The singleton instance of the inheritance info provider</returns>
+		public override IInheritanceInfoProvider ObtainInheritanceInfoProviderInstance()
+		{
+			return InheritanceInfoProviderSingleton.GetInstance();
+		}
+
 
 		/// <summary>Creates a new dynamic relation instance</summary>
 		/// <param name="leftOperand">The left operand.</param>
@@ -501,13 +463,19 @@ namespace NW26.FactoryClasses
 		{
 			return new DynamicRelation(leftOperand, joinType, rightOperand, onClause);
 		}
-		
-		/// <summary>Obtains the inheritance info provider instance from the singleton </summary>
-		/// <returns>The singleton instance of the inheritance info provider</returns>
-		public override IInheritanceInfoProvider ObtainInheritanceInfoProviderInstance()
+
+		/// <summary>Creates a new dynamic relation instance</summary>
+		/// <param name="leftOperand">The left operand.</param>
+		/// <param name="joinType">Type of the join. If None is specified, Inner is assumed.</param>
+		/// <param name="rightOperand">The right operand.</param>
+		/// <param name="aliasLeftOperand">The alias of the left operand. If you don't want to / need to alias the right operand (only alias if you have to), specify string.Empty.</param>
+		/// <param name="onClause">The on clause for the join.</param>
+		/// <returns>ready to use dynamic relation</returns>
+		public override IDynamicRelation CreateDynamicRelation(IEntityFieldCore leftOperand, JoinHint joinType, DerivedTableDefinition rightOperand, string aliasLeftOperand, IPredicate onClause)
 		{
-			return InheritanceInfoProviderSingleton.GetInstance();
+			return new DynamicRelation(leftOperand, joinType, rightOperand, aliasLeftOperand, onClause);
 		}
+
 
 		/// <summary>Creates a new dynamic relation instance</summary>
 		/// <param name="leftOperand">The left operand.</param>
@@ -518,7 +486,7 @@ namespace NW26.FactoryClasses
 		/// <returns>ready to use dynamic relation</returns>
 		public override IDynamicRelation CreateDynamicRelation(DerivedTableDefinition leftOperand, JoinHint joinType, string rightOperandEntityName, string aliasRightOperand, IPredicate onClause)
 		{
-			return new DynamicRelation(leftOperand, joinType, (NW26.EntityType)Enum.Parse(typeof(NW26.EntityType), rightOperandEntityName, false), aliasRightOperand, onClause);
+			return new DynamicRelation(leftOperand, joinType, (Northwind.EntityType)Enum.Parse(typeof(Northwind.EntityType), rightOperandEntityName, false), aliasRightOperand, onClause);
 		}
 
 		/// <summary>Creates a new dynamic relation instance</summary>
@@ -531,15 +499,28 @@ namespace NW26.FactoryClasses
 		/// <returns>ready to use dynamic relation</returns>
 		public override IDynamicRelation CreateDynamicRelation(string leftOperandEntityName, JoinHint joinType, string rightOperandEntityName, string aliasLeftOperand, string aliasRightOperand, IPredicate onClause)
 		{
-			return new DynamicRelation((NW26.EntityType)Enum.Parse(typeof(NW26.EntityType), leftOperandEntityName, false), joinType, (NW26.EntityType)Enum.Parse(typeof(NW26.EntityType), rightOperandEntityName, false), aliasLeftOperand, aliasRightOperand, onClause);
+			return new DynamicRelation((Northwind.EntityType)Enum.Parse(typeof(Northwind.EntityType), leftOperandEntityName, false), joinType, (Northwind.EntityType)Enum.Parse(typeof(Northwind.EntityType), rightOperandEntityName, false), aliasLeftOperand, aliasRightOperand, onClause);
 		}
 		
-		/// <summary>Implementation of the routine which gets the factory of the Entity type with the NW26.EntityType value passed in</summary>
+		/// <summary>Creates a new dynamic relation instance</summary>
+		/// <param name="leftOperand">The left operand.</param>
+		/// <param name="joinType">Type of the join. If None is specified, Inner is assumed.</param>
+		/// <param name="rightOperandEntityName">Name of the entity, which is used as the right operand.</param>
+		/// <param name="aliasLeftOperand">The alias of the left operand. If you don't want to / need to alias the right operand (only alias if you have to), specify string.Empty.</param>
+		/// <param name="aliasRightOperand">The alias of the right operand. If you don't want to / need to alias the right operand (only alias if you have to), specify string.Empty.</param>
+		/// <param name="onClause">The on clause for the join.</param>
+		/// <returns>ready to use dynamic relation</returns>
+		public override IDynamicRelation CreateDynamicRelation(IEntityFieldCore leftOperand, JoinHint joinType, string rightOperandEntityName, string aliasLeftOperand, string aliasRightOperand, IPredicate onClause)
+		{
+			return new DynamicRelation(leftOperand, joinType, (Northwind.EntityType)Enum.Parse(typeof(Northwind.EntityType), rightOperandEntityName, false), aliasLeftOperand, aliasRightOperand, onClause);
+		}
+		
+		/// <summary>Implementation of the routine which gets the factory of the Entity type with the Northwind.EntityType value passed in</summary>
 		/// <param name="entityTypeValue">The entity type value.</param>
 		/// <returns>the entity factory of the entity type or null if not found</returns>
 		protected override IEntityFactoryCore GetFactoryImpl(int entityTypeValue)
 		{
-			return EntityFactoryFactory.GetFactory((NW26.EntityType)entityTypeValue);
+			return EntityFactoryFactory.GetFactory((Northwind.EntityType)entityTypeValue);
 		}
 
 		/// <summary>Implementation of the routine which gets the factory of the Entity type with the .NET type passed in</summary>

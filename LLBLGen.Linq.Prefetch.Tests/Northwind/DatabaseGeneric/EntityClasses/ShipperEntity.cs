@@ -1,7 +1,7 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
+// Code is generated using LLBLGen Pro version: 5.0
 // Code is generated on: 
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
@@ -14,14 +14,14 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 #endif
 using System.Xml.Serialization;
-using NW26;
-using NW26.HelperClasses;
-using NW26.FactoryClasses;
-using NW26.RelationClasses;
+using Northwind;
+using Northwind.HelperClasses;
+using Northwind.FactoryClasses;
+using Northwind.RelationClasses;
 
 using SD.LLBLGen.Pro.ORMSupportClasses;
 
-namespace NW26.EntityClasses
+namespace Northwind.EntityClasses
 {
 	// __LLBLGENPRO_USER_CODE_REGION_START AdditionalNamespaces
 	// __LLBLGENPRO_USER_CODE_REGION_END
@@ -430,7 +430,7 @@ namespace NW26.EntityClasses
 		/// <returns>Ready to use IPrefetchPathElement2 implementation.</returns>
 		public static IPrefetchPathElement2 PrefetchPathOrders
 		{
-			get	{ return new PrefetchPathElement2( new EntityCollection<OrderEntity>(EntityFactoryCache2.GetEntityFactory(typeof(OrderEntityFactory))), (IEntityRelation)GetRelationsForField("Orders")[0], (int)NW26.EntityType.ShipperEntity, (int)NW26.EntityType.OrderEntity, 0, null, null, null, null, "Orders", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.OneToMany);	}
+			get	{ return new PrefetchPathElement2( new EntityCollection<OrderEntity>(EntityFactoryCache2.GetEntityFactory(typeof(OrderEntityFactory))), (IEntityRelation)GetRelationsForField("Orders")[0], (int)Northwind.EntityType.ShipperEntity, (int)Northwind.EntityType.OrderEntity, 0, null, null, null, null, "Orders", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.OneToMany);	}
 		}
 
 		/// <summary> Creates a new PrefetchPathElement2 object which contains all the information to prefetch the related entities of type 'Customer' for this entity.</summary>
@@ -442,7 +442,7 @@ namespace NW26.EntityClasses
 				IEntityRelation intermediateRelation = Relations.OrderEntityUsingShipVia;
 				intermediateRelation.SetAliases(string.Empty, "Order_");
 				return new PrefetchPathElement2(new EntityCollection<CustomerEntity>(EntityFactoryCache2.GetEntityFactory(typeof(CustomerEntityFactory))), intermediateRelation,
-					(int)NW26.EntityType.ShipperEntity, (int)NW26.EntityType.CustomerEntity, 0, null, null, GetRelationsForField("CustomerCollectionViaOrder"), null, "CustomerCollectionViaOrder", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToMany);
+					(int)Northwind.EntityType.ShipperEntity, (int)Northwind.EntityType.CustomerEntity, 0, null, null, GetRelationsForField("CustomerCollectionViaOrder"), null, "CustomerCollectionViaOrder", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToMany);
 			}
 		}
 
@@ -455,7 +455,7 @@ namespace NW26.EntityClasses
 				IEntityRelation intermediateRelation = Relations.OrderEntityUsingShipVia;
 				intermediateRelation.SetAliases(string.Empty, "Order_");
 				return new PrefetchPathElement2(new EntityCollection<EmployeeEntity>(EntityFactoryCache2.GetEntityFactory(typeof(EmployeeEntityFactory))), intermediateRelation,
-					(int)NW26.EntityType.ShipperEntity, (int)NW26.EntityType.EmployeeEntity, 0, null, null, GetRelationsForField("EmployeeCollectionViaOrder"), null, "EmployeeCollectionViaOrder", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToMany);
+					(int)Northwind.EntityType.ShipperEntity, (int)Northwind.EntityType.EmployeeEntity, 0, null, null, GetRelationsForField("EmployeeCollectionViaOrder"), null, "EmployeeCollectionViaOrder", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToMany);
 			}
 		}
 
@@ -546,11 +546,11 @@ namespace NW26.EntityClasses
 			get { return false;}
 		}
 		
-		/// <summary>Returns the NW26.EntityType enum value for this entity.</summary>
+		/// <summary>Returns the Northwind.EntityType enum value for this entity.</summary>
 		[Browsable(false), XmlIgnore]
 		protected override int LLBLGenProEntityTypeValue 
 		{ 
-			get { return (int)NW26.EntityType.ShipperEntity; }
+			get { return (int)Northwind.EntityType.ShipperEntity; }
 		}
 
 		#endregion

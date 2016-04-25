@@ -1,7 +1,7 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
+// Code is generated using LLBLGen Pro version: 5.0
 // Code is generated on: 
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
@@ -9,12 +9,12 @@
 //////////////////////////////////////////////////////////////
 using System;
 
-using NW26;
-using NW26.HelperClasses;
+using Northwind;
+using Northwind.HelperClasses;
 
 using SD.LLBLGen.Pro.ORMSupportClasses;
 
-namespace NW26.FactoryClasses
+namespace Northwind.FactoryClasses
 {
 	/// <summary>Factory class for IEntityField2 instances, used in IEntityFields2 instances.</summary>
 	public static partial class EntityFieldFactory

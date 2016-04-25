@@ -1,7 +1,7 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
+// Code is generated using LLBLGen Pro version: 5.0
 // Code is generated on: 
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
@@ -11,7 +11,7 @@ using System.Collections;
 using System.Data;
 using SD.LLBLGen.Pro.ORMSupportClasses;
 
-namespace NW26.DatabaseSpecific
+namespace Northwind.DatabaseSpecific
 {
 	/// <summary>Singleton implementation of the PersistenceInfoProvider. This class is the singleton wrapper through which the actual instance is retrieved.</summary>
 	/// <remarks>It uses a single instance of an internal class. The access isn't marked with locks as the PersistenceInfoProviderBase class is threadsafe.</remarks>
@@ -46,11 +46,9 @@ namespace NW26.DatabaseSpecific
 		/// <summary>Method which initializes the internal datastores with the structure of hierarchical types.</summary>
 		private void Init()
 		{
-			this.InitClass(13);
+			this.InitClass(11);
 			InitCategoryEntityMappings();
 			InitCustomerEntityMappings();
-			InitCustomerCustomerDemoEntityMappings();
-			InitCustomerDemographicEntityMappings();
 			InitEmployeeEntityMappings();
 			InitEmployeeTerritoryEntityMappings();
 			InitOrderEntityMappings();
@@ -65,7 +63,7 @@ namespace NW26.DatabaseSpecific
 		/// <summary>Inits CategoryEntity's mappings</summary>
 		private void InitCategoryEntityMappings()
 		{
-			this.AddElementMapping("CategoryEntity", @"Northwind", @"dbo", "Categories", 4);
+			this.AddElementMapping("CategoryEntity", @"Northwind", @"dbo", "Categories", 4, 0);
 			this.AddElementFieldMapping("CategoryEntity", "CategoryId", "CategoryID", false, "Int", 0, 10, 0, true, "SCOPE_IDENTITY()", null, typeof(System.Int32), 0);
 			this.AddElementFieldMapping("CategoryEntity", "CategoryName", "CategoryName", false, "NVarChar", 15, 0, 0, false, "", null, typeof(System.String), 1);
 			this.AddElementFieldMapping("CategoryEntity", "Description", "Description", true, "NText", 1073741823, 0, 0, false, "", null, typeof(System.String), 2);
@@ -75,7 +73,7 @@ namespace NW26.DatabaseSpecific
 		/// <summary>Inits CustomerEntity's mappings</summary>
 		private void InitCustomerEntityMappings()
 		{
-			this.AddElementMapping("CustomerEntity", @"Northwind", @"dbo", "Customers", 11);
+			this.AddElementMapping("CustomerEntity", @"Northwind", @"dbo", "Customers", 11, 0);
 			this.AddElementFieldMapping("CustomerEntity", "Address", "Address", true, "NVarChar", 60, 0, 0, false, "", null, typeof(System.String), 0);
 			this.AddElementFieldMapping("CustomerEntity", "City", "City", true, "NVarChar", 15, 0, 0, false, "", null, typeof(System.String), 1);
 			this.AddElementFieldMapping("CustomerEntity", "CompanyName", "CompanyName", false, "NVarChar", 40, 0, 0, false, "", null, typeof(System.String), 2);
@@ -89,26 +87,10 @@ namespace NW26.DatabaseSpecific
 			this.AddElementFieldMapping("CustomerEntity", "Region", "Region", true, "NVarChar", 15, 0, 0, false, "", null, typeof(System.String), 10);
 		}
 
-		/// <summary>Inits CustomerCustomerDemoEntity's mappings</summary>
-		private void InitCustomerCustomerDemoEntityMappings()
-		{
-			this.AddElementMapping("CustomerCustomerDemoEntity", @"Northwind", @"dbo", "CustomerCustomerDemo", 2);
-			this.AddElementFieldMapping("CustomerCustomerDemoEntity", "CustomerId", "CustomerID", false, "NChar", 5, 0, 0, false, "", null, typeof(System.String), 0);
-			this.AddElementFieldMapping("CustomerCustomerDemoEntity", "CustomerTypeId", "CustomerTypeID", false, "NChar", 10, 0, 0, false, "", null, typeof(System.String), 1);
-		}
-
-		/// <summary>Inits CustomerDemographicEntity's mappings</summary>
-		private void InitCustomerDemographicEntityMappings()
-		{
-			this.AddElementMapping("CustomerDemographicEntity", @"Northwind", @"dbo", "CustomerDemographics", 2);
-			this.AddElementFieldMapping("CustomerDemographicEntity", "CustomerDesc", "CustomerDesc", true, "NText", 1073741823, 0, 0, false, "", null, typeof(System.String), 0);
-			this.AddElementFieldMapping("CustomerDemographicEntity", "CustomerTypeId", "CustomerTypeID", false, "NChar", 10, 0, 0, false, "", null, typeof(System.String), 1);
-		}
-
 		/// <summary>Inits EmployeeEntity's mappings</summary>
 		private void InitEmployeeEntityMappings()
 		{
-			this.AddElementMapping("EmployeeEntity", @"Northwind", @"dbo", "Employees", 18);
+			this.AddElementMapping("EmployeeEntity", @"Northwind", @"dbo", "Employees", 19, 0);
 			this.AddElementFieldMapping("EmployeeEntity", "Address", "Address", true, "NVarChar", 60, 0, 0, false, "", null, typeof(System.String), 0);
 			this.AddElementFieldMapping("EmployeeEntity", "BirthDate", "BirthDate", true, "DateTime", 0, 0, 0, false, "", null, typeof(System.DateTime), 1);
 			this.AddElementFieldMapping("EmployeeEntity", "City", "City", true, "NVarChar", 15, 0, 0, false, "", null, typeof(System.String), 2);
@@ -124,15 +106,16 @@ namespace NW26.DatabaseSpecific
 			this.AddElementFieldMapping("EmployeeEntity", "PhotoPath", "PhotoPath", true, "NVarChar", 255, 0, 0, false, "", null, typeof(System.String), 12);
 			this.AddElementFieldMapping("EmployeeEntity", "PostalCode", "PostalCode", true, "NVarChar", 10, 0, 0, false, "", null, typeof(System.String), 13);
 			this.AddElementFieldMapping("EmployeeEntity", "Region", "Region", true, "NVarChar", 15, 0, 0, false, "", null, typeof(System.String), 14);
-			this.AddElementFieldMapping("EmployeeEntity", "ReportsTo", "ReportsTo", true, "Int", 0, 10, 0, false, "", null, typeof(System.Int32), 15);
-			this.AddElementFieldMapping("EmployeeEntity", "Title", "Title", true, "NVarChar", 30, 0, 0, false, "", null, typeof(System.String), 16);
-			this.AddElementFieldMapping("EmployeeEntity", "TitleOfCourtesy", "TitleOfCourtesy", true, "NVarChar", 25, 0, 0, false, "", null, typeof(System.String), 17);
+			this.AddElementFieldMapping("EmployeeEntity", "RegionId", "RegionID", true, "Int", 0, 10, 0, false, "", null, typeof(System.Int32), 15);
+			this.AddElementFieldMapping("EmployeeEntity", "ReportsTo", "ReportsTo", true, "Int", 0, 10, 0, false, "", null, typeof(System.Int32), 16);
+			this.AddElementFieldMapping("EmployeeEntity", "Title", "Title", true, "NVarChar", 30, 0, 0, false, "", null, typeof(System.String), 17);
+			this.AddElementFieldMapping("EmployeeEntity", "TitleOfCourtesy", "TitleOfCourtesy", true, "NVarChar", 25, 0, 0, false, "", null, typeof(System.String), 18);
 		}
 
 		/// <summary>Inits EmployeeTerritoryEntity's mappings</summary>
 		private void InitEmployeeTerritoryEntityMappings()
 		{
-			this.AddElementMapping("EmployeeTerritoryEntity", @"Northwind", @"dbo", "EmployeeTerritories", 2);
+			this.AddElementMapping("EmployeeTerritoryEntity", @"Northwind", @"dbo", "EmployeeTerritories", 2, 0);
 			this.AddElementFieldMapping("EmployeeTerritoryEntity", "EmployeeId", "EmployeeID", false, "Int", 0, 10, 0, false, "", null, typeof(System.Int32), 0);
 			this.AddElementFieldMapping("EmployeeTerritoryEntity", "TerritoryId", "TerritoryID", false, "NVarChar", 20, 0, 0, false, "", null, typeof(System.String), 1);
 		}
@@ -140,7 +123,7 @@ namespace NW26.DatabaseSpecific
 		/// <summary>Inits OrderEntity's mappings</summary>
 		private void InitOrderEntityMappings()
 		{
-			this.AddElementMapping("OrderEntity", @"Northwind", @"dbo", "Orders", 14);
+			this.AddElementMapping("OrderEntity", @"Northwind", @"dbo", "Orders", 14, 0);
 			this.AddElementFieldMapping("OrderEntity", "CustomerId", "CustomerID", true, "NChar", 5, 0, 0, false, "", null, typeof(System.String), 0);
 			this.AddElementFieldMapping("OrderEntity", "EmployeeId", "EmployeeID", true, "Int", 0, 10, 0, false, "", null, typeof(System.Int32), 1);
 			this.AddElementFieldMapping("OrderEntity", "Freight", "Freight", true, "Money", 0, 19, 4, false, "", null, typeof(System.Decimal), 2);
@@ -160,7 +143,7 @@ namespace NW26.DatabaseSpecific
 		/// <summary>Inits OrderDetailEntity's mappings</summary>
 		private void InitOrderDetailEntityMappings()
 		{
-			this.AddElementMapping("OrderDetailEntity", @"Northwind", @"dbo", "Order Details", 5);
+			this.AddElementMapping("OrderDetailEntity", @"Northwind", @"dbo", "Order Details", 5, 0);
 			this.AddElementFieldMapping("OrderDetailEntity", "Discount", "Discount", false, "Real", 0, 24, 0, false, "", null, typeof(System.Single), 0);
 			this.AddElementFieldMapping("OrderDetailEntity", "OrderId", "OrderID", false, "Int", 0, 10, 0, false, "", null, typeof(System.Int32), 1);
 			this.AddElementFieldMapping("OrderDetailEntity", "ProductId", "ProductID", false, "Int", 0, 10, 0, false, "", null, typeof(System.Int32), 2);
@@ -171,23 +154,24 @@ namespace NW26.DatabaseSpecific
 		/// <summary>Inits ProductEntity's mappings</summary>
 		private void InitProductEntityMappings()
 		{
-			this.AddElementMapping("ProductEntity", @"Northwind", @"dbo", "Products", 10);
+			this.AddElementMapping("ProductEntity", @"Northwind", @"dbo", "Products", 11, 0);
 			this.AddElementFieldMapping("ProductEntity", "CategoryId", "CategoryID", true, "Int", 0, 10, 0, false, "", null, typeof(System.Int32), 0);
 			this.AddElementFieldMapping("ProductEntity", "Discontinued", "Discontinued", false, "Bit", 0, 0, 0, false, "", null, typeof(System.Boolean), 1);
-			this.AddElementFieldMapping("ProductEntity", "ProductId", "ProductID", false, "Int", 0, 10, 0, true, "SCOPE_IDENTITY()", null, typeof(System.Int32), 2);
-			this.AddElementFieldMapping("ProductEntity", "ProductName", "ProductName", false, "NVarChar", 40, 0, 0, false, "", null, typeof(System.String), 3);
-			this.AddElementFieldMapping("ProductEntity", "QuantityPerUnit", "QuantityPerUnit", true, "NVarChar", 20, 0, 0, false, "", null, typeof(System.String), 4);
-			this.AddElementFieldMapping("ProductEntity", "ReorderLevel", "ReorderLevel", true, "SmallInt", 0, 5, 0, false, "", null, typeof(System.Int16), 5);
-			this.AddElementFieldMapping("ProductEntity", "SupplierId", "SupplierID", true, "Int", 0, 10, 0, false, "", null, typeof(System.Int32), 6);
-			this.AddElementFieldMapping("ProductEntity", "UnitPrice", "UnitPrice", true, "Money", 0, 19, 4, false, "", null, typeof(System.Decimal), 7);
-			this.AddElementFieldMapping("ProductEntity", "UnitsInStock", "UnitsInStock", true, "SmallInt", 0, 5, 0, false, "", null, typeof(System.Int16), 8);
-			this.AddElementFieldMapping("ProductEntity", "UnitsOnOrder", "UnitsOnOrder", true, "SmallInt", 0, 5, 0, false, "", null, typeof(System.Int16), 9);
+			this.AddElementFieldMapping("ProductEntity", "PreferredProduct", "PreferredProduct", true, "Bit", 0, 0, 0, false, "", null, typeof(System.Boolean), 2);
+			this.AddElementFieldMapping("ProductEntity", "ProductId", "ProductID", false, "Int", 0, 10, 0, true, "SCOPE_IDENTITY()", null, typeof(System.Int32), 3);
+			this.AddElementFieldMapping("ProductEntity", "ProductName", "ProductName", false, "NVarChar", 40, 0, 0, false, "", null, typeof(System.String), 4);
+			this.AddElementFieldMapping("ProductEntity", "QuantityPerUnit", "QuantityPerUnit", true, "NVarChar", 20, 0, 0, false, "", null, typeof(System.String), 5);
+			this.AddElementFieldMapping("ProductEntity", "ReorderLevel", "ReorderLevel", true, "SmallInt", 0, 5, 0, false, "", null, typeof(System.Int16), 6);
+			this.AddElementFieldMapping("ProductEntity", "SupplierId", "SupplierID", true, "Int", 0, 10, 0, false, "", null, typeof(System.Int32), 7);
+			this.AddElementFieldMapping("ProductEntity", "UnitPrice", "UnitPrice", true, "Money", 0, 19, 4, false, "", null, typeof(System.Decimal), 8);
+			this.AddElementFieldMapping("ProductEntity", "UnitsInStock", "UnitsInStock", true, "SmallInt", 0, 5, 0, false, "", null, typeof(System.Int16), 9);
+			this.AddElementFieldMapping("ProductEntity", "UnitsOnOrder", "UnitsOnOrder", true, "SmallInt", 0, 5, 0, false, "", null, typeof(System.Int16), 10);
 		}
 
 		/// <summary>Inits RegionEntity's mappings</summary>
 		private void InitRegionEntityMappings()
 		{
-			this.AddElementMapping("RegionEntity", @"Northwind", @"dbo", "Region", 2);
+			this.AddElementMapping("RegionEntity", @"Northwind", @"dbo", "Region", 2, 0);
 			this.AddElementFieldMapping("RegionEntity", "RegionDescription", "RegionDescription", false, "NChar", 50, 0, 0, false, "", null, typeof(System.String), 0);
 			this.AddElementFieldMapping("RegionEntity", "RegionId", "RegionID", false, "Int", 0, 10, 0, false, "", null, typeof(System.Int32), 1);
 		}
@@ -195,7 +179,7 @@ namespace NW26.DatabaseSpecific
 		/// <summary>Inits ShipperEntity's mappings</summary>
 		private void InitShipperEntityMappings()
 		{
-			this.AddElementMapping("ShipperEntity", @"Northwind", @"dbo", "Shippers", 3);
+			this.AddElementMapping("ShipperEntity", @"Northwind", @"dbo", "Shippers", 3, 0);
 			this.AddElementFieldMapping("ShipperEntity", "CompanyName", "CompanyName", false, "NVarChar", 40, 0, 0, false, "", null, typeof(System.String), 0);
 			this.AddElementFieldMapping("ShipperEntity", "Phone", "Phone", true, "NVarChar", 24, 0, 0, false, "", null, typeof(System.String), 1);
 			this.AddElementFieldMapping("ShipperEntity", "ShipperId", "ShipperID", false, "Int", 0, 10, 0, true, "SCOPE_IDENTITY()", null, typeof(System.Int32), 2);
@@ -204,7 +188,7 @@ namespace NW26.DatabaseSpecific
 		/// <summary>Inits SupplierEntity's mappings</summary>
 		private void InitSupplierEntityMappings()
 		{
-			this.AddElementMapping("SupplierEntity", @"Northwind", @"dbo", "Suppliers", 12);
+			this.AddElementMapping("SupplierEntity", @"Northwind", @"dbo", "Suppliers", 12, 0);
 			this.AddElementFieldMapping("SupplierEntity", "Address", "Address", true, "NVarChar", 60, 0, 0, false, "", null, typeof(System.String), 0);
 			this.AddElementFieldMapping("SupplierEntity", "City", "City", true, "NVarChar", 15, 0, 0, false, "", null, typeof(System.String), 1);
 			this.AddElementFieldMapping("SupplierEntity", "CompanyName", "CompanyName", false, "NVarChar", 40, 0, 0, false, "", null, typeof(System.String), 2);
@@ -222,10 +206,11 @@ namespace NW26.DatabaseSpecific
 		/// <summary>Inits TerritoryEntity's mappings</summary>
 		private void InitTerritoryEntityMappings()
 		{
-			this.AddElementMapping("TerritoryEntity", @"Northwind", @"dbo", "Territories", 3);
+			this.AddElementMapping("TerritoryEntity", @"Northwind", @"dbo", "Territories", 4, 0);
 			this.AddElementFieldMapping("TerritoryEntity", "RegionId", "RegionID", false, "Int", 0, 10, 0, false, "", null, typeof(System.Int32), 0);
 			this.AddElementFieldMapping("TerritoryEntity", "TerritoryDescription", "TerritoryDescription", false, "NChar", 50, 0, 0, false, "", null, typeof(System.String), 1);
 			this.AddElementFieldMapping("TerritoryEntity", "TerritoryId", "TerritoryID", false, "NVarChar", 20, 0, 0, false, "", null, typeof(System.String), 2);
+			this.AddElementFieldMapping("TerritoryEntity", "Test", "test", true, "Binary", 50, 0, 0, false, "", null, typeof(System.Byte[]), 3);
 		}
 
 	}

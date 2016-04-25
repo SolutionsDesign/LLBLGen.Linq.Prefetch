@@ -1,7 +1,7 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
+// Code is generated using LLBLGen Pro version: 5.0
 // Code is generated on: 
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
@@ -11,7 +11,7 @@ using System;
 using System.Data;
 using SD.LLBLGen.Pro.ORMSupportClasses;
 
-namespace NW26.DatabaseSpecific
+namespace Northwind.DatabaseSpecific
 {
 	/// <summary>Class which contains the static logic to execute action stored procedures in the database.</summary>
 	public static partial class ActionProcedures

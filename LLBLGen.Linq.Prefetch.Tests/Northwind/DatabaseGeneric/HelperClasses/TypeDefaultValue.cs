@@ -1,7 +1,7 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
+// Code is generated using LLBLGen Pro version: 5.0
 // Code is generated on: 
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
@@ -11,7 +11,7 @@ using System;
 
 using SD.LLBLGen.Pro.ORMSupportClasses;
 
-namespace NW26.HelperClasses
+namespace Northwind.HelperClasses
 {
 	/// <summary>
 	/// Class for the returning of a default value when a type is given. These
@@ -91,10 +91,28 @@ namespace NW26.HelperClasses
 						case "System.Byte[]":
 							valueToReturn = new byte[0];
 							break;
+						case "System.DateTimeOffset":
+							valueToReturn = DateTimeOffset.MinValue;
+							break;
+						case "System.TimeSpan":
+							valueToReturn = TimeSpan.MinValue;
+							break;
 					}
 					break;					
 				case TypeCode.Single:
 					valueToReturn = 0.0f;
+					break;
+				case TypeCode.UInt16:
+					valueToReturn = (ushort)0;
+					break;
+				case TypeCode.UInt32:
+					valueToReturn = (uint)0;
+					break;
+				case TypeCode.UInt64:
+					valueToReturn = (ulong)0;
+					break;
+				case TypeCode.SByte:
+					valueToReturn = (SByte)0;
 					break;
 				default:
 					// do nothing, return null.

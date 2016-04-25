@@ -1,7 +1,7 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
+// Code is generated using LLBLGen Pro version: 5.0
 // Code is generated on: 
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
@@ -10,7 +10,7 @@
 using System;
 using SD.LLBLGen.Pro.ORMSupportClasses;
 
-namespace NW26.HelperClasses
+namespace Northwind.HelperClasses
 {
 	
 	// __LLBLGENPRO_USER_CODE_REGION_START AdditionalNamespaces
@@ -49,11 +49,9 @@ namespace NW26.HelperClasses
 		/// <summary>Method which initializes the internal datastores.</summary>
 		private void Init()
 		{
-			this.InitClass( (13 + 0));
+			this.InitClass( (11 + 0));
 			InitCategoryEntityInfos();
 			InitCustomerEntityInfos();
-			InitCustomerCustomerDemoEntityInfos();
-			InitCustomerDemographicEntityInfos();
 			InitEmployeeEntityInfos();
 			InitEmployeeTerritoryEntityInfos();
 			InitOrderEntityInfos();
@@ -92,20 +90,6 @@ namespace NW26.HelperClasses
 			this.AddElementFieldInfo("CustomerEntity", "PostalCode", typeof(System.String), false, false, false, true,  (int)CustomerFieldIndex.PostalCode, 10, 0, 0);
 			this.AddElementFieldInfo("CustomerEntity", "Region", typeof(System.String), false, false, false, true,  (int)CustomerFieldIndex.Region, 15, 0, 0);
 		}
-		/// <summary>Inits CustomerCustomerDemoEntity's FieldInfo objects</summary>
-		private void InitCustomerCustomerDemoEntityInfos()
-		{
-			this.AddFieldIndexEnumForElementName(typeof(CustomerCustomerDemoFieldIndex), "CustomerCustomerDemoEntity");
-			this.AddElementFieldInfo("CustomerCustomerDemoEntity", "CustomerId", typeof(System.String), true, true, false, false,  (int)CustomerCustomerDemoFieldIndex.CustomerId, 5, 0, 0);
-			this.AddElementFieldInfo("CustomerCustomerDemoEntity", "CustomerTypeId", typeof(System.String), true, true, false, false,  (int)CustomerCustomerDemoFieldIndex.CustomerTypeId, 10, 0, 0);
-		}
-		/// <summary>Inits CustomerDemographicEntity's FieldInfo objects</summary>
-		private void InitCustomerDemographicEntityInfos()
-		{
-			this.AddFieldIndexEnumForElementName(typeof(CustomerDemographicFieldIndex), "CustomerDemographicEntity");
-			this.AddElementFieldInfo("CustomerDemographicEntity", "CustomerDesc", typeof(System.String), false, false, false, true,  (int)CustomerDemographicFieldIndex.CustomerDesc, 1073741823, 0, 0);
-			this.AddElementFieldInfo("CustomerDemographicEntity", "CustomerTypeId", typeof(System.String), true, false, false, false,  (int)CustomerDemographicFieldIndex.CustomerTypeId, 10, 0, 0);
-		}
 		/// <summary>Inits EmployeeEntity's FieldInfo objects</summary>
 		private void InitEmployeeEntityInfos()
 		{
@@ -125,6 +109,7 @@ namespace NW26.HelperClasses
 			this.AddElementFieldInfo("EmployeeEntity", "PhotoPath", typeof(System.String), false, false, false, true,  (int)EmployeeFieldIndex.PhotoPath, 255, 0, 0);
 			this.AddElementFieldInfo("EmployeeEntity", "PostalCode", typeof(System.String), false, false, false, true,  (int)EmployeeFieldIndex.PostalCode, 10, 0, 0);
 			this.AddElementFieldInfo("EmployeeEntity", "Region", typeof(System.String), false, false, false, true,  (int)EmployeeFieldIndex.Region, 15, 0, 0);
+			this.AddElementFieldInfo("EmployeeEntity", "RegionId", typeof(Nullable<System.Int32>), false, true, false, true,  (int)EmployeeFieldIndex.RegionId, 0, 0, 10);
 			this.AddElementFieldInfo("EmployeeEntity", "ReportsTo", typeof(Nullable<System.Int32>), false, true, false, true,  (int)EmployeeFieldIndex.ReportsTo, 0, 0, 10);
 			this.AddElementFieldInfo("EmployeeEntity", "Title", typeof(System.String), false, false, false, true,  (int)EmployeeFieldIndex.Title, 30, 0, 0);
 			this.AddElementFieldInfo("EmployeeEntity", "TitleOfCourtesy", typeof(System.String), false, false, false, true,  (int)EmployeeFieldIndex.TitleOfCourtesy, 25, 0, 0);
@@ -171,6 +156,7 @@ namespace NW26.HelperClasses
 			this.AddFieldIndexEnumForElementName(typeof(ProductFieldIndex), "ProductEntity");
 			this.AddElementFieldInfo("ProductEntity", "CategoryId", typeof(Nullable<System.Int32>), false, true, false, true,  (int)ProductFieldIndex.CategoryId, 0, 0, 10);
 			this.AddElementFieldInfo("ProductEntity", "Discontinued", typeof(System.Boolean), false, false, false, false,  (int)ProductFieldIndex.Discontinued, 0, 0, 0);
+			this.AddElementFieldInfo("ProductEntity", "PreferredProduct", typeof(Nullable<System.Boolean>), false, false, false, true,  (int)ProductFieldIndex.PreferredProduct, 0, 0, 0);
 			this.AddElementFieldInfo("ProductEntity", "ProductId", typeof(System.Int32), true, false, true, false,  (int)ProductFieldIndex.ProductId, 0, 0, 10);
 			this.AddElementFieldInfo("ProductEntity", "ProductName", typeof(System.String), false, false, false, false,  (int)ProductFieldIndex.ProductName, 40, 0, 0);
 			this.AddElementFieldInfo("ProductEntity", "QuantityPerUnit", typeof(System.String), false, false, false, true,  (int)ProductFieldIndex.QuantityPerUnit, 20, 0, 0);
@@ -219,6 +205,7 @@ namespace NW26.HelperClasses
 			this.AddElementFieldInfo("TerritoryEntity", "RegionId", typeof(System.Int32), false, true, false, false,  (int)TerritoryFieldIndex.RegionId, 0, 0, 10);
 			this.AddElementFieldInfo("TerritoryEntity", "TerritoryDescription", typeof(System.String), false, false, false, false,  (int)TerritoryFieldIndex.TerritoryDescription, 50, 0, 0);
 			this.AddElementFieldInfo("TerritoryEntity", "TerritoryId", typeof(System.String), true, false, false, false,  (int)TerritoryFieldIndex.TerritoryId, 20, 0, 0);
+			this.AddElementFieldInfo("TerritoryEntity", "Test", typeof(System.Byte[]), false, false, false, true,  (int)TerritoryFieldIndex.Test, 50, 0, 0);
 		}
 		
 	}

@@ -1,18 +1,19 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
+// Code is generated using LLBLGen Pro version: 5.0
 // Code is generated on: 
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 ////////////////////////////////////////////////////////////// 
 using System;
 using System.Linq;
-using NW26.EntityClasses;
+using Northwind.EntityClasses;
+using Northwind.HelperClasses;
 using SD.LLBLGen.Pro.ORMSupportClasses;
 using SD.LLBLGen.Pro.QuerySpec;
 
-namespace NW26.FactoryClasses
+namespace Northwind.FactoryClasses
 {
 	/// <summary>Factory class to produce DynamicQuery instances and EntityQuery instances</summary>
 	public partial class QueryFactory
@@ -115,18 +116,6 @@ namespace NW26.FactoryClasses
 		public EntityQuery<CustomerEntity> Customer
 		{
 			get { return Create<CustomerEntity>(); }
-		}
-
-		/// <summary>Creates and returns a new EntityQuery for the CustomerCustomerDemo entity</summary>
-		public EntityQuery<CustomerCustomerDemoEntity> CustomerCustomerDemo
-		{
-			get { return Create<CustomerCustomerDemoEntity>(); }
-		}
-
-		/// <summary>Creates and returns a new EntityQuery for the CustomerDemographic entity</summary>
-		public EntityQuery<CustomerDemographicEntity> CustomerDemographic
-		{
-			get { return Create<CustomerDemographicEntity>(); }
 		}
 
 		/// <summary>Creates and returns a new EntityQuery for the Employee entity</summary>

@@ -1,23 +1,24 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
+// Code is generated using LLBLGen Pro version: 5.0
 // Code is generated on: 
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 //////////////////////////////////////////////////////////////
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using SD.LLBLGen.Pro.LinqSupportClasses;
 using SD.LLBLGen.Pro.ORMSupportClasses;
 
-using NW26;
-using NW26.EntityClasses;
-using NW26.FactoryClasses;
-using NW26.HelperClasses;
-using NW26.RelationClasses;
+using Northwind;
+using Northwind.EntityClasses;
+using Northwind.FactoryClasses;
+using Northwind.HelperClasses;
+using Northwind.RelationClasses;
 
-namespace NW26.Linq
+namespace Northwind.Linq
 {
 	/// <summary>Meta-data class for the construction of Linq queries which are to be executed using LLBLGen Pro code.</summary>
 	public partial class LinqMetaData: ILinqMetaData
@@ -59,45 +60,39 @@ namespace NW26.Linq
 		public IDataSource GetQueryableForEntity(int typeOfEntity)
 		{
 			IDataSource toReturn = null;
-			switch((NW26.EntityType)typeOfEntity)
+			switch((Northwind.EntityType)typeOfEntity)
 			{
-				case NW26.EntityType.CategoryEntity:
+				case Northwind.EntityType.CategoryEntity:
 					toReturn = this.Category;
 					break;
-				case NW26.EntityType.CustomerEntity:
+				case Northwind.EntityType.CustomerEntity:
 					toReturn = this.Customer;
 					break;
-				case NW26.EntityType.CustomerCustomerDemoEntity:
-					toReturn = this.CustomerCustomerDemo;
-					break;
-				case NW26.EntityType.CustomerDemographicEntity:
-					toReturn = this.CustomerDemographic;
-					break;
-				case NW26.EntityType.EmployeeEntity:
+				case Northwind.EntityType.EmployeeEntity:
 					toReturn = this.Employee;
 					break;
-				case NW26.EntityType.EmployeeTerritoryEntity:
+				case Northwind.EntityType.EmployeeTerritoryEntity:
 					toReturn = this.EmployeeTerritory;
 					break;
-				case NW26.EntityType.OrderEntity:
+				case Northwind.EntityType.OrderEntity:
 					toReturn = this.Order;
 					break;
-				case NW26.EntityType.OrderDetailEntity:
+				case Northwind.EntityType.OrderDetailEntity:
 					toReturn = this.OrderDetail;
 					break;
-				case NW26.EntityType.ProductEntity:
+				case Northwind.EntityType.ProductEntity:
 					toReturn = this.Product;
 					break;
-				case NW26.EntityType.RegionEntity:
+				case Northwind.EntityType.RegionEntity:
 					toReturn = this.Region;
 					break;
-				case NW26.EntityType.ShipperEntity:
+				case Northwind.EntityType.ShipperEntity:
 					toReturn = this.Shipper;
 					break;
-				case NW26.EntityType.SupplierEntity:
+				case Northwind.EntityType.SupplierEntity:
 					toReturn = this.Supplier;
 					break;
-				case NW26.EntityType.TerritoryEntity:
+				case Northwind.EntityType.TerritoryEntity:
 					toReturn = this.Territory;
 					break;
 				default:
@@ -126,18 +121,6 @@ namespace NW26.Linq
 		public DataSource2<CustomerEntity> Customer
 		{
 			get { return new DataSource2<CustomerEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
-		}
-		
-		/// <summary>returns the datasource to use in a Linq query when targeting CustomerCustomerDemoEntity instances in the database.</summary>
-		public DataSource2<CustomerCustomerDemoEntity> CustomerCustomerDemo
-		{
-			get { return new DataSource2<CustomerCustomerDemoEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
-		}
-		
-		/// <summary>returns the datasource to use in a Linq query when targeting CustomerDemographicEntity instances in the database.</summary>
-		public DataSource2<CustomerDemographicEntity> CustomerDemographic
-		{
-			get { return new DataSource2<CustomerDemographicEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
 		}
 		
 		/// <summary>returns the datasource to use in a Linq query when targeting EmployeeEntity instances in the database.</summary>
@@ -194,7 +177,7 @@ namespace NW26.Linq
 			get { return new DataSource2<TerritoryEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
 		}
 		
- 
+
 		#region Class Property Declarations
 		/// <summary> Gets / sets the IDataAccessAdapter to use for the queries created with this meta data object.</summary>
 		/// <remarks> Be aware that the IDataAccessAdapter object set via this property is kept alive by the LLBLGenProQuery objects created with this meta data

@@ -1,7 +1,7 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
+// Code is generated using LLBLGen Pro version: 5.0
 // Code is generated on: 
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
@@ -17,10 +17,10 @@ using System.Runtime.Serialization;
 using System.Xml.Serialization;
 using System.Xml;
 using System.Xml.Schema;
-using NW26.EntityClasses;
+using Northwind.EntityClasses;
 using SD.LLBLGen.Pro.ORMSupportClasses;
 
-namespace NW26.HelperClasses
+namespace Northwind.HelperClasses
 {
 	// __LLBLGENPRO_USER_CODE_REGION_START AdditionalNamespaces
 	// __LLBLGENPRO_USER_CODE_REGION_END

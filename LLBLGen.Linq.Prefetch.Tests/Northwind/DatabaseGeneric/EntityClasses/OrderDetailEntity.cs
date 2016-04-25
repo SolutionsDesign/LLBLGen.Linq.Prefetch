@@ -1,7 +1,7 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
+// Code is generated using LLBLGen Pro version: 5.0
 // Code is generated on: 
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
@@ -14,14 +14,14 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 #endif
 using System.Xml.Serialization;
-using NW26;
-using NW26.HelperClasses;
-using NW26.FactoryClasses;
-using NW26.RelationClasses;
+using Northwind;
+using Northwind.HelperClasses;
+using Northwind.FactoryClasses;
+using Northwind.RelationClasses;
 
 using SD.LLBLGen.Pro.ORMSupportClasses;
 
-namespace NW26.EntityClasses
+namespace Northwind.EntityClasses
 {
 	// __LLBLGENPRO_USER_CODE_REGION_START AdditionalNamespaces
 	// __LLBLGENPRO_USER_CODE_REGION_END
@@ -406,7 +406,7 @@ namespace NW26.EntityClasses
 		/// <param name="resetFKFields">if set to true it will also reset the FK fields pointing to the related entity</param>
 		private void DesetupSyncOrder(bool signalRelatedEntity, bool resetFKFields)
 		{
-			this.PerformDesetupSyncRelatedEntity( _order, new PropertyChangedEventHandler( OnOrderPropertyChanged ), "Order", NW26.RelationClasses.StaticOrderDetailRelations.OrderEntityUsingOrderIdStatic, true, signalRelatedEntity, "OrderDetails", resetFKFields, new int[] { (int)OrderDetailFieldIndex.OrderId } );
+			this.PerformDesetupSyncRelatedEntity( _order, new PropertyChangedEventHandler( OnOrderPropertyChanged ), "Order", Northwind.RelationClasses.StaticOrderDetailRelations.OrderEntityUsingOrderIdStatic, true, signalRelatedEntity, "OrderDetails", resetFKFields, new int[] { (int)OrderDetailFieldIndex.OrderId } );
 			_order = null;
 		}
 
@@ -418,7 +418,7 @@ namespace NW26.EntityClasses
 			{
 				DesetupSyncOrder(true, true);
 				_order = (OrderEntity)relatedEntity;
-				this.PerformSetupSyncRelatedEntity( _order, new PropertyChangedEventHandler( OnOrderPropertyChanged ), "Order", NW26.RelationClasses.StaticOrderDetailRelations.OrderEntityUsingOrderIdStatic, true, new string[] {  } );
+				this.PerformSetupSyncRelatedEntity( _order, new PropertyChangedEventHandler( OnOrderPropertyChanged ), "Order", Northwind.RelationClasses.StaticOrderDetailRelations.OrderEntityUsingOrderIdStatic, true, new string[] {  } );
 			}
 		}
 		
@@ -439,7 +439,7 @@ namespace NW26.EntityClasses
 		/// <param name="resetFKFields">if set to true it will also reset the FK fields pointing to the related entity</param>
 		private void DesetupSyncProduct(bool signalRelatedEntity, bool resetFKFields)
 		{
-			this.PerformDesetupSyncRelatedEntity( _product, new PropertyChangedEventHandler( OnProductPropertyChanged ), "Product", NW26.RelationClasses.StaticOrderDetailRelations.ProductEntityUsingProductIdStatic, true, signalRelatedEntity, "OrderDetails", resetFKFields, new int[] { (int)OrderDetailFieldIndex.ProductId } );
+			this.PerformDesetupSyncRelatedEntity( _product, new PropertyChangedEventHandler( OnProductPropertyChanged ), "Product", Northwind.RelationClasses.StaticOrderDetailRelations.ProductEntityUsingProductIdStatic, true, signalRelatedEntity, "OrderDetails", resetFKFields, new int[] { (int)OrderDetailFieldIndex.ProductId } );
 			_product = null;
 		}
 
@@ -451,7 +451,7 @@ namespace NW26.EntityClasses
 			{
 				DesetupSyncProduct(true, true);
 				_product = (ProductEntity)relatedEntity;
-				this.PerformSetupSyncRelatedEntity( _product, new PropertyChangedEventHandler( OnProductPropertyChanged ), "Product", NW26.RelationClasses.StaticOrderDetailRelations.ProductEntityUsingProductIdStatic, true, new string[] {  } );
+				this.PerformSetupSyncRelatedEntity( _product, new PropertyChangedEventHandler( OnProductPropertyChanged ), "Product", Northwind.RelationClasses.StaticOrderDetailRelations.ProductEntityUsingProductIdStatic, true, new string[] {  } );
 			}
 		}
 		
@@ -502,14 +502,14 @@ namespace NW26.EntityClasses
 		/// <returns>Ready to use IPrefetchPathElement2 implementation.</returns>
 		public static IPrefetchPathElement2 PrefetchPathOrder
 		{
-			get	{ return new PrefetchPathElement2(new EntityCollection(EntityFactoryCache2.GetEntityFactory(typeof(OrderEntityFactory))),	(IEntityRelation)GetRelationsForField("Order")[0], (int)NW26.EntityType.OrderDetailEntity, (int)NW26.EntityType.OrderEntity, 0, null, null, null, null, "Order", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToOne); }
+			get	{ return new PrefetchPathElement2(new EntityCollection(EntityFactoryCache2.GetEntityFactory(typeof(OrderEntityFactory))),	(IEntityRelation)GetRelationsForField("Order")[0], (int)Northwind.EntityType.OrderDetailEntity, (int)Northwind.EntityType.OrderEntity, 0, null, null, null, null, "Order", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToOne); }
 		}
 
 		/// <summary> Creates a new PrefetchPathElement2 object which contains all the information to prefetch the related entities of type 'Product' for this entity.</summary>
 		/// <returns>Ready to use IPrefetchPathElement2 implementation.</returns>
 		public static IPrefetchPathElement2 PrefetchPathProduct
 		{
-			get	{ return new PrefetchPathElement2(new EntityCollection(EntityFactoryCache2.GetEntityFactory(typeof(ProductEntityFactory))),	(IEntityRelation)GetRelationsForField("Product")[0], (int)NW26.EntityType.OrderDetailEntity, (int)NW26.EntityType.ProductEntity, 0, null, null, null, null, "Product", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToOne); }
+			get	{ return new PrefetchPathElement2(new EntityCollection(EntityFactoryCache2.GetEntityFactory(typeof(ProductEntityFactory))),	(IEntityRelation)GetRelationsForField("Product")[0], (int)Northwind.EntityType.OrderDetailEntity, (int)Northwind.EntityType.ProductEntity, 0, null, null, null, null, "Product", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToOne); }
 		}
 
 
@@ -634,11 +634,11 @@ namespace NW26.EntityClasses
 			get { return false;}
 		}
 		
-		/// <summary>Returns the NW26.EntityType enum value for this entity.</summary>
+		/// <summary>Returns the Northwind.EntityType enum value for this entity.</summary>
 		[Browsable(false), XmlIgnore]
 		protected override int LLBLGenProEntityTypeValue 
 		{ 
-			get { return (int)NW26.EntityType.OrderDetailEntity; }
+			get { return (int)Northwind.EntityType.OrderDetailEntity; }
 		}
 
 		#endregion

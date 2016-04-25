@@ -1,7 +1,7 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
+// Code is generated using LLBLGen Pro version: 5.0
 // Code is generated on: 
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
@@ -9,10 +9,10 @@
 //////////////////////////////////////////////////////////////
 using System;
 using SD.LLBLGen.Pro.ORMSupportClasses;
-using NW26.FactoryClasses;
-using NW26;
+using Northwind.FactoryClasses;
+using Northwind;
 
-namespace NW26.HelperClasses
+namespace Northwind.HelperClasses
 {
 	/// <summary>Field Creation Class for entity CategoryEntity</summary>
 	public partial class CategoryFields
@@ -99,36 +99,6 @@ namespace NW26.HelperClasses
 		}
 	}
 
-	/// <summary>Field Creation Class for entity CustomerCustomerDemoEntity</summary>
-	public partial class CustomerCustomerDemoFields
-	{
-		/// <summary>Creates a new CustomerCustomerDemoEntity.CustomerId field instance</summary>
-		public static EntityField2 CustomerId
-		{
-			get { return (EntityField2)EntityFieldFactory.Create(CustomerCustomerDemoFieldIndex.CustomerId);}
-		}
-		/// <summary>Creates a new CustomerCustomerDemoEntity.CustomerTypeId field instance</summary>
-		public static EntityField2 CustomerTypeId
-		{
-			get { return (EntityField2)EntityFieldFactory.Create(CustomerCustomerDemoFieldIndex.CustomerTypeId);}
-		}
-	}
-
-	/// <summary>Field Creation Class for entity CustomerDemographicEntity</summary>
-	public partial class CustomerDemographicFields
-	{
-		/// <summary>Creates a new CustomerDemographicEntity.CustomerDesc field instance</summary>
-		public static EntityField2 CustomerDesc
-		{
-			get { return (EntityField2)EntityFieldFactory.Create(CustomerDemographicFieldIndex.CustomerDesc);}
-		}
-		/// <summary>Creates a new CustomerDemographicEntity.CustomerTypeId field instance</summary>
-		public static EntityField2 CustomerTypeId
-		{
-			get { return (EntityField2)EntityFieldFactory.Create(CustomerDemographicFieldIndex.CustomerTypeId);}
-		}
-	}
-
 	/// <summary>Field Creation Class for entity EmployeeEntity</summary>
 	public partial class EmployeeFields
 	{
@@ -206,6 +176,11 @@ namespace NW26.HelperClasses
 		public static EntityField2 Region
 		{
 			get { return (EntityField2)EntityFieldFactory.Create(EmployeeFieldIndex.Region);}
+		}
+		/// <summary>Creates a new EmployeeEntity.RegionId field instance</summary>
+		public static EntityField2 RegionId
+		{
+			get { return (EntityField2)EntityFieldFactory.Create(EmployeeFieldIndex.RegionId);}
 		}
 		/// <summary>Creates a new EmployeeEntity.ReportsTo field instance</summary>
 		public static EntityField2 ReportsTo
@@ -356,6 +331,11 @@ namespace NW26.HelperClasses
 		public static EntityField2 Discontinued
 		{
 			get { return (EntityField2)EntityFieldFactory.Create(ProductFieldIndex.Discontinued);}
+		}
+		/// <summary>Creates a new ProductEntity.PreferredProduct field instance</summary>
+		public static EntityField2 PreferredProduct
+		{
+			get { return (EntityField2)EntityFieldFactory.Create(ProductFieldIndex.PreferredProduct);}
 		}
 		/// <summary>Creates a new ProductEntity.ProductId field instance</summary>
 		public static EntityField2 ProductId
@@ -516,6 +496,11 @@ namespace NW26.HelperClasses
 		public static EntityField2 TerritoryId
 		{
 			get { return (EntityField2)EntityFieldFactory.Create(TerritoryFieldIndex.TerritoryId);}
+		}
+		/// <summary>Creates a new TerritoryEntity.Test field instance</summary>
+		public static EntityField2 Test
+		{
+			get { return (EntityField2)EntityFieldFactory.Create(TerritoryFieldIndex.Test);}
 		}
 	}
 	

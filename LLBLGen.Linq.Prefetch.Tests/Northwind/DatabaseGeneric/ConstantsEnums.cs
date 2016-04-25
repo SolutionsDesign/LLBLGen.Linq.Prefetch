@@ -1,7 +1,7 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
+// Code is generated using LLBLGen Pro version: 5.0
 // Code is generated on: 
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
@@ -9,7 +9,7 @@
 //////////////////////////////////////////////////////////////
 using System;
 
-namespace NW26
+namespace Northwind
 {
 	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: Category.</summary>
 	public enum CategoryFieldIndex
@@ -53,26 +53,6 @@ namespace NW26
 		/// <summary></summary>
 		AmountOfFields
 	}
-	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: CustomerCustomerDemo.</summary>
-	public enum CustomerCustomerDemoFieldIndex
-	{
-		///<summary>CustomerId. </summary>
-		CustomerId,
-		///<summary>CustomerTypeId. </summary>
-		CustomerTypeId,
-		/// <summary></summary>
-		AmountOfFields
-	}
-	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: CustomerDemographic.</summary>
-	public enum CustomerDemographicFieldIndex
-	{
-		///<summary>CustomerDesc. </summary>
-		CustomerDesc,
-		///<summary>CustomerTypeId. </summary>
-		CustomerTypeId,
-		/// <summary></summary>
-		AmountOfFields
-	}
 	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: Employee.</summary>
 	public enum EmployeeFieldIndex
 	{
@@ -106,6 +86,8 @@ namespace NW26
 		PostalCode,
 		///<summary>Region. </summary>
 		Region,
+		///<summary>RegionId. </summary>
+		RegionId,
 		///<summary>ReportsTo. </summary>
 		ReportsTo,
 		///<summary>Title. </summary>
@@ -182,6 +164,8 @@ namespace NW26
 		CategoryId,
 		///<summary>Discontinued. </summary>
 		Discontinued,
+		///<summary>PreferredProduct. </summary>
+		PreferredProduct,
 		///<summary>ProductId. </summary>
 		ProductId,
 		///<summary>ProductName. </summary>
@@ -262,6 +246,8 @@ namespace NW26
 		TerritoryDescription,
 		///<summary>TerritoryId. </summary>
 		TerritoryId,
+		///<summary>Test. </summary>
+		Test,
 		/// <summary></summary>
 		AmountOfFields
 	}
@@ -275,10 +261,6 @@ namespace NW26
 		CategoryEntity,
 		///<summary>Customer</summary>
 		CustomerEntity,
-		///<summary>CustomerCustomerDemo</summary>
-		CustomerCustomerDemoEntity,
-		///<summary>CustomerDemographic</summary>
-		CustomerDemographicEntity,
 		///<summary>Employee</summary>
 		EmployeeEntity,
 		///<summary>EmployeeTerritory</summary>

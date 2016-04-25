@@ -1,7 +1,7 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
+// Code is generated using LLBLGen Pro version: 5.0
 // Code is generated on: 
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
@@ -14,14 +14,14 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 #endif
 using System.Xml.Serialization;
-using NW26;
-using NW26.HelperClasses;
-using NW26.FactoryClasses;
-using NW26.RelationClasses;
+using Northwind;
+using Northwind.HelperClasses;
+using Northwind.FactoryClasses;
+using Northwind.RelationClasses;
 
 using SD.LLBLGen.Pro.ORMSupportClasses;
 
-namespace NW26.EntityClasses
+namespace Northwind.EntityClasses
 {
 	// __LLBLGENPRO_USER_CODE_REGION_START AdditionalNamespaces
 	// __LLBLGENPRO_USER_CODE_REGION_END
@@ -450,6 +450,8 @@ namespace NW26.EntityClasses
 			fieldHashtable = new Dictionary<string, string>();
 			_fieldsCustomProperties.Add("Discontinued", fieldHashtable);
 			fieldHashtable = new Dictionary<string, string>();
+			_fieldsCustomProperties.Add("PreferredProduct", fieldHashtable);
+			fieldHashtable = new Dictionary<string, string>();
 			_fieldsCustomProperties.Add("ProductId", fieldHashtable);
 			fieldHashtable = new Dictionary<string, string>();
 			_fieldsCustomProperties.Add("ProductName", fieldHashtable);
@@ -473,7 +475,7 @@ namespace NW26.EntityClasses
 		/// <param name="resetFKFields">if set to true it will also reset the FK fields pointing to the related entity</param>
 		private void DesetupSyncCategory(bool signalRelatedEntity, bool resetFKFields)
 		{
-			this.PerformDesetupSyncRelatedEntity( _category, new PropertyChangedEventHandler( OnCategoryPropertyChanged ), "Category", NW26.RelationClasses.StaticProductRelations.CategoryEntityUsingCategoryIdStatic, true, signalRelatedEntity, "Products", resetFKFields, new int[] { (int)ProductFieldIndex.CategoryId } );
+			this.PerformDesetupSyncRelatedEntity( _category, new PropertyChangedEventHandler( OnCategoryPropertyChanged ), "Category", Northwind.RelationClasses.StaticProductRelations.CategoryEntityUsingCategoryIdStatic, true, signalRelatedEntity, "Products", resetFKFields, new int[] { (int)ProductFieldIndex.CategoryId } );
 			_category = null;
 		}
 
@@ -485,7 +487,7 @@ namespace NW26.EntityClasses
 			{
 				DesetupSyncCategory(true, true);
 				_category = (CategoryEntity)relatedEntity;
-				this.PerformSetupSyncRelatedEntity( _category, new PropertyChangedEventHandler( OnCategoryPropertyChanged ), "Category", NW26.RelationClasses.StaticProductRelations.CategoryEntityUsingCategoryIdStatic, true, new string[] {  } );
+				this.PerformSetupSyncRelatedEntity( _category, new PropertyChangedEventHandler( OnCategoryPropertyChanged ), "Category", Northwind.RelationClasses.StaticProductRelations.CategoryEntityUsingCategoryIdStatic, true, new string[] {  } );
 			}
 		}
 		
@@ -506,7 +508,7 @@ namespace NW26.EntityClasses
 		/// <param name="resetFKFields">if set to true it will also reset the FK fields pointing to the related entity</param>
 		private void DesetupSyncSupplier(bool signalRelatedEntity, bool resetFKFields)
 		{
-			this.PerformDesetupSyncRelatedEntity( _supplier, new PropertyChangedEventHandler( OnSupplierPropertyChanged ), "Supplier", NW26.RelationClasses.StaticProductRelations.SupplierEntityUsingSupplierIdStatic, true, signalRelatedEntity, "Products", resetFKFields, new int[] { (int)ProductFieldIndex.SupplierId } );
+			this.PerformDesetupSyncRelatedEntity( _supplier, new PropertyChangedEventHandler( OnSupplierPropertyChanged ), "Supplier", Northwind.RelationClasses.StaticProductRelations.SupplierEntityUsingSupplierIdStatic, true, signalRelatedEntity, "Products", resetFKFields, new int[] { (int)ProductFieldIndex.SupplierId } );
 			_supplier = null;
 		}
 
@@ -518,7 +520,7 @@ namespace NW26.EntityClasses
 			{
 				DesetupSyncSupplier(true, true);
 				_supplier = (SupplierEntity)relatedEntity;
-				this.PerformSetupSyncRelatedEntity( _supplier, new PropertyChangedEventHandler( OnSupplierPropertyChanged ), "Supplier", NW26.RelationClasses.StaticProductRelations.SupplierEntityUsingSupplierIdStatic, true, new string[] {  } );
+				this.PerformSetupSyncRelatedEntity( _supplier, new PropertyChangedEventHandler( OnSupplierPropertyChanged ), "Supplier", Northwind.RelationClasses.StaticProductRelations.SupplierEntityUsingSupplierIdStatic, true, new string[] {  } );
 			}
 		}
 		
@@ -569,7 +571,7 @@ namespace NW26.EntityClasses
 		/// <returns>Ready to use IPrefetchPathElement2 implementation.</returns>
 		public static IPrefetchPathElement2 PrefetchPathOrderDetails
 		{
-			get	{ return new PrefetchPathElement2( new EntityCollection<OrderDetailEntity>(EntityFactoryCache2.GetEntityFactory(typeof(OrderDetailEntityFactory))), (IEntityRelation)GetRelationsForField("OrderDetails")[0], (int)NW26.EntityType.ProductEntity, (int)NW26.EntityType.OrderDetailEntity, 0, null, null, null, null, "OrderDetails", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.OneToMany);	}
+			get	{ return new PrefetchPathElement2( new EntityCollection<OrderDetailEntity>(EntityFactoryCache2.GetEntityFactory(typeof(OrderDetailEntityFactory))), (IEntityRelation)GetRelationsForField("OrderDetails")[0], (int)Northwind.EntityType.ProductEntity, (int)Northwind.EntityType.OrderDetailEntity, 0, null, null, null, null, "OrderDetails", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.OneToMany);	}
 		}
 
 		/// <summary> Creates a new PrefetchPathElement2 object which contains all the information to prefetch the related entities of type 'Order' for this entity.</summary>
@@ -581,7 +583,7 @@ namespace NW26.EntityClasses
 				IEntityRelation intermediateRelation = Relations.OrderDetailEntityUsingProductId;
 				intermediateRelation.SetAliases(string.Empty, "OrderDetail_");
 				return new PrefetchPathElement2(new EntityCollection<OrderEntity>(EntityFactoryCache2.GetEntityFactory(typeof(OrderEntityFactory))), intermediateRelation,
-					(int)NW26.EntityType.ProductEntity, (int)NW26.EntityType.OrderEntity, 0, null, null, GetRelationsForField("OrderCollectionViaOrderDetail"), null, "OrderCollectionViaOrderDetail", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToMany);
+					(int)Northwind.EntityType.ProductEntity, (int)Northwind.EntityType.OrderEntity, 0, null, null, GetRelationsForField("OrderCollectionViaOrderDetail"), null, "OrderCollectionViaOrderDetail", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToMany);
 			}
 		}
 
@@ -589,14 +591,14 @@ namespace NW26.EntityClasses
 		/// <returns>Ready to use IPrefetchPathElement2 implementation.</returns>
 		public static IPrefetchPathElement2 PrefetchPathCategory
 		{
-			get	{ return new PrefetchPathElement2(new EntityCollection(EntityFactoryCache2.GetEntityFactory(typeof(CategoryEntityFactory))),	(IEntityRelation)GetRelationsForField("Category")[0], (int)NW26.EntityType.ProductEntity, (int)NW26.EntityType.CategoryEntity, 0, null, null, null, null, "Category", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToOne); }
+			get	{ return new PrefetchPathElement2(new EntityCollection(EntityFactoryCache2.GetEntityFactory(typeof(CategoryEntityFactory))),	(IEntityRelation)GetRelationsForField("Category")[0], (int)Northwind.EntityType.ProductEntity, (int)Northwind.EntityType.CategoryEntity, 0, null, null, null, null, "Category", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToOne); }
 		}
 
 		/// <summary> Creates a new PrefetchPathElement2 object which contains all the information to prefetch the related entities of type 'Supplier' for this entity.</summary>
 		/// <returns>Ready to use IPrefetchPathElement2 implementation.</returns>
 		public static IPrefetchPathElement2 PrefetchPathSupplier
 		{
-			get	{ return new PrefetchPathElement2(new EntityCollection(EntityFactoryCache2.GetEntityFactory(typeof(SupplierEntityFactory))),	(IEntityRelation)GetRelationsForField("Supplier")[0], (int)NW26.EntityType.ProductEntity, (int)NW26.EntityType.SupplierEntity, 0, null, null, null, null, "Supplier", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToOne); }
+			get	{ return new PrefetchPathElement2(new EntityCollection(EntityFactoryCache2.GetEntityFactory(typeof(SupplierEntityFactory))),	(IEntityRelation)GetRelationsForField("Supplier")[0], (int)Northwind.EntityType.ProductEntity, (int)Northwind.EntityType.SupplierEntity, 0, null, null, null, null, "Supplier", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToOne); }
 		}
 
 
@@ -641,6 +643,16 @@ namespace NW26.EntityClasses
 		{
 			get { return (System.Boolean)GetValue((int)ProductFieldIndex.Discontinued, true); }
 			set	{ SetValue((int)ProductFieldIndex.Discontinued, value); }
+		}
+
+		/// <summary> The PreferredProduct property of the Entity Product<br/><br/></summary>
+		/// <remarks>Mapped on  table field: "Products"."PreferredProduct"<br/>
+		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		public virtual Nullable<System.Boolean> PreferredProduct
+		{
+			get { return (Nullable<System.Boolean>)GetValue((int)ProductFieldIndex.PreferredProduct, false); }
+			set	{ SetValue((int)ProductFieldIndex.PreferredProduct, value); }
 		}
 
 		/// <summary> The ProductId property of the Entity Product<br/><br/></summary>
@@ -785,11 +797,11 @@ namespace NW26.EntityClasses
 			get { return false;}
 		}
 		
-		/// <summary>Returns the NW26.EntityType enum value for this entity.</summary>
+		/// <summary>Returns the Northwind.EntityType enum value for this entity.</summary>
 		[Browsable(false), XmlIgnore]
 		protected override int LLBLGenProEntityTypeValue 
 		{ 
-			get { return (int)NW26.EntityType.ProductEntity; }
+			get { return (int)Northwind.EntityType.ProductEntity; }
 		}
 
 		#endregion

@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLBLGen.Linq.Prefetch.Tests", "LLBLGen.Linq.Prefetch.Tests\LLBLGen.Linq.Prefetch.Tests.csproj", "{011C2CCB-938B-4AAD-9035-7CE04D511079}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NW26", "LLBLGen.Linq.Prefetch.Tests\Northwind\NW26.csproj", "{1F675E2D-229F-4DDB-B977-D0693B5ED469}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NW26DBSpecific", "LLBLGen.Linq.Prefetch.Tests\Northwind\NW26DBSpecific.csproj", "{C1F6E6F4-616F-4D35-A230-8C03A3973EBD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLBLGen.Linq.Prefetch", "LLBLGen.Linq.Prefetch\LLBLGen.Linq.Prefetch.csproj", "{9B0CB7DF-C146-4733-91D5-D9D931ECA434}"
 EndProject
@@ -15,6 +13,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{041678
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind", "LLBLGen.Linq.Prefetch.Tests\Northwind\Northwind.csproj", "{7E65CAE8-D9D6-4FFD-95EE-132FFDE933B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindDBSpecific", "LLBLGen.Linq.Prefetch.Tests\Northwind\NorthwindDBSpecific.csproj", "{EDF3F435-69BF-4D2C-A177-3C22DE4007EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,18 +28,18 @@ Global
 		{011C2CCB-938B-4AAD-9035-7CE04D511079}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{011C2CCB-938B-4AAD-9035-7CE04D511079}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{011C2CCB-938B-4AAD-9035-7CE04D511079}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1F675E2D-229F-4DDB-B977-D0693B5ED469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1F675E2D-229F-4DDB-B977-D0693B5ED469}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1F675E2D-229F-4DDB-B977-D0693B5ED469}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1F675E2D-229F-4DDB-B977-D0693B5ED469}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C1F6E6F4-616F-4D35-A230-8C03A3973EBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1F6E6F4-616F-4D35-A230-8C03A3973EBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1F6E6F4-616F-4D35-A230-8C03A3973EBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1F6E6F4-616F-4D35-A230-8C03A3973EBD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9B0CB7DF-C146-4733-91D5-D9D931ECA434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9B0CB7DF-C146-4733-91D5-D9D931ECA434}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B0CB7DF-C146-4733-91D5-D9D931ECA434}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B0CB7DF-C146-4733-91D5-D9D931ECA434}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E65CAE8-D9D6-4FFD-95EE-132FFDE933B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E65CAE8-D9D6-4FFD-95EE-132FFDE933B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E65CAE8-D9D6-4FFD-95EE-132FFDE933B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E65CAE8-D9D6-4FFD-95EE-132FFDE933B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDF3F435-69BF-4D2C-A177-3C22DE4007EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDF3F435-69BF-4D2C-A177-3C22DE4007EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDF3F435-69BF-4D2C-A177-3C22DE4007EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDF3F435-69BF-4D2C-A177-3C22DE4007EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,7 +1,7 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
+// Code is generated using LLBLGen Pro version: 5.0
 // Code is generated on: 
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
@@ -10,12 +10,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using NW26;
-using NW26.FactoryClasses;
-using NW26.HelperClasses;
+using Northwind;
+using Northwind.FactoryClasses;
+using Northwind.HelperClasses;
 using SD.LLBLGen.Pro.ORMSupportClasses;
 
-namespace NW26.RelationClasses
+namespace Northwind.RelationClasses
 {
 	/// <summary>Implements the relations factory for the entity: Employee. </summary>
 	public partial class EmployeeRelations
@@ -34,6 +34,7 @@ namespace NW26.RelationClasses
 			toReturn.Add(this.EmployeeTerritoryEntityUsingEmployeeId);
 			toReturn.Add(this.OrderEntityUsingEmployeeId);
 			toReturn.Add(this.EmployeeEntityUsingEmployeeIdReportsTo);
+			toReturn.Add(this.RegionEntityUsingRegionId);
 			return toReturn;
 		}
 
@@ -99,6 +100,20 @@ namespace NW26.RelationClasses
 				return relation;
 			}
 		}
+		/// <summary>Returns a new IEntityRelation object, between EmployeeEntity and RegionEntity over the m:1 relation they have, using the relation between the fields:
+		/// Employee.RegionId - Region.RegionId
+		/// </summary>
+		public virtual IEntityRelation RegionEntityUsingRegionId
+		{
+			get
+			{
+				IEntityRelation relation = new EntityRelation(SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToOne, "Region1", false);
+				relation.AddEntityFieldPair(RegionFields.RegionId, EmployeeFields.RegionId);
+				relation.InheritanceInfoPkSideEntity = InheritanceInfoProviderSingleton.GetInstance().GetInheritanceInfo("RegionEntity", false);
+				relation.InheritanceInfoFkSideEntity = InheritanceInfoProviderSingleton.GetInstance().GetInheritanceInfo("EmployeeEntity", true);
+				return relation;
+			}
+		}
 		/// <summary>stub, not used in this entity, only for TargetPerEntity entities.</summary>
 		public virtual IEntityRelation GetSubTypeRelation(string subTypeEntityName) { return null; }
 		/// <summary>stub, not used in this entity, only for TargetPerEntity entities.</summary>
@@ -117,6 +132,7 @@ namespace NW26.RelationClasses
 		internal static readonly IEntityRelation EmployeeTerritoryEntityUsingEmployeeIdStatic = new EmployeeRelations().EmployeeTerritoryEntityUsingEmployeeId;
 		internal static readonly IEntityRelation OrderEntityUsingEmployeeIdStatic = new EmployeeRelations().OrderEntityUsingEmployeeId;
 		internal static readonly IEntityRelation EmployeeEntityUsingEmployeeIdReportsToStatic = new EmployeeRelations().EmployeeEntityUsingEmployeeIdReportsTo;
+		internal static readonly IEntityRelation RegionEntityUsingRegionIdStatic = new EmployeeRelations().RegionEntityUsingRegionId;
 
 		/// <summary>CTor</summary>
 		static StaticEmployeeRelations()
