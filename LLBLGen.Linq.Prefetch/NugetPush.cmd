@@ -1,4 +1,2 @@
 @echo off
-set package=%1
-if "%package%"=="" set /p package="Enter package number: "
-nuget push LLBLGen.Linq.Prefetch.%package%.nupkg
+nuget push LLBLGen.Linq.Prefetch.1.0.0.6.nupkg
