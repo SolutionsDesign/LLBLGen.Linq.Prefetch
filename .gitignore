@@ -10,3 +10,4 @@ deploy
 *ReSharper*
 *.DotSettings.user
 packages
+/.vs/LLBLGen.Linq.Prefetch/v15/Server/sqlite3
