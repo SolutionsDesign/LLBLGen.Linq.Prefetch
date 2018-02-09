@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
 		<id>LLBLGen.Linq.Prefetch</id>
-		<version>1.0.0.6</version>
+		<version>1.0.0.7</version>
 		<authors>Richard Hopton</authors>
 		<owners>Solutions Design bv</owners>
 		<description>Prefetch extensions for LLBLGen Pro.</description> 
@@ -11,9 +11,9 @@
 		<iconUrl>http://www.llblgen.com/Pics/LLBLGenLogo_32x32.png</iconUrl>
 		<tags>LLBLGen Pro Prefetch O/RM</tags>
 		<language>en-us</language>
-        <copyright>(c)2002-2016 Solutions Design bv</copyright>
+        <copyright>(c)2002-2018 Solutions Design bv</copyright>
 		<dependencies>
-			<dependency id="SD.LLBLGen.Pro.ORMSupportClasses" version="[5.0.0, 5.1)" />
+			<dependency id="SD.LLBLGen.Pro.ORMSupportClasses" version="[5.0.0, 5.3)" />
 		</dependencies>		
   </metadata>
 	<files>
