@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!--LLBLGen Pro v5.0 project file. Do not manually edit this file. Incorrect references could lead to an unloadable project file.-->
-<Project Version="5.0" TargetFrameworkName="LLBLGen Pro Runtime Framework">
+<!--LLBLGen Pro v5.3 project file. Do not manually edit this file. Incorrect references could lead to an unloadable project file.-->
+<Project Version="5.3" TargetFrameworkName="LLBLGen Pro Runtime Framework">
   <Properties>
     <Abbreviations />
     <Property Name="AdditionalTaskPerformerFolder" Value="" />
@@ -67,6 +67,7 @@
     <Property Name="SingularizeElementNames" Value="true" />
     <Property Name="StoredProcNameStripPattern" Value="{pr_, sp_}{}" />
     <Property Name="StoreTimeLastGeneratedIntoProject" Value="false" />
+    <Property Name="StoreTimeLastSyncIntoProject" Value="true" />
     <Property Name="SyncMappedElementNamesAfterRefresh_v5" Value="false" />
     <Property Name="SyncMappedElementNamesAfterRelationalModelDataSync_v5" Value="false" />
     <Property Name="SyncRelationalModelDataElementNameWithModelElementName_v5" Value="true" />
@@ -94,13 +95,13 @@
         <DestinationRootFolder Value=".\Northwind" />
         <FrameworkName Value="LLBLGen Pro Runtime Framework" />
         <LanguageName Value="C#" />
-        <PlatformName Value=".NET 4.0" />
+        <PlatformName Value=".NET 4.6.1" />
         <PresetName Value="SD.Presets.Adapter.General" />
         <RootNamespace Value="Northwind" />
         <TemplateGroup Value="Adapter" />
         <TemplateBindings>
           <Binding Name="SD.TemplateBindings.SharedTemplates.Deprecated" />
-          <Binding Name="SD.TemplateBindings.SharedTemplates.NET40" />
+          <Binding Name="SD.TemplateBindings.SharedTemplates.NET45x" />
           <Binding Name="SD.TemplateBindings.SharedTemplates" />
           <Binding Name="SD.TemplateBindings.SqlServerSpecific" />
           <Binding Name="SD.TemplateBindings.General" />

@@ -510,7 +510,7 @@ namespace LLBLGen.Linq.Prefetch.Tests
             yield return e => e.CustomerCollectionViaOrder.With(c => c.Orders);
         }
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void SetupTests()
         {
             Console.WriteLine("{0}.{1}", RuntimeLibraryVersion.Version, RuntimeLibraryVersion.Build);
