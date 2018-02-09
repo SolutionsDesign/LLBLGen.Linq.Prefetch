@@ -1,6 +1,6 @@
 ﻿////////////////////////////////////////////////////////////////////////////////////////////////////////
 // COPYRIGHTS:
-// Copyright (c)2002-2016 Solutions Design. All rights reserved.
+// Copyright (c)2002-2018Solutions Design. All rights reserved.
 // http://www.llblgen.com
 // 
 // This library's sourcecode is released under the following license:
@@ -30,6 +30,7 @@
 // Contributers to the code:
 //		- Richard Hopton
 //////////////////////////////////////////////////////////////////////
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
